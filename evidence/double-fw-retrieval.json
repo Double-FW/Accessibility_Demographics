@@ -1,0 +1,104 @@
+{
+  "checked": "2026-11-14",
+  "scope": "Public metadata and READMEs for eight repositories; four selected owning documents; not a full audit",
+  "repositories": [
+    {
+      "repo": "Cognitive-UX-Design",
+      "sha": null,
+      "error": false,
+      "visibility": "public",
+      "readme_url": "https://github.com/Double-FW/Cognitive-UX-Design/blob/main/README.md",
+      "readme_modified": "2026-11-05T18:12:07Z"
+    },
+    {
+      "repo": "POUR-for-Branding-Systems-and-CX",
+      "sha": null,
+      "error": false,
+      "visibility": "public",
+      "readme_url": "https://github.com/Double-FW/POUR-for-Branding-Systems-and-CX/blob/main/README.md",
+      "readme_modified": "2026-10-11T20:37:31Z"
+    },
+    {
+      "repo": "Accessible-Typography-for-UX-and-Brand-Systems",
+      "sha": null,
+      "error": false,
+      "visibility": "public",
+      "readme_url": "https://github.com/Double-FW/Accessible-Typography-for-UX-and-Brand-Systems/blob/main/README.md",
+      "readme_modified": "2026-10-12T14:46:48Z"
+    },
+    {
+      "repo": "Data_Ethics_and_Disability",
+      "sha": null,
+      "error": false,
+      "visibility": "public",
+      "readme_url": "https://github.com/Double-FW/Data_Ethics_and_Disability/blob/main/README.md",
+      "readme_modified": "2026-11-07T13:09:56Z"
+    },
+    {
+      "repo": "Accessibility-and-Inclusive-Design-Knowledge-Base",
+      "sha": null,
+      "error": false,
+      "visibility": "public",
+      "readme_url": "https://github.com/Double-FW/Accessibility-and-Inclusive-Design-Knowledge-Base/blob/main/README.md",
+      "readme_modified": "2026-10-14T09:03:14Z"
+    },
+    {
+      "repo": "QA_Accessibility_Testing",
+      "sha": null,
+      "error": false,
+      "visibility": "public",
+      "readme_url": "https://github.com/Double-FW/QA_Accessibility_Testing/blob/main/README.md",
+      "readme_modified": "2026-11-01T19:37:58Z"
+    },
+    {
+      "repo": "Accessible-Email-Design",
+      "sha": null,
+      "error": false,
+      "visibility": "public",
+      "readme_url": "https://github.com/Double-FW/Accessible-Email-Design/blob/main/README.md",
+      "readme_modified": "2026-10-13T19:16:57Z"
+    },
+    {
+      "repo": "Accessibility_Programme_Runbooks",
+      "sha": null,
+      "error": false,
+      "visibility": "public",
+      "readme_url": "https://github.com/Double-FW/Accessibility_Programme_Runbooks/blob/main/README.md",
+      "readme_modified": "2026-11-08T14:22:07Z"
+    }
+  ],
+  "owning_documents": [
+    {
+      "repo": "Cognitive-UX-Design",
+      "path": "Interruption_Recovery_and_Task_Continuity.md",
+      "url": "https://github.com/Double-FW/Cognitive-UX-Design/blob/main/Interruption_Recovery_and_Task_Continuity.md",
+      "retrieved": "2026-11-14",
+      "modified": "2026-11-05T18:12:07Z",
+      "status": "retrieved; independent scientific validation not implied"
+    },
+    {
+      "repo": "Accessible-Typography-for-UX-and-Brand-Systems",
+      "path": "Accessible_Typography_for_UX_and_Brand_Systems.md",
+      "url": "https://github.com/Double-FW/Accessible-Typography-for-UX-and-Brand-Systems/blob/main/Accessible_Typography_for_UX_and_Brand_Systems.md",
+      "retrieved": "2026-11-14",
+      "modified": "2026-10-12T09:33:41Z",
+      "status": "retrieved; independent scientific validation not implied"
+    },
+    {
+      "repo": "Data_Ethics_and_Disability",
+      "path": "Nothing_About_Us_Without_Us.md",
+      "url": "https://github.com/Double-FW/Data_Ethics_and_Disability/blob/main/Nothing_About_Us_Without_Us.md",
+      "retrieved": "2026-11-14",
+      "modified": "2026-11-06T12:47:56Z",
+      "status": "retrieved; independent scientific validation not implied"
+    },
+    {
+      "repo": "Accessible-Email-Design",
+      "path": "Email_Accessibility.md",
+      "url": "https://github.com/Double-FW/Accessible-Email-Design/blob/main/Email_Accessibility.md",
+      "retrieved": "2026-11-14",
+      "modified": "2026-10-13T18:38:30Z",
+      "status": "retrieved; independent scientific validation not implied"
+    }
+  ]
+}

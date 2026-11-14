@@ -1,0 +1,222 @@
+{
+  "schema_version": "1.0",
+  "repository": "https://github.com/Double-FW/Accessibility_Demographics",
+  "version": "0.1.0",
+  "language": "en-GB",
+  "purpose": "Customer reach, engagement and relationship opportunity through accessibility",
+  "agent_instructions": "AGENTS.md",
+  "evidence_register": "evidence/source-register.md",
+  "source_pairing_rules": [
+    {
+      "source": "evidence/supplied/Apparent_Disability_Proportions_UK_Report.md",
+      "always_include": "evidence/apparent-disability-review.md",
+      "reason": "Aggregate apparent-disability range is unvalidated"
+    }
+  ],
+  "entries": [
+    {
+      "path": "AGENTS.md",
+      "title": "Instructions for agents working with this repository",
+      "kind": "root",
+      "status": "exploratory guidance; independent review pending"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "title": "Changelog",
+      "kind": "root",
+      "status": "exploratory guidance; independent review pending"
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "title": "Contributing and maintaining evidence",
+      "kind": "root",
+      "status": "exploratory guidance; independent review pending"
+    },
+    {
+      "path": "INSTALL.md",
+      "title": "Applying this repository update",
+      "kind": "root",
+      "status": "exploratory guidance; independent review pending"
+    },
+    {
+      "path": "README.md",
+      "title": "Accessibility Demographics",
+      "kind": "root",
+      "status": "exploratory guidance; independent review pending"
+    },
+    {
+      "path": "RESEARCH_BACKLOG.md",
+      "title": "Research backlog and development priorities",
+      "kind": "root",
+      "status": "exploratory guidance; independent review pending"
+    },
+    {
+      "path": "VALIDATION.md",
+      "title": "Validation record",
+      "kind": "root",
+      "status": "exploratory guidance; independent review pending"
+    },
+    {
+      "path": "evidence/apparent-disability-review.md",
+      "title": "Review of the supplied apparent-disability estimate",
+      "kind": "evidence",
+      "status": "exploratory guidance; independent review pending"
+    },
+    {
+      "path": "evidence/double-fw-retrieval.json",
+      "title": "double-fw-retrieval",
+      "kind": "evidence",
+      "status": "exploratory guidance; independent review pending"
+    },
+    {
+      "path": "evidence/population-observations.json",
+      "title": "population-observations",
+      "kind": "evidence",
+      "status": "exploratory guidance; independent review pending"
+    },
+    {
+      "path": "evidence/source-register.md",
+      "title": "Evidence and source register",
+      "kind": "evidence",
+      "status": "exploratory guidance; independent review pending"
+    },
+    {
+      "path": "evidence/supplied/Apparent_Disability_Proportions_UK_Report.md",
+      "title": "Apparent Disability in UK Society",
+      "kind": "evidence",
+      "status": "supplied background; headline unvalidated"
+    },
+    {
+      "path": "examples/retail-and-long-term-services.md",
+      "title": "Worked examples: retail and long-term services",
+      "kind": "examples",
+      "status": "exploratory guidance; independent review pending"
+    },
+    {
+      "path": "foundations/disability-models-and-access-needs.md",
+      "title": "Disability models and access needs explained",
+      "kind": "foundations",
+      "status": "exploratory guidance; independent review pending"
+    },
+    {
+      "path": "foundations/objectives-and-scope.md",
+      "title": "Objectives and scope",
+      "kind": "foundations",
+      "status": "exploratory guidance; independent review pending"
+    },
+    {
+      "path": "guides/agentic-workflow.md",
+      "title": "Human and agentic workflows",
+      "kind": "guides",
+      "status": "exploratory guidance; independent review pending"
+    },
+    {
+      "path": "guides/brand-and-engagement.md",
+      "title": "Brand perception, reach and engagement",
+      "kind": "guides",
+      "status": "exploratory guidance; independent review pending"
+    },
+    {
+      "path": "guides/research-and-measurement.md",
+      "title": "Research and measurement",
+      "kind": "guides",
+      "status": "exploratory guidance; independent review pending"
+    },
+    {
+      "path": "guides/service-optimisation.md",
+      "title": "Optimising a service for reach and engagement",
+      "kind": "guides",
+      "status": "exploratory guidance; independent review pending"
+    },
+    {
+      "path": "index.json",
+      "title": "index",
+      "kind": "root",
+      "status": "exploratory guidance; independent review pending"
+    },
+    {
+      "path": "methods/combined-needs-and-reach.md",
+      "title": "Combined needs and proportional reach",
+      "kind": "methods",
+      "status": "exploratory guidance; independent review pending"
+    },
+    {
+      "path": "methods/customer-and-lifetime-value.md",
+      "title": "Customer value and long-term relationships",
+      "kind": "methods",
+      "status": "exploratory guidance; independent review pending"
+    },
+    {
+      "path": "methods/estimating-demographics.md",
+      "title": "Estimating individual demographics",
+      "kind": "methods",
+      "status": "exploratory guidance; independent review pending"
+    },
+    {
+      "path": "prompts/opportunity-research.md",
+      "title": "Prompts for accessibility opportunity research",
+      "kind": "prompts",
+      "status": "exploratory guidance; independent review pending"
+    },
+    {
+      "path": "research/ageing-and-changing-needs.md",
+      "title": "Ageing and changing customer needs",
+      "kind": "research",
+      "status": "exploratory guidance; independent review pending"
+    },
+    {
+      "path": "research/apparent-disability.md",
+      "title": "Investigating apparent disability",
+      "kind": "research",
+      "status": "exploratory guidance; independent review pending"
+    },
+    {
+      "path": "research/everyday-contexts.md",
+      "title": "Everyday contexts and changing interaction",
+      "kind": "research",
+      "status": "exploratory guidance; independent review pending"
+    },
+    {
+      "path": "research/illness-injury-and-distress.md",
+      "title": "Illness, injury, distress and demanding services",
+      "kind": "research",
+      "status": "exploratory guidance; independent review pending"
+    },
+    {
+      "path": "research/neurodivergence-and-perception.md",
+      "title": "Neurodivergence and perceptual differences",
+      "kind": "research",
+      "status": "exploratory guidance; independent review pending"
+    },
+    {
+      "path": "research/uk-eu-us-evidence.md",
+      "title": "UK, EU and US evidence: how to compare",
+      "kind": "research",
+      "status": "exploratory guidance; independent review pending"
+    },
+    {
+      "path": "resources/double-fw-resource-map.md",
+      "title": "Double-FW resource map",
+      "kind": "resources",
+      "status": "exploratory guidance; independent review pending"
+    },
+    {
+      "path": "templates/evidence-record.md",
+      "title": "Evidence record template",
+      "kind": "templates",
+      "status": "exploratory guidance; independent review pending"
+    },
+    {
+      "path": "templates/opportunity-assessment.md",
+      "title": "Opportunity assessment template",
+      "kind": "templates",
+      "status": "exploratory guidance; independent review pending"
+    },
+    {
+      "path": "templates/organisation-brief.md",
+      "title": "Organisation and customer opportunity brief",
+      "kind": "templates",
+      "status": "exploratory guidance; independent review pending"
+    }
+  ]
+}
