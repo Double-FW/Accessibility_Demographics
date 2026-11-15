@@ -1,7 +1,7 @@
 ---
 title: "Customer value and long-term relationships"
-version: "0.1.0"
-date: "2026-11-14"
+version: "0.2.0"
+date: "2026-11-15"
 status: "exploratory guidance; independent review pending"
 language: "en-GB"
 document_type: "guide"
@@ -42,3 +42,9 @@ Use local finance definitions and organisation-approved assumptions. Model chang
 Low, central and high scenarios should vary evidenced uncertainties and named assumptions, not arbitrary optimism. Show the break-even improvement, major cost drivers, attribution limits and outcomes that remain worthwhile without monetisation. Include customer effort, trust and equitable participation alongside financial value.
 
 See [synthetic examples](../examples/retail-and-long-term-services.md) and [measurement](../guides/research-and-measurement.md).
+
+## Calculation references and provenance
+
+Use [F14](../Accessibility_Demographic_Statistics_and_Estimation_Methods.md#f14--existing-business-associated-with-an-audience) for existing associated business, [F15](../Accessibility_Demographic_Statistics_and_Estimation_Methods.md#f15--additional-completion-and-commercial-value) for additional completion/contribution and [F16](../Accessibility_Demographic_Statistics_and_Estimation_Methods.md#f16--retained-relationship-value) for retained relationship value. These definitions own the formula IDs; the explanations above provide application context. Use [F02](../Accessibility_Demographic_Statistics_and_Estimation_Methods.md#f02--demographic-weighting) for customer-demographic inputs and [F12](../Accessibility_Demographic_Statistics_and_Estimation_Methods.md#f12--future-audience-composition) only for explicit future-composition assumptions.
+
+Trace every estimate from statistic ID and metric through audience transfer, barrier exposure and improvement effect. None of the statistical reference's prevalence records measures a universal conversion uplift or customer value. If spend, costs, continuation or effect sizes are missing, keep the financial result unknown or show a labelled scenario. Do not apply both a retention uplift and a lifetime-value uplift to the same benefit twice.

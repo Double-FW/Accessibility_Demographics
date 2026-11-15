@@ -1,7 +1,7 @@
 ---
 title: "Accessibility Demographics"
-version: "0.1.0"
-date: "2026-11-14"
+version: "0.2.0"
+date: "2026-11-15"
 status: "exploratory guidance; independent review pending"
 language: "en-GB"
 document_type: "repository overview"
@@ -24,12 +24,19 @@ It supports people working directly and authorised agents supporting research, a
 5. Assess [commercial and relationship value](methods/customer-and-lifetime-value.md), [brand outcomes](guides/brand-and-engagement.md) and [measurement](guides/research-and-measurement.md).
 6. Record findings in the [opportunity assessment](templates/opportunity-assessment.md); validate assumptions with customers.
 
+## Statistics and calculations
+
+Use [Accessibility demographics: statistics and estimation methods](Accessibility_Demographic_Statistics_and_Estimation_Methods.md) for 80 reference entries, including one explicitly excluded estimate, 28 source entries and 17 identified formulae. Entries can contain several measures and overlapping populations: this is not a total audience size or a completed harmonised dataset.
+
+The reference owns the statistical wording and formula definitions. [Structured observations](evidence/population-observations.json) provide a traceable machine-readable view; [the source register](evidence/source-register.md) explains identifier aliases and evidence status. Topic and method guides explain application. If representations disagree, flag and reconcile the discrepancy before calculation.
+
 ## Navigate by question
 
 | Question | Document |
 | --- | --- |
 | How do medical and social models relate to apparent, hidden and situational disability? | [Explanation guide](foundations/disability-models-and-access-needs.md) |
 | How do we estimate an individual demographic? | [Estimation method](methods/estimating-demographics.md) |
+| Where are the statistics, estimates and formulae? | [Statistics reference](Accessibility_Demographic_Statistics_and_Estimation_Methods.md) |
 | What can be compared between the UK, EU and US? | [Evidence guide](research/uk-eu-us-evidence.md) |
 | How should apparent disability be investigated? | [Apparent-disability guide](research/apparent-disability.md) |
 | How do neurodivergence and perceptual differences overlap? | [Neurodivergence guide](research/neurodivergence-and-perception.md) |
@@ -49,7 +56,7 @@ It supports people working directly and authorised agents supporting research, a
 
 ## Evidence and status
 
-Version 0.1.0 provides working methods, substantive guides, templates and explicitly synthetic examples. It is not a completed epidemiological review or a validated forecasting model. [The evidence register](evidence/source-register.md) distinguishes checked sources, supplied background and research still required. Country figures describe different populations and must not be ranked as directly comparable measures.
+Version 0.2.0 integrates the statistical reference with the working methods, substantive guides, templates and explicitly synthetic examples. It is not a completed epidemiological review or a validated forecasting model. [The evidence register](evidence/source-register.md) distinguishes checked sources, supplied background and research still required. Country figures describe different populations and must not be ranked as directly comparable measures.
 
 The supplied [UK apparent-disability report](evidence/supplied/Apparent_Disability_Proportions_UK_Report.md) is preserved unchanged. Its proposed 6–8% range and 7% midpoint are **unvalidated hypotheses for this repository**, not accepted audience benchmarks. Read the [methodological review](evidence/apparent-disability-review.md) before reuse. The existing root Word file is retained in the remote repository.
 

@@ -1,84 +1,4097 @@
 {
-  "schema_version": "1.0",
-  "status": "bounded observations, not a completed demographic dataset",
+  "schema_version": "2.0",
+  "version": "0.2.0",
+  "updated": "2026-11-15",
+  "status": "source-checked derived reference; customer transfer and independent review pending",
+  "canonical_reference": {
+    "path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+    "version": "0.2.0",
+    "sha256": "3fc38b666a93e74d03f9ea3ce5d870a93eae773ec2d0d700f947983c1c4cd3e0"
+  },
+  "synchronisation_rule": "Reference owns statistical wording and formula definitions. JSON is derived; discrepancies block affected calculations until reconciled.",
+  "legacy_source_aliases": {
+    "S04": "D01",
+    "S05": "D02",
+    "S06": "D07",
+    "S07": "D05"
+  },
+  "legacy_observation_aliases": {
+    "S04": "UK01",
+    "S05": "EU01",
+    "S07": "US01"
+  },
+  "migration_note": "Schema 2.0 replaces the three old S-series observation rows with canonical statistic IDs and named metrics. Resolve legacy_observation_aliases before lookup; old direct value/claim_type fields are replaced by metrics/evidence_code. Source aliases and observation aliases have different meanings.",
+  "evidence_codes": {
+    "OBS": "published observation",
+    "EST": "attributed estimate or synthesis",
+    "PROJ": "published projection",
+    "DER": "explicit derivation",
+    "ASSUMP": "analyst-selected input; not an observed statistic",
+    "EXCLUDE": "not usable as a calculation input"
+  },
+  "unit_rules": {
+    "proportion": "decimal probability, not percentage; 0.23 means 23 percent",
+    "people": "population count; qualifiers such as greater_than and around must be retained",
+    "working_days": "work absence days; not calendar days or all days of impairment",
+    "people_per_day": "approximate flow, not net population increase",
+    "episodes_per_person_year": "frequency; not unique people or momentary prevalence",
+    "null": "unknown point value; not zero; planning_range may supply explicit endpoints"
+  },
+  "sources": [
+    {
+      "id": "D01",
+      "description": "DWP, Family Resources Survey 2024–25, section 4, age prevalence and impairment types; table 4.6",
+      "url": "https://www.gov.uk/government/statistics/family-resources-survey-financial-year-2024-to-2025/family-resources-survey-financial-year-2024-to-2025",
+      "date_and_provenance": "Published 26 March 2026; April 2024–March 2025 fieldwork",
+      "checked": "2026-11-15"
+    },
+    {
+      "id": "D02",
+      "description": "Eurostat, Find out more about people with disabilities in the EU, opening paragraph",
+      "url": "https://ec.europa.eu/eurostat/web/products-eurostat-news/w/wdn-20251203-1",
+      "date_and_provenance": "3 December 2025; 2024 data",
+      "checked": "2026-11-15"
+    },
+    {
+      "id": "D03",
+      "description": "Eurostat, 80% of disabled people used the internet in 2024, text and methodological note",
+      "url": "https://ec.europa.eu/eurostat/web/products-eurostat-news/w/ddn-20250827-1",
+      "date_and_provenance": "27 August 2025; 2024 data",
+      "checked": "2026-11-15"
+    },
+    {
+      "id": "D04",
+      "description": "Eurostat, Disability statistics—access to ICT, figure populations",
+      "url": "https://ec.europa.eu/eurostat/statistics-explained/SEPDF/cache/134943.pdf",
+      "date_and_provenance": "2026 article; ages 16–74; confirms age scope; retrieve original datasets before new calculations",
+      "checked": "2026-11-15"
+    },
+    {
+      "id": "D05",
+      "description": "CDC, Disability and Health Data Now, key findings",
+      "url": "https://www.cdc.gov/disability-and-health/articles-documents/disability-and-health-data-now.html",
+      "date_and_provenance": "8 April 2025; 2022 BRFSS",
+      "checked": "2026-11-15"
+    },
+    {
+      "id": "D06",
+      "description": "CDC, PLACES disability measure definitions, summary",
+      "url": "https://www.cdc.gov/places/measure-definitions/disability.html",
+      "date_and_provenance": "29 October 2024; summary of 2022 domain rates; retrieve underlying DHDS estimates for crude/adjusted status",
+      "checked": "2026-11-15"
+    },
+    {
+      "id": "D07",
+      "description": "CDC, Disability datasets, survey-method comparison",
+      "url": "https://www.cdc.gov/dhds/datasets/",
+      "date_and_provenance": "3 April 2025",
+      "checked": "2026-11-15"
+    },
+    {
+      "id": "D08",
+      "description": "British Dyslexia Association, dyslexia factsheet, facts and figures",
+      "url": "https://cdn.bdadyslexia.org.uk/uploads/documents/Downloadable-Resources/British-Dyslexia-Association-Dyslexia-Factsheet.pdf",
+      "date_and_provenance": "2025-hosted factsheet; estimate, no single fieldwork date recorded",
+      "checked": "2026-11-15"
+    },
+    {
+      "id": "D09",
+      "description": "Canadian Paediatric Society, DCD assessment/diagnosis/management, opening paragraph",
+      "url": "https://cps.ca/en/documents/position/developmental-coordination-disorder",
+      "date_and_provenance": "2021 professional statement; school-aged estimate",
+      "checked": "2026-11-15"
+    },
+    {
+      "id": "D10",
+      "description": "NHS England, ADHD MI supporting information, estimated prevalence methodology",
+      "url": "https://digital.nhs.uk/data-and-information/publications/statistical/mi-adhd/supporting-information",
+      "date_and_provenance": "Current page; NICE planning estimates; no new survey date",
+      "checked": "2026-11-15"
+    },
+    {
+      "id": "D11",
+      "description": "Staley et al., adult ADHD diagnosis, MMWR, abstract and table 1",
+      "url": "https://www.cdc.gov/mmwr/volumes/73/wr/mm7340a1.htm",
+      "date_and_provenance": "10 October 2024; October–November 2023 survey",
+      "checked": "2026-11-15"
+    },
+    {
+      "id": "D12",
+      "description": "CDC, Data on ADHD in Children, current diagnosis section",
+      "url": "https://www.cdc.gov/adhd/data/index.html",
+      "date_and_provenance": "Updated 8 July 2026; 2024 NSCH",
+      "checked": "2026-11-15"
+    },
+    {
+      "id": "D13",
+      "description": "Shaw et al., ADDM autism surveillance, MMWR, tables 1–2",
+      "url": "https://www.cdc.gov/mmwr/volumes/74/ss/ss7402a1.htm",
+      "date_and_provenance": "17 April 2025; 2022 surveillance",
+      "checked": "2026-11-15"
+    },
+    {
+      "id": "D14",
+      "description": "WHO, Autism, epidemiology",
+      "url": "https://www.who.int/news-room/fact-sheets/detail/Autism-spectrum-disorders",
+      "date_and_provenance": "2025 fact sheet; modelled 2021 global estimate",
+      "checked": "2026-11-15"
+    },
+    {
+      "id": "D15",
+      "description": "Lai et al., co-occurring diagnoses in autism, Lancet Psychiatry, abstract",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/31447415/",
+      "date_and_provenance": "2019 meta-analysis; studies to February 2019; not a new national survey",
+      "checked": "2026-11-15"
+    },
+    {
+      "id": "D16",
+      "description": "NHS England, APMS 2023/24 autism chapter, highlight and methodological correction",
+      "url": "https://digital.nhs.uk/data-and-information/publications/statistical/adult-psychiatric-morbidity-survey/survey-of-mental-health-and-wellbeing-england-2023-24/10.-autism-spectrum-disorder",
+      "date_and_provenance": "Current replacement for chapter withdrawn May 2026; original estimate excluded",
+      "checked": "2026-11-15"
+    },
+    {
+      "id": "D17",
+      "description": "nidirect, colour vision deficiency, types and symptoms",
+      "url": "https://www.nidirect.gov.uk/conditions/colour-vision-deficiency-colour-blindness",
+      "date_and_provenance": "Current public-health summary; no fieldwork year recorded",
+      "checked": "2026-11-15"
+    },
+    {
+      "id": "D18",
+      "description": "RNID, hearing loss/tinnitus/BSL prevalence, age groups and calculation methods",
+      "url": "https://rnid.org.uk/what-we-do/evidence-hub/prevalence-of-hearing-loss-tinnitus-and-bsl/",
+      "date_and_provenance": "Updated 13 November 2026; older audiometry plus population data; BSL estimate separately attributed to BDA",
+      "checked": "2026-11-15"
+    },
+    {
+      "id": "D19",
+      "description": "ONS, Language, England and Wales, Census 2021, British Sign Language section",
+      "url": "https://www.ons.gov.uk/peoplepopulationandcommunity/culturalidentity/language/bulletins/languageenglandandwales/census2021",
+      "date_and_provenance": "29 November 2022; Census 2021",
+      "checked": "2026-11-15"
+    },
+    {
+      "id": "D20",
+      "description": "RNIB, key sight-loss information and statistics, headline sections",
+      "url": "https://www.rnib.org.uk/professionals/research-and-data/key-information-and-statistics-on-sight-loss-in-the-uk/",
+      "date_and_provenance": "Current synthesis; mixed underlying dates; retrieve projection model before forecasting",
+      "checked": "2026-11-15"
+    },
+    {
+      "id": "D21",
+      "description": "RNIB, complex needs and older people's services, older people and sensory loss",
+      "url": "https://www.rnib.org.uk/professionals/social-care-professionals/complex-needs-and-older-peoples-services/",
+      "date_and_provenance": "Current synthesis; underlying age-specific estimate date not recorded",
+      "checked": "2026-11-15"
+    },
+    {
+      "id": "D22",
+      "description": "ONS, National population projections, 2024-based, age structure",
+      "url": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationprojections/bulletins/nationalpopulationprojections/2024based",
+      "date_and_provenance": "2026 release; 2024 base and 2049 projection",
+      "checked": "2026-11-15"
+    },
+    {
+      "id": "D23",
+      "description": "WHO, Deafness and hearing loss, overview and projections",
+      "url": "https://www.who.int/news-room/fact-sheets/detail/deafness-and-hearing-loss",
+      "date_and_provenance": "Current fact sheet; global synthesis and 2050 projections; reference years vary",
+      "checked": "2026-11-15"
+    },
+    {
+      "id": "D24",
+      "description": "NCHS, Data Brief 559, sleep, US 2024, tables 1–4",
+      "url": "https://www.cdc.gov/nchs/products/databriefs/db559.htm",
+      "date_and_provenance": "April 2026; 2024 NHIS",
+      "checked": "2026-11-15"
+    },
+    {
+      "id": "D25",
+      "description": "NHS England, APMS common mental-health conditions, key findings and results",
+      "url": "https://digital.nhs.uk/data-and-information/publications/statistical/adult-psychiatric-morbidity-survey/survey-of-mental-health-and-wellbeing-england-2023-24/common-mental-health-conditions",
+      "date_and_provenance": "27 November 2025; March 2023–July 2024",
+      "checked": "2026-11-15"
+    },
+    {
+      "id": "D26",
+      "description": "HSE, Health and safety statistics 2025, ill health, stress and non-fatal injuries",
+      "url": "https://www.hse.gov.uk/statistics/assets/docs/hssh2425.pdf",
+      "date_and_provenance": "2025 publication; Great Britain 2024/25; self-reported LFS estimates",
+      "checked": "2026-11-15"
+    },
+    {
+      "id": "D27",
+      "description": "CDC, About common cold, overview",
+      "url": "https://www.cdc.gov/common-cold/about/",
+      "date_and_provenance": "19 February 2026; public-health synthesis, no single survey year",
+      "checked": "2026-11-15"
+    },
+    {
+      "id": "D28",
+      "description": "ONS, Drug misuse, England and Wales, YE March 2025, main points and age comparison",
+      "url": "https://www.ons.gov.uk/peoplepopulationandcommunity/crimeandjustice/articles/drugmisuseinenglandandwales/yearendingmarch2025",
+      "date_and_provenance": "11 December 2025; CSEW YE March 2025",
+      "checked": "2026-11-15"
+    }
+  ],
+  "formula_catalogue": [
+    {
+      "id": "F01",
+      "title": "Basic audience estimate",
+      "path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+      "anchor": "f01--basic-audience-estimate",
+      "version": "0.2.0"
+    },
+    {
+      "id": "F02",
+      "title": "Demographic weighting",
+      "path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+      "anchor": "f02--demographic-weighting",
+      "version": "0.2.0"
+    },
+    {
+      "id": "F03",
+      "title": "Conditional proportions and denominator correction",
+      "path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+      "anchor": "f03--conditional-proportions-and-denominator-correction",
+      "version": "0.2.0"
+    },
+    {
+      "id": "F04",
+      "title": "Combined reach and co-occurrence",
+      "path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+      "anchor": "f04--combined-reach-and-co-occurrence",
+      "version": "0.2.0"
+    },
+    {
+      "id": "F05",
+      "title": "Recover disjoint age bands from cumulative thresholds",
+      "path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+      "anchor": "f05--recover-disjoint-age-bands-from-cumulative-thresholds",
+      "version": "0.2.0"
+    },
+    {
+      "id": "F06",
+      "title": "Episode burden and average time affected",
+      "path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+      "anchor": "f06--episode-burden-and-average-time-affected",
+      "version": "0.2.0"
+    },
+    {
+      "id": "F07",
+      "title": "Probability of an active episode under a stated model",
+      "path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+      "anchor": "f07--probability-of-an-active-episode-under-a-stated-model",
+      "version": "0.2.0"
+    },
+    {
+      "id": "F08",
+      "title": "People with an episode during a window",
+      "path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+      "anchor": "f08--people-with-an-episode-during-a-window",
+      "version": "0.2.0"
+    },
+    {
+      "id": "F09",
+      "title": "Observed person-time and interaction exposure",
+      "path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+      "anchor": "f09--observed-person-time-and-interaction-exposure",
+      "version": "0.2.0"
+    },
+    {
+      "id": "F10",
+      "title": "Time-of-day and environment weighting",
+      "path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+      "anchor": "f10--time-of-day-and-environment-weighting",
+      "version": "0.2.0"
+    },
+    {
+      "id": "F11",
+      "title": "Service-specific selection",
+      "path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+      "anchor": "f11--service-specific-selection",
+      "version": "0.2.0"
+    },
+    {
+      "id": "F12",
+      "title": "Future audience composition",
+      "path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+      "anchor": "f12--future-audience-composition",
+      "version": "0.2.0"
+    },
+    {
+      "id": "F13",
+      "title": "Changes over time",
+      "path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+      "anchor": "f13--changes-over-time",
+      "version": "0.2.0"
+    },
+    {
+      "id": "F14",
+      "title": "Existing business associated with an audience",
+      "path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+      "anchor": "f14--existing-business-associated-with-an-audience",
+      "version": "0.2.0"
+    },
+    {
+      "id": "F15",
+      "title": "Additional completion and commercial value",
+      "path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+      "anchor": "f15--additional-completion-and-commercial-value",
+      "version": "0.2.0"
+    },
+    {
+      "id": "F16",
+      "title": "Retained relationship value",
+      "path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+      "anchor": "f16--retained-relationship-value",
+      "version": "0.2.0"
+    },
+    {
+      "id": "F17",
+      "title": "Uncertainty and scenario propagation",
+      "path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+      "anchor": "f17--uncertainty-and-scenario-propagation",
+      "version": "0.2.0"
+    }
+  ],
   "observations": [
     {
-      "id": "S04",
-      "claim": "Source-defined disability in UK private households",
-      "value": 25,
-      "unit": "percent of people",
-      "count_millions": 16.7,
+      "id": "UK01",
+      "claim": "All people: disability",
       "geography": "UK",
-      "age": "all ages; see source definitions",
-      "period": "2024-04 to 2025-03",
-      "published": "2026-03-26",
-      "denominator": "people in UK private households represented by FRS",
-      "definition": "FRS source-defined disability; not an apparency measure",
+      "population": "FRS private-household population",
+      "age_range": "all ages",
+      "period": "2024–25",
+      "denominator": "all people in FRS private-household population",
+      "source_ids": [
+        "D01"
+      ],
+      "evidence_code": "OBS",
+      "reference_version": "0.2.0",
+      "reference_path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+      "reference_cells": [
+        "All people: disability",
+        "25%; 16.7 million"
+      ],
+      "reference_checked": "2026-11-15",
+      "metrics": [
+        {
+          "name": "disability_prevalence",
+          "value": 0.25,
+          "unit": "proportion",
+          "uncertainty": null,
+          "uncertainty_status": "not_extracted_or_not_supplied_in_reference"
+        },
+        {
+          "name": "disabled_people",
+          "value": 16700000,
+          "unit": "people",
+          "uncertainty": null,
+          "uncertainty_status": "not_extracted_or_not_supplied_in_reference",
+          "qualifier": "rounded"
+        }
+      ],
+      "calculation_allowed": true,
+      "customer_transfer_validated": false,
+      "calculation_use": "requires_population_definition_and_method_match",
+      "limitations": [
+        "rounded source estimates; FRS household coverage; age definitions must match"
+      ],
+      "required_context": {
+        "path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+        "section_anchor": "2-uk-disability-and-functional-needs",
+        "instruction": "Read the section notes and source scope together with this row; do not retrieve numeric metrics without applicability and limitation fields."
+      },
+      "standardisation": "not age-standardised"
+    },
+    {
+      "id": "UK02",
+      "claim": "Children: disability",
+      "geography": "UK",
+      "population": "FRS private-household population",
+      "age_range": "FRS-defined children",
+      "period": "2024–25",
+      "denominator": "all FRS-defined children",
+      "source_ids": [
+        "D01"
+      ],
+      "evidence_code": "OBS",
+      "reference_version": "0.2.0",
+      "reference_path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+      "reference_cells": [
+        "Children: disability",
+        "12%"
+      ],
+      "reference_checked": "2026-11-15",
+      "metrics": [
+        {
+          "name": "disability_prevalence",
+          "value": 0.12,
+          "unit": "proportion",
+          "uncertainty": null,
+          "uncertainty_status": "not_extracted_or_not_supplied_in_reference"
+        }
+      ],
+      "calculation_allowed": true,
+      "customer_transfer_validated": false,
+      "calculation_use": "requires_population_definition_and_method_match",
+      "limitations": [
+        "rounded source estimates; FRS household coverage; age definitions must match"
+      ],
+      "required_context": {
+        "path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+        "section_anchor": "2-uk-disability-and-functional-needs",
+        "instruction": "Read the section notes and source scope together with this row; do not retrieve numeric metrics without applicability and limitation fields."
+      },
+      "standardisation": "not age-standardised"
+    },
+    {
+      "id": "UK03",
+      "claim": "Working-age: disability",
+      "geography": "UK",
+      "population": "FRS private-household population",
+      "age_range": "FRS-defined working age",
+      "period": "2024–25",
+      "denominator": "all FRS-defined working-age people",
+      "source_ids": [
+        "D01"
+      ],
+      "evidence_code": "OBS",
+      "reference_version": "0.2.0",
+      "reference_path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+      "reference_cells": [
+        "Working-age: disability",
+        "23%"
+      ],
+      "reference_checked": "2026-11-15",
+      "metrics": [
+        {
+          "name": "disability_prevalence",
+          "value": 0.23,
+          "unit": "proportion",
+          "uncertainty": null,
+          "uncertainty_status": "not_extracted_or_not_supplied_in_reference"
+        }
+      ],
+      "calculation_allowed": true,
+      "customer_transfer_validated": false,
+      "calculation_use": "requires_population_definition_and_method_match",
+      "limitations": [
+        "rounded source estimates; FRS household coverage; age definitions must match"
+      ],
+      "required_context": {
+        "path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+        "section_anchor": "2-uk-disability-and-functional-needs",
+        "instruction": "Read the section notes and source scope together with this row; do not retrieve numeric metrics without applicability and limitation fields."
+      },
+      "standardisation": "not age-standardised"
+    },
+    {
+      "id": "UK04",
+      "claim": "Pension-age: disability",
+      "geography": "UK",
+      "population": "FRS private-household population",
+      "age_range": "FRS-defined pension age",
+      "period": "2024–25",
+      "denominator": "all FRS-defined pension-age people",
+      "source_ids": [
+        "D01"
+      ],
+      "evidence_code": "OBS",
+      "reference_version": "0.2.0",
+      "reference_path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+      "reference_cells": [
+        "Pension-age: disability",
+        "45%"
+      ],
+      "reference_checked": "2026-11-15",
+      "metrics": [
+        {
+          "name": "disability_prevalence",
+          "value": 0.45,
+          "unit": "proportion",
+          "uncertainty": null,
+          "uncertainty_status": "not_extracted_or_not_supplied_in_reference"
+        }
+      ],
+      "calculation_allowed": true,
+      "customer_transfer_validated": false,
+      "calculation_use": "requires_population_definition_and_method_match",
+      "limitations": [
+        "rounded source estimates; FRS household coverage; age definitions must match"
+      ],
+      "required_context": {
+        "path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+        "section_anchor": "2-uk-disability-and-functional-needs",
+        "instruction": "Read the section notes and source scope together with this row; do not retrieve numeric metrics without applicability and limitation fields."
+      },
+      "standardisation": "not age-standardised"
+    },
+    {
+      "id": "UK05",
+      "claim": "Disabled children: social/behavioural; learning; mental-health impairments",
+      "geography": "UK",
+      "population": "FRS private-household population",
+      "age_range": "FRS-defined children",
+      "period": "2024–25",
+      "denominator": "disabled FRS-defined children",
+      "source_ids": [
+        "D01"
+      ],
+      "evidence_code": "OBS",
+      "reference_version": "0.2.0",
+      "reference_path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+      "reference_cells": [
+        "Disabled children: social/behavioural; learning; mental-health impairments",
+        "61%; 32%; 26%"
+      ],
+      "reference_checked": "2026-11-15",
+      "metrics": [
+        {
+          "name": "social_behavioural",
+          "value": 0.61,
+          "unit": "proportion",
+          "uncertainty": null,
+          "uncertainty_status": "not_extracted_or_not_supplied_in_reference"
+        },
+        {
+          "name": "learning",
+          "value": 0.32,
+          "unit": "proportion",
+          "uncertainty": null,
+          "uncertainty_status": "not_extracted_or_not_supplied_in_reference"
+        },
+        {
+          "name": "mental_health",
+          "value": 0.26,
+          "unit": "proportion",
+          "uncertainty": null,
+          "uncertainty_status": "not_extracted_or_not_supplied_in_reference"
+        }
+      ],
+      "calculation_allowed": true,
+      "customer_transfer_validated": false,
+      "calculation_use": "requires_population_definition_and_method_match",
+      "limitations": [
+        "rounded source estimates; FRS household coverage; age definitions must match"
+      ],
+      "required_context": {
+        "path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+        "section_anchor": "2-uk-disability-and-functional-needs",
+        "instruction": "Read the section notes and source scope together with this row; do not retrieve numeric metrics without applicability and limitation fields."
+      },
+      "standardisation": "not age-standardised"
+    },
+    {
+      "id": "UK06",
+      "claim": "Disabled working-age: mental-health; mobility; stamina/breathing/fatigue impairments",
+      "geography": "UK",
+      "population": "FRS private-household population",
+      "age_range": "FRS-defined working age",
+      "period": "2024–25",
+      "denominator": "disabled FRS-defined working-age people",
+      "source_ids": [
+        "D01"
+      ],
+      "evidence_code": "OBS",
+      "reference_version": "0.2.0",
+      "reference_path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+      "reference_cells": [
+        "Disabled working-age: mental-health; mobility; stamina/breathing/fatigue impairments",
+        "46%; 40%; 33%"
+      ],
+      "reference_checked": "2026-11-15",
+      "metrics": [
+        {
+          "name": "mental_health",
+          "value": 0.46,
+          "unit": "proportion",
+          "uncertainty": null,
+          "uncertainty_status": "not_extracted_or_not_supplied_in_reference"
+        },
+        {
+          "name": "mobility",
+          "value": 0.4,
+          "unit": "proportion",
+          "uncertainty": null,
+          "uncertainty_status": "not_extracted_or_not_supplied_in_reference"
+        },
+        {
+          "name": "stamina_breathing_fatigue",
+          "value": 0.33,
+          "unit": "proportion",
+          "uncertainty": null,
+          "uncertainty_status": "not_extracted_or_not_supplied_in_reference"
+        }
+      ],
+      "calculation_allowed": true,
+      "customer_transfer_validated": false,
+      "calculation_use": "requires_population_definition_and_method_match",
+      "limitations": [
+        "rounded source estimates; FRS household coverage; age definitions must match"
+      ],
+      "required_context": {
+        "path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+        "section_anchor": "2-uk-disability-and-functional-needs",
+        "instruction": "Read the section notes and source scope together with this row; do not retrieve numeric metrics without applicability and limitation fields."
+      },
+      "standardisation": "not age-standardised"
+    },
+    {
+      "id": "UK07",
+      "claim": "Disabled pension-age: mobility; stamina/breathing/fatigue; dexterity impairments",
+      "geography": "UK",
+      "population": "FRS private-household population",
+      "age_range": "FRS-defined pension age",
+      "period": "2024–25",
+      "denominator": "disabled FRS-defined pension-age people",
+      "source_ids": [
+        "D01"
+      ],
+      "evidence_code": "OBS",
+      "reference_version": "0.2.0",
+      "reference_path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+      "reference_cells": [
+        "Disabled pension-age: mobility; stamina/breathing/fatigue; dexterity impairments",
+        "68%; 45%; 34%"
+      ],
+      "reference_checked": "2026-11-15",
+      "metrics": [
+        {
+          "name": "mobility",
+          "value": 0.68,
+          "unit": "proportion",
+          "uncertainty": null,
+          "uncertainty_status": "not_extracted_or_not_supplied_in_reference"
+        },
+        {
+          "name": "stamina_breathing_fatigue",
+          "value": 0.45,
+          "unit": "proportion",
+          "uncertainty": null,
+          "uncertainty_status": "not_extracted_or_not_supplied_in_reference"
+        },
+        {
+          "name": "dexterity",
+          "value": 0.34,
+          "unit": "proportion",
+          "uncertainty": null,
+          "uncertainty_status": "not_extracted_or_not_supplied_in_reference"
+        }
+      ],
+      "calculation_allowed": true,
+      "customer_transfer_validated": false,
+      "calculation_use": "requires_population_definition_and_method_match",
+      "limitations": [
+        "rounded source estimates; FRS household coverage; age definitions must match"
+      ],
+      "required_context": {
+        "path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+        "section_anchor": "2-uk-disability-and-functional-needs",
+        "instruction": "Read the section notes and source scope together with this row; do not retrieve numeric metrics without applicability and limitation fields."
+      },
+      "standardisation": "not age-standardised"
+    },
+    {
+      "id": "DR01",
+      "claim": "Working-age, source-defined disabled with mental-health impairment",
+      "geography": "UK",
+      "population": "FRS private-household population",
+      "age_range": "FRS-defined working age",
+      "period": "2024–25",
+      "denominator": "all people in the stated FRS age group",
+      "source_ids": [
+        "D01"
+      ],
+      "evidence_code": "DER",
+      "reference_version": "0.2.0",
+      "reference_path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+      "reference_cells": [
+        "Working-age, source-defined disabled with mental-health impairment",
+        "0.23 × 0.46",
+        "10.6%"
+      ],
+      "reference_checked": "2026-11-15",
+      "metrics": [
+        {
+          "name": "disabled_and_mental_health",
+          "value": 0.1058,
+          "unit": "proportion",
+          "uncertainty": null,
+          "uncertainty_status": "not_extracted_or_not_supplied_in_reference",
+          "qualifier": "derived_from_rounded_source_rates"
+        }
+      ],
+      "calculation_allowed": true,
+      "customer_transfer_validated": false,
+      "calculation_use": "requires_population_definition_and_method_match",
+      "limitations": [
+        "rounded source estimates; FRS household coverage; age definitions must match"
+      ],
+      "derived_inputs": [
+        "UK03",
+        "UK06",
+        "mental_health"
+      ],
+      "required_context": {
+        "path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+        "section_anchor": "2-uk-disability-and-functional-needs",
+        "instruction": "Read the section notes and source scope together with this row; do not retrieve numeric metrics without applicability and limitation fields."
+      },
       "standardisation": "not age-standardised",
-      "uncertainty": null,
-      "uncertainty_status": "not recorded; retrieve source quality and detailed tables",
-      "status": "verified source observation; audience transfer not established",
-      "source_url": "https://www.gov.uk/government/statistics/family-resources-survey-financial-year-2024-to-2025/family-resources-survey-financial-year-2024-to-2025",
-      "location": "section 4, disability prevalence by age group",
-      "limitations": [
-        "rounded estimates",
-        "excludes some communal settings",
-        "not equivalent to EU or US survey measures"
-      ],
-      "retrieved": "2026-11-14",
-      "claim_type": "source estimate"
+      "derivation": {
+        "formula_id": "F03",
+        "inputs": [
+          {
+            "statistic_id": "UK03",
+            "metric": "disability_prevalence"
+          },
+          {
+            "statistic_id": "UK06",
+            "metric": "mental_health"
+          }
+        ],
+        "operation": "multiply",
+        "display_rounding": "reference uses approximately one decimal percentage point; typed value retains product of rounded inputs"
+      }
     },
     {
-      "id": "S05",
-      "claim": "Disability/activity limitation in EU",
-      "value": 23.9,
-      "unit": "percent of people aged 16+",
+      "id": "DR02",
+      "claim": "Working-age, source-defined disabled with mobility impairment",
+      "geography": "UK",
+      "population": "FRS private-household population",
+      "age_range": "FRS-defined working age",
+      "period": "2024–25",
+      "denominator": "all people in the stated FRS age group",
+      "source_ids": [
+        "D01"
+      ],
+      "evidence_code": "DER",
+      "reference_version": "0.2.0",
+      "reference_path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+      "reference_cells": [
+        "Working-age, source-defined disabled with mobility impairment",
+        "0.23 × 0.40",
+        "9.2%"
+      ],
+      "reference_checked": "2026-11-15",
+      "metrics": [
+        {
+          "name": "disabled_and_mobility",
+          "value": 0.09200000000000001,
+          "unit": "proportion",
+          "uncertainty": null,
+          "uncertainty_status": "not_extracted_or_not_supplied_in_reference",
+          "qualifier": "derived_from_rounded_source_rates"
+        }
+      ],
+      "calculation_allowed": true,
+      "customer_transfer_validated": false,
+      "calculation_use": "requires_population_definition_and_method_match",
+      "limitations": [
+        "rounded source estimates; FRS household coverage; age definitions must match"
+      ],
+      "derived_inputs": [
+        "UK03",
+        "UK06",
+        "mobility"
+      ],
+      "required_context": {
+        "path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+        "section_anchor": "2-uk-disability-and-functional-needs",
+        "instruction": "Read the section notes and source scope together with this row; do not retrieve numeric metrics without applicability and limitation fields."
+      },
+      "standardisation": "not age-standardised",
+      "derivation": {
+        "formula_id": "F03",
+        "inputs": [
+          {
+            "statistic_id": "UK03",
+            "metric": "disability_prevalence"
+          },
+          {
+            "statistic_id": "UK06",
+            "metric": "mobility"
+          }
+        ],
+        "operation": "multiply",
+        "display_rounding": "reference uses approximately one decimal percentage point; typed value retains product of rounded inputs"
+      }
+    },
+    {
+      "id": "DR03",
+      "claim": "Working-age, source-defined disabled with stamina/breathing/fatigue impairment",
+      "geography": "UK",
+      "population": "FRS private-household population",
+      "age_range": "FRS-defined working age",
+      "period": "2024–25",
+      "denominator": "all people in the stated FRS age group",
+      "source_ids": [
+        "D01"
+      ],
+      "evidence_code": "DER",
+      "reference_version": "0.2.0",
+      "reference_path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+      "reference_cells": [
+        "Working-age, source-defined disabled with stamina/breathing/fatigue impairment",
+        "0.23 × 0.33",
+        "7.6%"
+      ],
+      "reference_checked": "2026-11-15",
+      "metrics": [
+        {
+          "name": "disabled_and_stamina_breathing_fatigue",
+          "value": 0.07590000000000001,
+          "unit": "proportion",
+          "uncertainty": null,
+          "uncertainty_status": "not_extracted_or_not_supplied_in_reference",
+          "qualifier": "derived_from_rounded_source_rates"
+        }
+      ],
+      "calculation_allowed": true,
+      "customer_transfer_validated": false,
+      "calculation_use": "requires_population_definition_and_method_match",
+      "limitations": [
+        "rounded source estimates; FRS household coverage; age definitions must match"
+      ],
+      "derived_inputs": [
+        "UK03",
+        "UK06",
+        "stamina_breathing_fatigue"
+      ],
+      "required_context": {
+        "path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+        "section_anchor": "2-uk-disability-and-functional-needs",
+        "instruction": "Read the section notes and source scope together with this row; do not retrieve numeric metrics without applicability and limitation fields."
+      },
+      "standardisation": "not age-standardised",
+      "derivation": {
+        "formula_id": "F03",
+        "inputs": [
+          {
+            "statistic_id": "UK03",
+            "metric": "disability_prevalence"
+          },
+          {
+            "statistic_id": "UK06",
+            "metric": "stamina_breathing_fatigue"
+          }
+        ],
+        "operation": "multiply",
+        "display_rounding": "reference uses approximately one decimal percentage point; typed value retains product of rounded inputs"
+      }
+    },
+    {
+      "id": "DR04",
+      "claim": "Pension-age, source-defined disabled with mobility impairment",
+      "geography": "UK",
+      "population": "FRS private-household population",
+      "age_range": "FRS-defined pension age",
+      "period": "2024–25",
+      "denominator": "all people in the stated FRS age group",
+      "source_ids": [
+        "D01"
+      ],
+      "evidence_code": "DER",
+      "reference_version": "0.2.0",
+      "reference_path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+      "reference_cells": [
+        "Pension-age, source-defined disabled with mobility impairment",
+        "0.45 × 0.68",
+        "30.6%"
+      ],
+      "reference_checked": "2026-11-15",
+      "metrics": [
+        {
+          "name": "disabled_and_mobility",
+          "value": 0.30600000000000005,
+          "unit": "proportion",
+          "uncertainty": null,
+          "uncertainty_status": "not_extracted_or_not_supplied_in_reference",
+          "qualifier": "derived_from_rounded_source_rates"
+        }
+      ],
+      "calculation_allowed": true,
+      "customer_transfer_validated": false,
+      "calculation_use": "requires_population_definition_and_method_match",
+      "limitations": [
+        "rounded source estimates; FRS household coverage; age definitions must match"
+      ],
+      "derived_inputs": [
+        "UK04",
+        "UK07",
+        "mobility"
+      ],
+      "required_context": {
+        "path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+        "section_anchor": "2-uk-disability-and-functional-needs",
+        "instruction": "Read the section notes and source scope together with this row; do not retrieve numeric metrics without applicability and limitation fields."
+      },
+      "standardisation": "not age-standardised",
+      "derivation": {
+        "formula_id": "F03",
+        "inputs": [
+          {
+            "statistic_id": "UK04",
+            "metric": "disability_prevalence"
+          },
+          {
+            "statistic_id": "UK07",
+            "metric": "mobility"
+          }
+        ],
+        "operation": "multiply",
+        "display_rounding": "reference uses approximately one decimal percentage point; typed value retains product of rounded inputs"
+      }
+    },
+    {
+      "id": "DR05",
+      "claim": "Pension-age, source-defined disabled with stamina/breathing/fatigue impairment",
+      "geography": "UK",
+      "population": "FRS private-household population",
+      "age_range": "FRS-defined pension age",
+      "period": "2024–25",
+      "denominator": "all people in the stated FRS age group",
+      "source_ids": [
+        "D01"
+      ],
+      "evidence_code": "DER",
+      "reference_version": "0.2.0",
+      "reference_path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+      "reference_cells": [
+        "Pension-age, source-defined disabled with stamina/breathing/fatigue impairment",
+        "0.45 × 0.45",
+        "20.3%"
+      ],
+      "reference_checked": "2026-11-15",
+      "metrics": [
+        {
+          "name": "disabled_and_stamina_breathing_fatigue",
+          "value": 0.2025,
+          "unit": "proportion",
+          "uncertainty": null,
+          "uncertainty_status": "not_extracted_or_not_supplied_in_reference",
+          "qualifier": "derived_from_rounded_source_rates"
+        }
+      ],
+      "calculation_allowed": true,
+      "customer_transfer_validated": false,
+      "calculation_use": "requires_population_definition_and_method_match",
+      "limitations": [
+        "rounded source estimates; FRS household coverage; age definitions must match"
+      ],
+      "derived_inputs": [
+        "UK04",
+        "UK07",
+        "stamina_breathing_fatigue"
+      ],
+      "required_context": {
+        "path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+        "section_anchor": "2-uk-disability-and-functional-needs",
+        "instruction": "Read the section notes and source scope together with this row; do not retrieve numeric metrics without applicability and limitation fields."
+      },
+      "standardisation": "not age-standardised",
+      "derivation": {
+        "formula_id": "F03",
+        "inputs": [
+          {
+            "statistic_id": "UK04",
+            "metric": "disability_prevalence"
+          },
+          {
+            "statistic_id": "UK07",
+            "metric": "stamina_breathing_fatigue"
+          }
+        ],
+        "operation": "multiply",
+        "display_rounding": "reference uses approximately one decimal percentage point; typed value retains product of rounded inputs"
+      }
+    },
+    {
+      "id": "DR06",
+      "claim": "Pension-age, source-defined disabled with dexterity impairment",
+      "geography": "UK",
+      "population": "FRS private-household population",
+      "age_range": "FRS-defined pension age",
+      "period": "2024–25",
+      "denominator": "all people in the stated FRS age group",
+      "source_ids": [
+        "D01"
+      ],
+      "evidence_code": "DER",
+      "reference_version": "0.2.0",
+      "reference_path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+      "reference_cells": [
+        "Pension-age, source-defined disabled with dexterity impairment",
+        "0.45 × 0.34",
+        "15.3%"
+      ],
+      "reference_checked": "2026-11-15",
+      "metrics": [
+        {
+          "name": "disabled_and_dexterity",
+          "value": 0.15300000000000002,
+          "unit": "proportion",
+          "uncertainty": null,
+          "uncertainty_status": "not_extracted_or_not_supplied_in_reference",
+          "qualifier": "derived_from_rounded_source_rates"
+        }
+      ],
+      "calculation_allowed": true,
+      "customer_transfer_validated": false,
+      "calculation_use": "requires_population_definition_and_method_match",
+      "limitations": [
+        "rounded source estimates; FRS household coverage; age definitions must match"
+      ],
+      "derived_inputs": [
+        "UK04",
+        "UK07",
+        "dexterity"
+      ],
+      "required_context": {
+        "path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+        "section_anchor": "2-uk-disability-and-functional-needs",
+        "instruction": "Read the section notes and source scope together with this row; do not retrieve numeric metrics without applicability and limitation fields."
+      },
+      "standardisation": "not age-standardised",
+      "derivation": {
+        "formula_id": "F03",
+        "inputs": [
+          {
+            "statistic_id": "UK04",
+            "metric": "disability_prevalence"
+          },
+          {
+            "statistic_id": "UK07",
+            "metric": "dexterity"
+          }
+        ],
+        "operation": "multiply",
+        "display_rounding": "reference uses approximately one decimal percentage point; typed value retains product of rounded inputs"
+      }
+    },
+    {
+      "id": "EU01",
+      "claim": "16+",
       "geography": "EU",
-      "age": "16+",
+      "population": "source-covered population",
+      "age_range": "16+ unless specified",
       "period": "2024",
-      "published": "2025-12-03",
-      "denominator": "people aged 16+ in source EU population",
-      "definition": "activity limitation; inspect underlying EU-SILC question and metadata before modelling",
-      "standardisation": "not established from news summary in this record",
-      "uncertainty": null,
-      "uncertainty_status": "not recorded",
-      "status": "verified source observation; underlying methods and audience transfer require review",
-      "source_url": "https://ec.europa.eu/eurostat/web/products-eurostat-news/w/wdn-20251203-1",
-      "location": "opening paragraph",
-      "limitations": [
-        "summary source",
-        "not a condition breakdown",
-        "not an apparency measure",
-        "coverage/exclusions require underlying table review"
+      "denominator": "source-covered EU people aged 16+",
+      "source_ids": [
+        "D02"
       ],
-      "retrieved": "2026-11-14",
-      "claim_type": "source estimate"
+      "evidence_code": "OBS",
+      "reference_version": "0.2.0",
+      "reference_path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+      "reference_cells": [
+        "16+",
+        "23.9%"
+      ],
+      "reference_checked": "2026-11-15",
+      "metrics": [
+        {
+          "name": "activity_limitation",
+          "value": 0.239,
+          "unit": "proportion",
+          "uncertainty": null,
+          "uncertainty_status": "not_extracted_or_not_supplied_in_reference"
+        }
+      ],
+      "calculation_allowed": true,
+      "customer_transfer_validated": false,
+      "calculation_use": "requires_population_definition_and_method_match",
+      "limitations": [],
+      "required_context": {
+        "path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+        "section_anchor": "3-eu-disability-and-digital-participation",
+        "instruction": "Read the section notes and source scope together with this row; do not retrieve numeric metrics without applicability and limitation fields."
+      }
     },
     {
-      "id": "S07",
-      "claim": "Functional disability in US adults",
-      "value": 28.7,
-      "unit": "percent of adults",
-      "geography": "US",
-      "age": "18+",
-      "period": "2022",
-      "published": null,
-      "denominator": "adult population represented by BRFSS",
-      "definition": "six functional disability domains; retrieve source thresholds",
-      "standardisation": "inspect selected DHDS/BRFSS measure before reuse",
-      "uncertainty": null,
-      "uncertainty_status": "not recorded",
-      "status": "verified source observation; methods and audience transfer require review",
-      "source_url": "https://www.cdc.gov/disability-and-health/articles-documents/disability-and-health-data-now.html",
-      "location": "key findings; interpret with S06",
-      "limitations": [
-        "non-institutionalised survey coverage",
-        "source methods affect prevalence",
-        "not an apparency measure",
-        "not a harmonised country comparison"
+      "id": "EU02",
+      "claim": "16–24",
+      "geography": "EU",
+      "population": "source-covered population",
+      "age_range": "16–24",
+      "period": "2024",
+      "denominator": "source-covered EU people aged 16–24",
+      "source_ids": [
+        "D02"
       ],
-      "retrieved": "2026-11-14",
-      "claim_type": "source estimate"
+      "evidence_code": "OBS",
+      "reference_version": "0.2.0",
+      "reference_path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+      "reference_cells": [
+        "16–24",
+        "7.1%"
+      ],
+      "reference_checked": "2026-11-15",
+      "metrics": [
+        {
+          "name": "activity_limitation",
+          "value": 0.071,
+          "unit": "proportion",
+          "uncertainty": null,
+          "uncertainty_status": "not_extracted_or_not_supplied_in_reference"
+        }
+      ],
+      "calculation_allowed": true,
+      "customer_transfer_validated": false,
+      "calculation_use": "requires_population_definition_and_method_match",
+      "limitations": [],
+      "required_context": {
+        "path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+        "section_anchor": "3-eu-disability-and-digital-participation",
+        "instruction": "Read the section notes and source scope together with this row; do not retrieve numeric metrics without applicability and limitation fields."
+      }
+    },
+    {
+      "id": "EU03",
+      "claim": "85+",
+      "geography": "EU",
+      "population": "source-covered population",
+      "age_range": "85+",
+      "period": "2024",
+      "denominator": "source-covered EU people aged 85+",
+      "source_ids": [
+        "D02"
+      ],
+      "evidence_code": "OBS",
+      "reference_version": "0.2.0",
+      "reference_path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+      "reference_cells": [
+        "85+",
+        "72.3%"
+      ],
+      "reference_checked": "2026-11-15",
+      "metrics": [
+        {
+          "name": "activity_limitation",
+          "value": 0.723,
+          "unit": "proportion",
+          "uncertainty": null,
+          "uncertainty_status": "not_extracted_or_not_supplied_in_reference"
+        }
+      ],
+      "calculation_allowed": true,
+      "customer_transfer_validated": false,
+      "calculation_use": "requires_population_definition_and_method_match",
+      "limitations": [],
+      "required_context": {
+        "path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+        "section_anchor": "3-eu-disability-and-digital-participation",
+        "instruction": "Read the section notes and source scope together with this row; do not retrieve numeric metrics without applicability and limitation fields."
+      }
+    },
+    {
+      "id": "EU04",
+      "claim": "Internet use in previous 12 months",
+      "geography": "EU",
+      "population": "source-covered population",
+      "age_range": "16–74",
+      "period": "2024",
+      "denominator": "people in each stated limitation group, ages 16–74",
+      "source_ids": [
+        "D03",
+        "D04"
+      ],
+      "evidence_code": "OBS",
+      "reference_version": "0.2.0",
+      "reference_path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+      "reference_cells": [
+        "Internet use in previous 12 months",
+        "82.3%",
+        "89.0%",
+        "95.2%"
+      ],
+      "reference_checked": "2026-11-15",
+      "metrics": [
+        {
+          "name": "severe_limitation",
+          "value": 0.823,
+          "unit": "proportion",
+          "uncertainty": null,
+          "uncertainty_status": "not_extracted_or_not_supplied_in_reference"
+        },
+        {
+          "name": "moderate_limitation",
+          "value": 0.89,
+          "unit": "proportion",
+          "uncertainty": null,
+          "uncertainty_status": "not_extracted_or_not_supplied_in_reference"
+        },
+        {
+          "name": "no_limitation",
+          "value": 0.952,
+          "unit": "proportion",
+          "uncertainty": null,
+          "uncertainty_status": "not_extracted_or_not_supplied_in_reference"
+        }
+      ],
+      "calculation_allowed": true,
+      "customer_transfer_validated": false,
+      "calculation_use": "requires_population_definition_and_method_match",
+      "limitations": [],
+      "reference_window": "previous 12 months",
+      "required_context": {
+        "path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+        "section_anchor": "3-eu-disability-and-digital-participation",
+        "instruction": "Read the section notes and source scope together with this row; do not retrieve numeric metrics without applicability and limitation fields."
+      }
+    },
+    {
+      "id": "EU05",
+      "claim": "Internet banking in previous 3 months",
+      "geography": "EU",
+      "population": "source-covered population",
+      "age_range": "16–74",
+      "period": "2024",
+      "denominator": "people in each stated limitation group, ages 16–74",
+      "source_ids": [
+        "D03",
+        "D04"
+      ],
+      "evidence_code": "OBS",
+      "reference_version": "0.2.0",
+      "reference_path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+      "reference_cells": [
+        "Internet banking in previous 3 months",
+        "51.0%",
+        "59.6%",
+        "69.3%"
+      ],
+      "reference_checked": "2026-11-15",
+      "metrics": [
+        {
+          "name": "severe_limitation",
+          "value": 0.51,
+          "unit": "proportion",
+          "uncertainty": null,
+          "uncertainty_status": "not_extracted_or_not_supplied_in_reference"
+        },
+        {
+          "name": "moderate_limitation",
+          "value": 0.596,
+          "unit": "proportion",
+          "uncertainty": null,
+          "uncertainty_status": "not_extracted_or_not_supplied_in_reference"
+        },
+        {
+          "name": "no_limitation",
+          "value": 0.693,
+          "unit": "proportion",
+          "uncertainty": null,
+          "uncertainty_status": "not_extracted_or_not_supplied_in_reference"
+        }
+      ],
+      "calculation_allowed": true,
+      "customer_transfer_validated": false,
+      "calculation_use": "requires_population_definition_and_method_match",
+      "limitations": [],
+      "reference_window": "previous 3 months",
+      "required_context": {
+        "path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+        "section_anchor": "3-eu-disability-and-digital-participation",
+        "instruction": "Read the section notes and source scope together with this row; do not retrieve numeric metrics without applicability and limitation fields."
+      }
+    },
+    {
+      "id": "US01",
+      "claim": "Any functional disability, adults",
+      "geography": "US",
+      "population": "civilian non-institutionalised adults",
+      "age_range": "18+ unless specified",
+      "period": "2022",
+      "denominator": "all source-covered people in the specified age group",
+      "source_ids": [
+        "D05"
+      ],
+      "evidence_code": "OBS",
+      "reference_version": "0.2.0",
+      "reference_path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+      "reference_cells": [
+        "Any functional disability, adults",
+        "28.7%; about 70 million",
+        "D05"
+      ],
+      "reference_checked": "2026-11-15",
+      "metrics": [
+        {
+          "name": "any_functional_disability",
+          "value": 0.287,
+          "unit": "proportion",
+          "uncertainty": null,
+          "uncertainty_status": "not_extracted_or_not_supplied_in_reference"
+        },
+        {
+          "name": "people",
+          "value": 70000000,
+          "unit": "people",
+          "uncertainty": null,
+          "uncertainty_status": "not_extracted_or_not_supplied_in_reference",
+          "qualifier": "about"
+        }
+      ],
+      "calculation_allowed": true,
+      "customer_transfer_validated": false,
+      "calculation_use": "context_only_until_standardisation_and_population_checked",
+      "limitations": [],
+      "required_context": {
+        "path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+        "section_anchor": "4-us-functional-disability",
+        "instruction": "Read the section notes and source scope together with this row; do not retrieve numeric metrics without applicability and limitation fields."
+      },
+      "standardisation": "Inspect selected underlying DHDS crude versus age-adjusted measure before headcount calculation"
+    },
+    {
+      "id": "US02",
+      "claim": "Any functional disability, ages 18–44",
+      "geography": "US",
+      "population": "civilian non-institutionalised adults",
+      "age_range": "18–44",
+      "period": "2022",
+      "denominator": "all source-covered people in the specified age group",
+      "source_ids": [
+        "D05"
+      ],
+      "evidence_code": "OBS",
+      "reference_version": "0.2.0",
+      "reference_path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+      "reference_cells": [
+        "Any functional disability, ages 18–44",
+        "23.6%",
+        "D05"
+      ],
+      "reference_checked": "2026-11-15",
+      "metrics": [
+        {
+          "name": "any_functional_disability",
+          "value": 0.236,
+          "unit": "proportion",
+          "uncertainty": null,
+          "uncertainty_status": "not_extracted_or_not_supplied_in_reference"
+        }
+      ],
+      "calculation_allowed": true,
+      "customer_transfer_validated": false,
+      "calculation_use": "context_only_until_standardisation_and_population_checked",
+      "limitations": [],
+      "required_context": {
+        "path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+        "section_anchor": "4-us-functional-disability",
+        "instruction": "Read the section notes and source scope together with this row; do not retrieve numeric metrics without applicability and limitation fields."
+      },
+      "standardisation": "Inspect selected underlying DHDS crude versus age-adjusted measure before headcount calculation"
+    },
+    {
+      "id": "US03",
+      "claim": "Any functional disability, ages 65+",
+      "geography": "US",
+      "population": "civilian non-institutionalised adults",
+      "age_range": "65+",
+      "period": "2022",
+      "denominator": "all source-covered people in the specified age group",
+      "source_ids": [
+        "D05"
+      ],
+      "evidence_code": "OBS",
+      "reference_version": "0.2.0",
+      "reference_path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+      "reference_cells": [
+        "Any functional disability, ages 65+",
+        "43.9%",
+        "D05"
+      ],
+      "reference_checked": "2026-11-15",
+      "metrics": [
+        {
+          "name": "any_functional_disability",
+          "value": 0.439,
+          "unit": "proportion",
+          "uncertainty": null,
+          "uncertainty_status": "not_extracted_or_not_supplied_in_reference"
+        }
+      ],
+      "calculation_allowed": true,
+      "customer_transfer_validated": false,
+      "calculation_use": "context_only_until_standardisation_and_population_checked",
+      "limitations": [],
+      "required_context": {
+        "path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+        "section_anchor": "4-us-functional-disability",
+        "instruction": "Read the section notes and source scope together with this row; do not retrieve numeric metrics without applicability and limitation fields."
+      },
+      "standardisation": "Inspect selected underlying DHDS crude versus age-adjusted measure before headcount calculation"
+    },
+    {
+      "id": "US04",
+      "claim": "Cognition: serious difficulty concentrating, remembering or deciding",
+      "geography": "US",
+      "population": "civilian non-institutionalised adults",
+      "age_range": "18+ unless specified",
+      "period": "2022",
+      "denominator": "all source-covered people in the specified age group",
+      "source_ids": [
+        "D06"
+      ],
+      "evidence_code": "OBS",
+      "reference_version": "0.2.0",
+      "reference_path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+      "reference_cells": [
+        "Cognition: serious difficulty concentrating, remembering or deciding",
+        "13.9%",
+        "D06"
+      ],
+      "reference_checked": "2026-11-15",
+      "metrics": [
+        {
+          "name": "cognition",
+          "value": 0.139,
+          "unit": "proportion",
+          "uncertainty": null,
+          "uncertainty_status": "not_extracted_or_not_supplied_in_reference"
+        }
+      ],
+      "calculation_allowed": true,
+      "customer_transfer_validated": false,
+      "calculation_use": "context_only_until_standardisation_and_population_checked",
+      "limitations": [],
+      "required_context": {
+        "path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+        "section_anchor": "4-us-functional-disability",
+        "instruction": "Read the section notes and source scope together with this row; do not retrieve numeric metrics without applicability and limitation fields."
+      },
+      "standardisation": "Inspect selected underlying DHDS crude versus age-adjusted measure before headcount calculation"
+    },
+    {
+      "id": "US05",
+      "claim": "Mobility: serious walking/stair difficulty",
+      "geography": "US",
+      "population": "civilian non-institutionalised adults",
+      "age_range": "18+ unless specified",
+      "period": "2022",
+      "denominator": "all source-covered people in the specified age group",
+      "source_ids": [
+        "D06"
+      ],
+      "evidence_code": "OBS",
+      "reference_version": "0.2.0",
+      "reference_path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+      "reference_cells": [
+        "Mobility: serious walking/stair difficulty",
+        "12.2%",
+        "D06"
+      ],
+      "reference_checked": "2026-11-15",
+      "metrics": [
+        {
+          "name": "mobility",
+          "value": 0.122,
+          "unit": "proportion",
+          "uncertainty": null,
+          "uncertainty_status": "not_extracted_or_not_supplied_in_reference"
+        }
+      ],
+      "calculation_allowed": true,
+      "customer_transfer_validated": false,
+      "calculation_use": "context_only_until_standardisation_and_population_checked",
+      "limitations": [],
+      "required_context": {
+        "path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+        "section_anchor": "4-us-functional-disability",
+        "instruction": "Read the section notes and source scope together with this row; do not retrieve numeric metrics without applicability and limitation fields."
+      },
+      "standardisation": "Inspect selected underlying DHDS crude versus age-adjusted measure before headcount calculation"
+    },
+    {
+      "id": "US06",
+      "claim": "Independent living: difficulty with errands alone",
+      "geography": "US",
+      "population": "civilian non-institutionalised adults",
+      "age_range": "18+ unless specified",
+      "period": "2022",
+      "denominator": "all source-covered people in the specified age group",
+      "source_ids": [
+        "D06"
+      ],
+      "evidence_code": "OBS",
+      "reference_version": "0.2.0",
+      "reference_path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+      "reference_cells": [
+        "Independent living: difficulty with errands alone",
+        "7.7%",
+        "D06"
+      ],
+      "reference_checked": "2026-11-15",
+      "metrics": [
+        {
+          "name": "independent_living",
+          "value": 0.077,
+          "unit": "proportion",
+          "uncertainty": null,
+          "uncertainty_status": "not_extracted_or_not_supplied_in_reference"
+        }
+      ],
+      "calculation_allowed": true,
+      "customer_transfer_validated": false,
+      "calculation_use": "context_only_until_standardisation_and_population_checked",
+      "limitations": [],
+      "required_context": {
+        "path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+        "section_anchor": "4-us-functional-disability",
+        "instruction": "Read the section notes and source scope together with this row; do not retrieve numeric metrics without applicability and limitation fields."
+      },
+      "standardisation": "Inspect selected underlying DHDS crude versus age-adjusted measure before headcount calculation"
+    },
+    {
+      "id": "US07",
+      "claim": "Hearing: deafness or serious difficulty",
+      "geography": "US",
+      "population": "civilian non-institutionalised adults",
+      "age_range": "18+ unless specified",
+      "period": "2022",
+      "denominator": "all source-covered people in the specified age group",
+      "source_ids": [
+        "D06"
+      ],
+      "evidence_code": "OBS",
+      "reference_version": "0.2.0",
+      "reference_path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+      "reference_cells": [
+        "Hearing: deafness or serious difficulty",
+        "6.2%",
+        "D06"
+      ],
+      "reference_checked": "2026-11-15",
+      "metrics": [
+        {
+          "name": "hearing",
+          "value": 0.062,
+          "unit": "proportion",
+          "uncertainty": null,
+          "uncertainty_status": "not_extracted_or_not_supplied_in_reference"
+        }
+      ],
+      "calculation_allowed": true,
+      "customer_transfer_validated": false,
+      "calculation_use": "context_only_until_standardisation_and_population_checked",
+      "limitations": [],
+      "required_context": {
+        "path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+        "section_anchor": "4-us-functional-disability",
+        "instruction": "Read the section notes and source scope together with this row; do not retrieve numeric metrics without applicability and limitation fields."
+      },
+      "standardisation": "Inspect selected underlying DHDS crude versus age-adjusted measure before headcount calculation"
+    },
+    {
+      "id": "US08",
+      "claim": "Vision: blindness or serious difficulty despite glasses",
+      "geography": "US",
+      "population": "civilian non-institutionalised adults",
+      "age_range": "18+ unless specified",
+      "period": "2022",
+      "denominator": "all source-covered people in the specified age group",
+      "source_ids": [
+        "D06"
+      ],
+      "evidence_code": "OBS",
+      "reference_version": "0.2.0",
+      "reference_path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+      "reference_cells": [
+        "Vision: blindness or serious difficulty despite glasses",
+        "5.5%",
+        "D06"
+      ],
+      "reference_checked": "2026-11-15",
+      "metrics": [
+        {
+          "name": "vision",
+          "value": 0.055,
+          "unit": "proportion",
+          "uncertainty": null,
+          "uncertainty_status": "not_extracted_or_not_supplied_in_reference"
+        }
+      ],
+      "calculation_allowed": true,
+      "customer_transfer_validated": false,
+      "calculation_use": "context_only_until_standardisation_and_population_checked",
+      "limitations": [],
+      "required_context": {
+        "path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+        "section_anchor": "4-us-functional-disability",
+        "instruction": "Read the section notes and source scope together with this row; do not retrieve numeric metrics without applicability and limitation fields."
+      },
+      "standardisation": "Inspect selected underlying DHDS crude versus age-adjusted measure before headcount calculation"
+    },
+    {
+      "id": "US09",
+      "claim": "Self-care: dressing/bathing difficulty",
+      "geography": "US",
+      "population": "civilian non-institutionalised adults",
+      "age_range": "18+ unless specified",
+      "period": "2022",
+      "denominator": "all source-covered people in the specified age group",
+      "source_ids": [
+        "D06"
+      ],
+      "evidence_code": "OBS",
+      "reference_version": "0.2.0",
+      "reference_path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+      "reference_cells": [
+        "Self-care: dressing/bathing difficulty",
+        "3.6%",
+        "D06"
+      ],
+      "reference_checked": "2026-11-15",
+      "metrics": [
+        {
+          "name": "self_care",
+          "value": 0.036,
+          "unit": "proportion",
+          "uncertainty": null,
+          "uncertainty_status": "not_extracted_or_not_supplied_in_reference"
+        }
+      ],
+      "calculation_allowed": true,
+      "customer_transfer_validated": false,
+      "calculation_use": "context_only_until_standardisation_and_population_checked",
+      "limitations": [],
+      "required_context": {
+        "path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+        "section_anchor": "4-us-functional-disability",
+        "instruction": "Read the section notes and source scope together with this row; do not retrieve numeric metrics without applicability and limitation fields."
+      },
+      "standardisation": "Inspect selected underlying DHDS crude versus age-adjusted measure before headcount calculation"
+    },
+    {
+      "id": "ND01",
+      "claim": "UK population, dyslexia",
+      "geography": "UK",
+      "population": "BDA UK population estimate",
+      "age_range": "all ages; source synthesis",
+      "period": null,
+      "denominator": "source-defined population for the stated estimate; metric-level subgroup overrides apply",
+      "source_ids": [
+        "D08"
+      ],
+      "evidence_code": "EST",
+      "reference_version": "0.2.0",
+      "reference_path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+      "reference_cells": [
+        "UK population, dyslexia",
+        "Around 10%",
+        "EST, British Dyslexia Association [D08]; synthesis without a fieldwork year or CI in this record. Planning starting point, not exact diagnosed count."
+      ],
+      "reference_checked": "2026-11-15",
+      "metrics": [
+        {
+          "name": "dyslexia",
+          "value": 0.1,
+          "unit": "proportion",
+          "uncertainty": null,
+          "uncertainty_status": "not_extracted_or_not_supplied_in_reference",
+          "qualifier": "around"
+        }
+      ],
+      "calculation_allowed": true,
+      "customer_transfer_validated": false,
+      "calculation_use": "requires_population_definition_and_method_match",
+      "limitations": [
+        "EST, British Dyslexia Association [D08]; synthesis without a fieldwork year or CI in this record. Planning starting point, not exact diagnosed count."
+      ],
+      "required_context": {
+        "path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+        "section_anchor": "5-neurodivergence-and-colour-perception",
+        "instruction": "Read the section notes and source scope together with this row; do not retrieve numeric metrics without applicability and limitation fields."
+      }
+    },
+    {
+      "id": "ND02",
+      "claim": "School-aged children, DCD/dyspraxia",
+      "geography": "international professional synthesis; Canadian statement",
+      "population": "school-aged children in source synthesis",
+      "age_range": "school age",
+      "period": null,
+      "denominator": "source-defined population for the stated estimate; metric-level subgroup overrides apply",
+      "source_ids": [
+        "D09"
+      ],
+      "evidence_code": "EST",
+      "reference_version": "0.2.0",
+      "reference_path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+      "reference_cells": [
+        "School-aged children, DCD/dyspraxia",
+        "5–6%",
+        "EST, Canadian Paediatric Society, 2021 [D09]; professional synthesis, not UK/EU/US adult prevalence. No adult default multiplier."
+      ],
+      "reference_checked": "2026-11-15",
+      "metrics": [
+        {
+          "name": "developmental_coordination_disorder",
+          "value": null,
+          "unit": "proportion",
+          "uncertainty": null,
+          "uncertainty_status": "not_extracted_or_not_supplied_in_reference",
+          "planning_range": {
+            "lower": 0.05,
+            "upper": 0.06,
+            "unit": "proportion",
+            "type": "published_estimate_range_not_confidence_interval"
+          },
+          "missing_point_estimate": "Do not invent a midpoint as a sourced estimate"
+        }
+      ],
+      "calculation_allowed": true,
+      "customer_transfer_validated": false,
+      "calculation_use": "requires_population_definition_and_method_match",
+      "limitations": [
+        "EST, Canadian Paediatric Society, 2021 [D09]; professional synthesis, not UK/EU/US adult prevalence. No adult default multiplier."
+      ],
+      "published": "2021",
+      "use_restriction": "Not an adult or national UK/EU/US default multiplier",
+      "required_context": {
+        "path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+        "section_anchor": "5-neurodivergence-and-colour-perception",
+        "instruction": "Read the section notes and source scope together with this row; do not retrieve numeric metrics without applicability and limitation fields."
+      }
+    },
+    {
+      "id": "ND03",
+      "claim": "UK adults, ADHD",
+      "geography": "UK estimate used in NHS England planning",
+      "population": "adults in source estimate",
+      "age_range": "adult; check intended age convention",
+      "period": null,
+      "denominator": "source-defined population for the stated estimate; metric-level subgroup overrides apply",
+      "source_ids": [
+        "D10"
+      ],
+      "evidence_code": "EST",
+      "reference_version": "0.2.0",
+      "reference_path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+      "reference_cells": [
+        "UK adults, ADHD",
+        "3–4%",
+        "EST, NICE estimate reported by NHS England [D10]; no single fieldwork year or CI. Age-specific evidence is preferable."
+      ],
+      "reference_checked": "2026-11-15",
+      "metrics": [
+        {
+          "name": "adult_ADHD",
+          "value": null,
+          "unit": "proportion",
+          "uncertainty": null,
+          "uncertainty_status": "not_extracted_or_not_supplied_in_reference",
+          "planning_range": {
+            "lower": 0.03,
+            "upper": 0.04,
+            "unit": "proportion",
+            "type": "published_estimate_range_not_confidence_interval"
+          },
+          "missing_point_estimate": "Do not invent a midpoint as a sourced estimate"
+        }
+      ],
+      "calculation_allowed": true,
+      "customer_transfer_validated": false,
+      "calculation_use": "requires_population_definition_and_method_match",
+      "limitations": [
+        "EST, NICE estimate reported by NHS England [D10]; no single fieldwork year or CI. Age-specific evidence is preferable."
+      ],
+      "required_context": {
+        "path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+        "section_anchor": "5-neurodivergence-and-colour-perception",
+        "instruction": "Read the section notes and source scope together with this row; do not retrieve numeric metrics without applicability and limitation fields."
+      }
+    },
+    {
+      "id": "ND04",
+      "claim": "Children/young people, ADHD",
+      "geography": "NICE estimate used in NHS England planning",
+      "population": "children and young people",
+      "age_range": "children/young people; NHS planning convention uses 0–24",
+      "period": null,
+      "denominator": "source-defined population for the stated estimate; metric-level subgroup overrides apply",
+      "source_ids": [
+        "D10"
+      ],
+      "evidence_code": "EST",
+      "reference_version": "0.2.0",
+      "reference_path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+      "reference_cells": [
+        "Children/young people, ADHD",
+        "Around 5%",
+        "EST, NICE estimate reported by NHS England [D10]; planning methodology, not a newly measured UK census."
+      ],
+      "reference_checked": "2026-11-15",
+      "metrics": [
+        {
+          "name": "child_young_person_ADHD",
+          "value": 0.05,
+          "unit": "proportion",
+          "uncertainty": null,
+          "uncertainty_status": "not_extracted_or_not_supplied_in_reference",
+          "qualifier": "around"
+        }
+      ],
+      "calculation_allowed": true,
+      "customer_transfer_validated": false,
+      "calculation_use": "requires_population_definition_and_method_match",
+      "limitations": [
+        "EST, NICE estimate reported by NHS England [D10]; planning methodology, not a newly measured UK census."
+      ],
+      "required_context": {
+        "path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+        "section_anchor": "5-neurodivergence-and-colour-perception",
+        "instruction": "Read the section notes and source scope together with this row; do not retrieve numeric metrics without applicability and limitation fields."
+      }
+    },
+    {
+      "id": "ND05",
+      "claim": "US adults 18+, current ADHD diagnosis, self-report",
+      "geography": "US",
+      "population": "Rapid Surveys System adults",
+      "age_range": "18+",
+      "period": "October–November 2023",
+      "denominator": "source-defined population for the stated estimate; metric-level subgroup overrides apply",
+      "source_ids": [
+        "D11"
+      ],
+      "evidence_code": "OBS",
+      "reference_version": "0.2.0",
+      "reference_path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+      "reference_cells": [
+        "US adults 18+, current ADHD diagnosis, self-report",
+        "6.0%; 95% CI 5.3–6.8%; 15.5 million",
+        "OBS, October–November 2023 Rapid Surveys System [D11], table 1. Diagnosed prevalence is not all underlying ADHD."
+      ],
+      "reference_checked": "2026-11-15",
+      "metrics": [
+        {
+          "name": "current_ADHD_diagnosis",
+          "value": 0.06,
+          "unit": "proportion",
+          "uncertainty": {
+            "type": "published_95_percent_confidence_interval",
+            "lower": 0.053,
+            "upper": 0.068
+          },
+          "uncertainty_status": "published_interval_extracted"
+        },
+        {
+          "name": "people",
+          "value": 15500000,
+          "unit": "people",
+          "uncertainty": null,
+          "uncertainty_status": "not_extracted_or_not_supplied_in_reference",
+          "qualifier": "estimated"
+        }
+      ],
+      "calculation_allowed": true,
+      "customer_transfer_validated": false,
+      "calculation_use": "requires_population_definition_and_method_match",
+      "limitations": [
+        "OBS, October–November 2023 Rapid Surveys System [D11], table 1. Diagnosed prevalence is not all underlying ADHD."
+      ],
+      "published": "2024-10-10",
+      "required_context": {
+        "path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+        "section_anchor": "5-neurodivergence-and-colour-perception",
+        "instruction": "Read the section notes and source scope together with this row; do not retrieve numeric metrics without applicability and limitation fields."
+      }
+    },
+    {
+      "id": "ND06",
+      "claim": "US children 3–17, current ADHD diagnosis reported by parents",
+      "geography": "US",
+      "population": "NSCH children; parent-reported current diagnosis",
+      "age_range": "3–17",
+      "period": "2024",
+      "denominator": "source-defined population for the stated estimate; metric-level subgroup overrides apply",
+      "source_ids": [
+        "D12"
+      ],
+      "evidence_code": "OBS",
+      "reference_version": "0.2.0",
+      "reference_path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+      "reference_cells": [
+        "US children 3–17, current ADHD diagnosis reported by parents",
+        "11.7%; about 7 million",
+        "OBS, 2024 NSCH, summarised by CDC in July 2026 [D12]. Do not substitute older ever-diagnosed figures."
+      ],
+      "reference_checked": "2026-11-15",
+      "metrics": [
+        {
+          "name": "current_ADHD_diagnosis",
+          "value": 0.117,
+          "unit": "proportion",
+          "uncertainty": null,
+          "uncertainty_status": "not_extracted_or_not_supplied_in_reference"
+        },
+        {
+          "name": "people",
+          "value": 7000000,
+          "unit": "people",
+          "uncertainty": null,
+          "uncertainty_status": "not_extracted_or_not_supplied_in_reference",
+          "qualifier": "about"
+        }
+      ],
+      "calculation_allowed": true,
+      "customer_transfer_validated": false,
+      "calculation_use": "requires_population_definition_and_method_match",
+      "limitations": [
+        "OBS, 2024 NSCH, summarised by CDC in July 2026 [D12]. Do not substitute older ever-diagnosed figures."
+      ],
+      "published": "2026-07-08",
+      "required_context": {
+        "path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+        "section_anchor": "5-neurodivergence-and-colour-perception",
+        "instruction": "Read the section notes and source scope together with this row; do not retrieve numeric metrics without applicability and limitation fields."
+      }
+    },
+    {
+      "id": "ND07",
+      "claim": "Autism identified among 8-year-olds in 16 US surveillance sites",
+      "geography": "16 US ADDM surveillance sites",
+      "population": "children aged 8 in surveillance catchments",
+      "age_range": "8",
+      "period": "2022",
+      "denominator": "source-defined population for the stated estimate; metric-level subgroup overrides apply",
+      "source_ids": [
+        "D13"
+      ],
+      "evidence_code": "OBS",
+      "reference_version": "0.2.0",
+      "reference_path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+      "reference_cells": [
+        "Autism identified among 8-year-olds in 16 US surveillance sites",
+        "32.2 per 1,000 = 3.22%; observed 95% CI 3.16–3.29%",
+        "OBS, 2022 ADDM [D13], table 1. Not all US children, adults or a representative global sample."
+      ],
+      "reference_checked": "2026-11-15",
+      "metrics": [
+        {
+          "name": "identified_autism",
+          "value": 0.0322,
+          "unit": "proportion",
+          "uncertainty": {
+            "type": "published_95_percent_confidence_interval",
+            "lower": 0.0316,
+            "upper": 0.0329
+          },
+          "uncertainty_status": "published_interval_extracted",
+          "normalisation": "32.2 per 1000 divided by 1000; interval likewise"
+        }
+      ],
+      "calculation_allowed": true,
+      "customer_transfer_validated": false,
+      "calculation_use": "requires_population_definition_and_method_match",
+      "limitations": [
+        "OBS, 2022 ADDM [D13], table 1. Not all US children, adults or a representative global sample."
+      ],
+      "published": "2025-04-17",
+      "use_restriction": "Not a representative all-US or adult prevalence estimate",
+      "required_context": {
+        "path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+        "section_anchor": "5-neurodivergence-and-colour-perception",
+        "instruction": "Read the section notes and source scope together with this row; do not retrieve numeric metrics without applicability and limitation fields."
+      }
+    },
+    {
+      "id": "ND08",
+      "claim": "Same surveillance population, boys / girls",
+      "geography": "16 US ADDM surveillance sites",
+      "population": "boys/girls aged 8 in surveillance catchments",
+      "age_range": "8",
+      "period": "2022",
+      "denominator": "source-defined population for the stated estimate; metric-level subgroup overrides apply",
+      "source_ids": [
+        "D13"
+      ],
+      "evidence_code": "OBS",
+      "reference_version": "0.2.0",
+      "reference_path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+      "reference_cells": [
+        "Same surveillance population, boys / girls",
+        "49.2 / 14.3 per 1,000 = 4.92% / 1.43%",
+        "OBS, 2022 [D13], table 2; source sex categories, site selection and ascertainment apply."
+      ],
+      "reference_checked": "2026-11-15",
+      "metrics": [
+        {
+          "name": "identified_autism_boys",
+          "value": 0.0492,
+          "unit": "proportion",
+          "uncertainty": null,
+          "uncertainty_status": "not_extracted_or_not_supplied_in_reference",
+          "population_override": "boys aged 8 in surveillance sites"
+        },
+        {
+          "name": "identified_autism_girls",
+          "value": 0.0143,
+          "unit": "proportion",
+          "uncertainty": null,
+          "uncertainty_status": "not_extracted_or_not_supplied_in_reference",
+          "population_override": "girls aged 8 in surveillance sites"
+        }
+      ],
+      "calculation_allowed": true,
+      "customer_transfer_validated": false,
+      "calculation_use": "requires_population_definition_and_method_match",
+      "limitations": [
+        "OBS, 2022 [D13], table 2; source sex categories, site selection and ascertainment apply."
+      ],
+      "published": "2025-04-17",
+      "required_context": {
+        "path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+        "section_anchor": "5-neurodivergence-and-colour-perception",
+        "instruction": "Read the section notes and source scope together with this row; do not retrieve numeric metrics without applicability and limitation fields."
+      }
+    },
+    {
+      "id": "ND09",
+      "claim": "Global population, autism",
+      "geography": "global",
+      "population": "modelled global population",
+      "age_range": "all ages",
+      "period": "2021",
+      "denominator": "source-defined population for the stated estimate; metric-level subgroup overrides apply",
+      "source_ids": [
+        "D14"
+      ],
+      "evidence_code": "EST",
+      "reference_version": "0.2.0",
+      "reference_path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+      "reference_cells": [
+        "Global population, autism",
+        "About 1 in 127, approximately 0.79%",
+        "EST, WHO reporting modelled 2021 prevalence [D14]; contextual only, not a substitute for national or age-specific evidence."
+      ],
+      "reference_checked": "2026-11-15",
+      "metrics": [
+        {
+          "name": "autism",
+          "value": 0.007874015748031496,
+          "unit": "proportion",
+          "uncertainty": null,
+          "uncertainty_status": "not_extracted_or_not_supplied_in_reference",
+          "qualifier": "about",
+          "normalisation": "one in 127; reference display approximately 0.79 percent"
+        }
+      ],
+      "calculation_allowed": true,
+      "customer_transfer_validated": false,
+      "calculation_use": "requires_population_definition_and_method_match",
+      "limitations": [
+        "EST, WHO reporting modelled 2021 prevalence [D14]; contextual only, not a substitute for national or age-specific evidence."
+      ],
+      "published": "2025-09-17",
+      "use_restriction": "Global context, not a national adult multiplier",
+      "required_context": {
+        "path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+        "section_anchor": "5-neurodivergence-and-colour-perception",
+        "instruction": "Read the section notes and source scope together with this row; do not retrieve numeric metrics without applicability and limitation fields."
+      }
+    },
+    {
+      "id": "ND10",
+      "claim": "People with autism in international studies, co-occurring ADHD",
+      "geography": "international studies",
+      "population": "people with autism in included studies",
+      "age_range": "mixed study populations",
+      "period": "studies through February 2019",
+      "denominator": "studied people with autism",
+      "source_ids": [
+        "D15"
+      ],
+      "evidence_code": "EST",
+      "reference_version": "0.2.0",
+      "reference_path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+      "reference_cells": [
+        "People with autism in international studies, co-occurring ADHD",
+        "28%; pooled 95% CI 25–32%",
+        "EST, 2019 meta-analysis [D15], studies through February 2019; substantial heterogeneity. Not a national population rate or default for every autistic cohort."
+      ],
+      "reference_checked": "2026-11-15",
+      "metrics": [
+        {
+          "name": "ADHD_given_autism",
+          "value": 0.28,
+          "unit": "proportion",
+          "uncertainty": {
+            "type": "published_95_percent_confidence_interval",
+            "lower": 0.25,
+            "upper": 0.32
+          },
+          "uncertainty_status": "published_interval_extracted",
+          "denominator_override": "studied people with autism; heterogeneous international studies"
+        }
+      ],
+      "calculation_allowed": true,
+      "customer_transfer_validated": false,
+      "calculation_use": "requires_population_definition_and_method_match",
+      "limitations": [
+        "EST, 2019 meta-analysis [D15], studies through February 2019; substantial heterogeneity. Not a national population rate or default for every autistic cohort."
+      ],
+      "published": "2019",
+      "use_restriction": "Heterogeneous conditional synthesis; not an automatic national multiplier",
+      "required_context": {
+        "path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+        "section_anchor": "5-neurodivergence-and-colour-perception",
+        "instruction": "Read the section notes and source scope together with this row; do not retrieve numeric metrics without applicability and limitation fields."
+      }
+    },
+    {
+      "id": "ND11",
+      "claim": "England adult-autism prevalence from original APMS 2023/24 chapter",
+      "geography": "England",
+      "population": "APMS adults; original estimate withdrawn",
+      "age_range": "adult APMS population",
+      "period": "2023/24",
+      "denominator": "source-defined population for the stated estimate; metric-level subgroup overrides apply",
+      "source_ids": [
+        "D16"
+      ],
+      "evidence_code": "EXCLUDE",
+      "reference_version": "0.2.0",
+      "reference_path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+      "reference_cells": [
+        "England adult-autism prevalence from original APMS 2023/24 chapter",
+        "Do not use the original 0.9% estimate",
+        "EXCLUDE: NHS England says the estimate should not be used and the corrected chapter presents no prevalence estimate [D16]."
+      ],
+      "reference_checked": "2026-11-15",
+      "metrics": [],
+      "calculation_allowed": false,
+      "customer_transfer_validated": false,
+      "calculation_use": "prohibited",
+      "limitations": [
+        "EXCLUDE: NHS England says the estimate should not be used and the corrected chapter presents no prevalence estimate [D16]."
+      ],
+      "use_restriction": "Withdrawn estimate; no replacement prevalence asserted",
+      "required_context": {
+        "path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+        "section_anchor": "5-neurodivergence-and-colour-perception",
+        "instruction": "Read the section notes and source scope together with this row; do not retrieve numeric metrics without applicability and limitation fields."
+      },
+      "exclusion_reason": "NHS England withdrew original APMS adult-autism prevalence estimate; retain provenance, no numeric metric"
+    },
+    {
+      "id": "CV01",
+      "claim": "Red–green colour vision deficiency, men / women in source terminology",
+      "geography": "UK public-health summary; population transfer requires review",
+      "population": "source-defined population",
+      "age_range": "source does not give a single age band",
+      "period": null,
+      "denominator": "source-defined population for the stated estimate; metric-level subgroup overrides apply",
+      "source_ids": [
+        "D17"
+      ],
+      "evidence_code": "EST",
+      "reference_version": "0.2.0",
+      "reference_path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+      "reference_cells": [
+        "Red–green colour vision deficiency, men / women in source terminology",
+        "About 1 in 12 / 1 in 200 = 8.33% / 0.50%",
+        "EST, UK public-health information [D17]; no survey year or CI supplied. Applicability varies; do not transfer indiscriminately between populations."
+      ],
+      "reference_checked": "2026-11-15",
+      "metrics": [
+        {
+          "name": "red_green_CVD_men",
+          "value": 0.08333333333333333,
+          "unit": "proportion",
+          "uncertainty": null,
+          "uncertainty_status": "not_extracted_or_not_supplied_in_reference",
+          "qualifier": "about",
+          "population_override": "men in source population terminology"
+        },
+        {
+          "name": "red_green_CVD_women",
+          "value": 0.005,
+          "unit": "proportion",
+          "uncertainty": null,
+          "uncertainty_status": "not_extracted_or_not_supplied_in_reference",
+          "qualifier": "about",
+          "population_override": "women in source population terminology"
+        }
+      ],
+      "calculation_allowed": true,
+      "customer_transfer_validated": false,
+      "calculation_use": "requires_population_definition_and_method_match",
+      "limitations": [
+        "EST, UK public-health information [D17]; no survey year or CI supplied. Applicability varies; do not transfer indiscriminately between populations."
+      ],
+      "required_context": {
+        "path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+        "section_anchor": "5-neurodivergence-and-colour-perception",
+        "instruction": "Read the section notes and source scope together with this row; do not retrieve numeric metrics without applicability and limitation fields."
+      }
+    },
+    {
+      "id": "HE01",
+      "claim": "UK, hearing loss",
+      "geography": "UK",
+      "population": "RNID modelled population",
+      "age_range": "source-defined age group",
+      "period": null,
+      "denominator": "not applicable to counts/flows; any proportion uses the source-defined population and age group",
+      "source_ids": [
+        "D18"
+      ],
+      "evidence_code": "EST",
+      "reference_version": "0.2.0",
+      "reference_path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+      "reference_cells": [
+        "UK, hearing loss",
+        "Over 17 million"
+      ],
+      "reference_checked": "2026-11-15",
+      "metrics": [
+        {
+          "name": "people_with_hearing_loss",
+          "value": 17000000,
+          "unit": "people",
+          "uncertainty": null,
+          "uncertainty_status": "not_extracted_or_not_supplied_in_reference",
+          "qualifier": "greater_than"
+        }
+      ],
+      "calculation_allowed": true,
+      "customer_transfer_validated": false,
+      "calculation_use": "requires_population_definition_and_method_match",
+      "limitations": [
+        "source synthesis/model; underlying years vary; no uncertainty interval extracted"
+      ],
+      "required_context": {
+        "path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+        "section_anchor": "6-hearing-sight-and-ageing",
+        "instruction": "Read the section notes and source scope together with this row; do not retrieve numeric metrics without applicability and limitation fields."
+      },
+      "definition_context": "RNID hearing-loss synthesis: four-frequency average threshold at least 25 dB in either ear; deaf/hearing-loss/tinnitus union is broader; inspect source dates and age thresholds."
+    },
+    {
+      "id": "HE02",
+      "claim": "UK, deaf/hearing loss/tinnitus union",
+      "geography": "UK",
+      "population": "RNID modelled population",
+      "age_range": "source-defined age group",
+      "period": null,
+      "denominator": "not applicable to counts/flows; any proportion uses the source-defined population and age group",
+      "source_ids": [
+        "D18"
+      ],
+      "evidence_code": "EST",
+      "reference_version": "0.2.0",
+      "reference_path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+      "reference_cells": [
+        "UK, deaf/hearing loss/tinnitus union",
+        "Over 18 million"
+      ],
+      "reference_checked": "2026-11-15",
+      "metrics": [
+        {
+          "name": "deaf_hearing_loss_or_tinnitus_union",
+          "value": 18000000,
+          "unit": "people",
+          "uncertainty": null,
+          "uncertainty_status": "not_extracted_or_not_supplied_in_reference",
+          "qualifier": "greater_than"
+        }
+      ],
+      "calculation_allowed": true,
+      "customer_transfer_validated": false,
+      "calculation_use": "requires_population_definition_and_method_match",
+      "limitations": [
+        "source synthesis/model; underlying years vary; no uncertainty interval extracted"
+      ],
+      "required_context": {
+        "path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+        "section_anchor": "6-hearing-sight-and-ageing",
+        "instruction": "Read the section notes and source scope together with this row; do not retrieve numeric metrics without applicability and limitation fields."
+      },
+      "definition_context": "RNID hearing-loss synthesis: four-frequency average threshold at least 25 dB in either ear; deaf/hearing-loss/tinnitus union is broader; inspect source dates and age thresholds."
+    },
+    {
+      "id": "HE03",
+      "claim": "Hearing loss, people over 40 / over 50 / over 60 / aged 70+",
+      "geography": "UK",
+      "population": "RNID modelled population",
+      "age_range": "nested cumulative thresholds: >40, >50, >60, 70+",
+      "period": null,
+      "denominator": "not applicable to counts/flows; any proportion uses the source-defined population and age group",
+      "source_ids": [
+        "D18"
+      ],
+      "evidence_code": "EST",
+      "reference_version": "0.2.0",
+      "reference_path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+      "reference_cells": [
+        "Hearing loss, people over 40 / over 50 / over 60 / aged 70+",
+        "45% / 55% / 65% / almost 80%"
+      ],
+      "reference_checked": "2026-11-15",
+      "metrics": [
+        {
+          "name": "over_40",
+          "value": 0.45,
+          "unit": "proportion",
+          "uncertainty": null,
+          "uncertainty_status": "not_extracted_or_not_supplied_in_reference",
+          "age_override": "over 40"
+        },
+        {
+          "name": "over_50",
+          "value": 0.55,
+          "unit": "proportion",
+          "uncertainty": null,
+          "uncertainty_status": "not_extracted_or_not_supplied_in_reference",
+          "age_override": "over 50"
+        },
+        {
+          "name": "over_60",
+          "value": 0.65,
+          "unit": "proportion",
+          "uncertainty": null,
+          "uncertainty_status": "not_extracted_or_not_supplied_in_reference",
+          "age_override": "over 60"
+        },
+        {
+          "name": "age_70_plus",
+          "value": 0.8,
+          "unit": "proportion",
+          "uncertainty": null,
+          "uncertainty_status": "not_extracted_or_not_supplied_in_reference",
+          "qualifier": "almost",
+          "age_override": "70+"
+        }
+      ],
+      "calculation_allowed": true,
+      "customer_transfer_validated": false,
+      "calculation_use": "requires_population_definition_and_method_match",
+      "limitations": [
+        "source synthesis/model; underlying years vary; no uncertainty interval extracted"
+      ],
+      "nested_population_groups": true,
+      "required_context": {
+        "path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+        "section_anchor": "6-hearing-sight-and-ageing",
+        "instruction": "Read the section notes and source scope together with this row; do not retrieve numeric metrics without applicability and limitation fields."
+      },
+      "definition_context": "RNID hearing-loss synthesis: four-frequency average threshold at least 25 dB in either ear; deaf/hearing-loss/tinnitus union is broader; inspect source dates and age thresholds."
+    },
+    {
+      "id": "HE04",
+      "claim": "Working-age, some hearing loss",
+      "geography": "UK",
+      "population": "RNID modelled population",
+      "age_range": "source-defined working age",
+      "period": null,
+      "denominator": "not applicable to counts/flows; any proportion uses the source-defined population and age group",
+      "source_ids": [
+        "D18"
+      ],
+      "evidence_code": "EST",
+      "reference_version": "0.2.0",
+      "reference_path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+      "reference_cells": [
+        "Working-age, some hearing loss",
+        "About 9 million"
+      ],
+      "reference_checked": "2026-11-15",
+      "metrics": [
+        {
+          "name": "working_age_people_with_hearing_loss",
+          "value": 9000000,
+          "unit": "people",
+          "uncertainty": null,
+          "uncertainty_status": "not_extracted_or_not_supplied_in_reference",
+          "qualifier": "about"
+        }
+      ],
+      "calculation_allowed": true,
+      "customer_transfer_validated": false,
+      "calculation_use": "requires_population_definition_and_method_match",
+      "limitations": [
+        "source synthesis/model; underlying years vary; no uncertainty interval extracted"
+      ],
+      "required_context": {
+        "path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+        "section_anchor": "6-hearing-sight-and-ageing",
+        "instruction": "Read the section notes and source scope together with this row; do not retrieve numeric metrics without applicability and limitation fields."
+      },
+      "definition_context": "RNID hearing-loss synthesis: four-frequency average threshold at least 25 dB in either ear; deaf/hearing-loss/tinnitus union is broader; inspect source dates and age thresholds."
+    },
+    {
+      "id": "HE05",
+      "claim": "Hearing difficulty with most conversational speech",
+      "geography": "UK",
+      "population": "RNID modelled population",
+      "age_range": "source-defined age group",
+      "period": null,
+      "denominator": "not applicable to counts/flows; any proportion uses the source-defined population and age group",
+      "source_ids": [
+        "D18"
+      ],
+      "evidence_code": "EST",
+      "reference_version": "0.2.0",
+      "reference_path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+      "reference_cells": [
+        "Hearing difficulty with most conversational speech",
+        "About 2.4 million"
+      ],
+      "reference_checked": "2026-11-15",
+      "metrics": [
+        {
+          "name": "people_struggling_with_most_conversational_speech",
+          "value": 2400000,
+          "unit": "people",
+          "uncertainty": null,
+          "uncertainty_status": "not_extracted_or_not_supplied_in_reference",
+          "qualifier": "about"
+        }
+      ],
+      "calculation_allowed": true,
+      "customer_transfer_validated": false,
+      "calculation_use": "requires_population_definition_and_method_match",
+      "limitations": [
+        "source synthesis/model; underlying years vary; no uncertainty interval extracted"
+      ],
+      "required_context": {
+        "path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+        "section_anchor": "6-hearing-sight-and-ageing",
+        "instruction": "Read the section notes and source scope together with this row; do not retrieve numeric metrics without applicability and limitation fields."
+      },
+      "definition_context": "RNID hearing-loss synthesis: four-frequency average threshold at least 25 dB in either ear; deaf/hearing-loss/tinnitus union is broader; inspect source dates and age thresholds."
+    },
+    {
+      "id": "SL01",
+      "claim": "England and Wales usual residents aged 3+, BSL main language, Census 2021",
+      "geography": "England and Wales",
+      "population": "usual residents in Census 2021",
+      "age_range": "3+",
+      "period": "2021",
+      "denominator": "usual residents aged 3+",
+      "source_ids": [
+        "D19"
+      ],
+      "evidence_code": "OBS",
+      "reference_version": "0.2.0",
+      "reference_path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+      "reference_cells": [
+        "England and Wales usual residents aged 3+, BSL main language, Census 2021",
+        "22,000; 0.04%",
+        "OBS [D19]. Main language, not everyone able to use BSL; not a UK adult percentage."
+      ],
+      "reference_checked": "2026-11-15",
+      "metrics": [
+        {
+          "name": "BSL_main_language_people",
+          "value": 22000,
+          "unit": "people",
+          "uncertainty": null,
+          "uncertainty_status": "not_extracted_or_not_supplied_in_reference",
+          "qualifier": "rounded"
+        },
+        {
+          "name": "BSL_main_language_prevalence",
+          "value": 0.0004,
+          "unit": "proportion",
+          "uncertainty": null,
+          "uncertainty_status": "not_extracted_or_not_supplied_in_reference"
+        }
+      ],
+      "calculation_allowed": true,
+      "customer_transfer_validated": false,
+      "calculation_use": "requires_population_definition_and_method_match",
+      "limitations": [
+        "OBS [D19]. Main language, not everyone able to use BSL; not a UK adult percentage."
+      ],
+      "published": "2022-11-29",
+      "required_context": {
+        "path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+        "section_anchor": "6-hearing-sight-and-ageing",
+        "instruction": "Read the section notes and source scope together with this row; do not retrieve numeric metrics without applicability and limitation fields."
+      }
+    },
+    {
+      "id": "SL02",
+      "claim": "UK BSL users, broad estimate",
+      "geography": "UK",
+      "population": "BDA broad BSL-use estimate reported by RNID",
+      "age_range": "not established in reference",
+      "period": null,
+      "denominator": "not applicable to counts/flows; any proportion uses the source-defined population and age group",
+      "source_ids": [
+        "D18"
+      ],
+      "evidence_code": "EST",
+      "reference_version": "0.2.0",
+      "reference_path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+      "reference_cells": [
+        "UK BSL users, broad estimate",
+        "151,000, including 87,000 deaf users",
+        "EST, BDA estimate reported by RNID [D18]; underlying estimate date not established here. Competing definitions yield different totals."
+      ],
+      "reference_checked": "2026-11-15",
+      "metrics": [
+        {
+          "name": "BSL_users",
+          "value": 151000,
+          "unit": "people",
+          "uncertainty": null,
+          "uncertainty_status": "not_extracted_or_not_supplied_in_reference",
+          "qualifier": "estimate"
+        },
+        {
+          "name": "deaf_BSL_users",
+          "value": 87000,
+          "unit": "people",
+          "uncertainty": null,
+          "uncertainty_status": "not_extracted_or_not_supplied_in_reference",
+          "qualifier": "subset_of_BSL_users"
+        }
+      ],
+      "calculation_allowed": true,
+      "customer_transfer_validated": false,
+      "calculation_use": "requires_population_definition_and_method_match",
+      "limitations": [
+        "EST, BDA estimate reported by RNID [D18]; underlying estimate date not established here. Competing definitions yield different totals."
+      ],
+      "use_restriction": "Different language-use construct from SL01; estimate date unresolved",
+      "required_context": {
+        "path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+        "section_anchor": "6-hearing-sight-and-ageing",
+        "instruction": "Read the section notes and source scope together with this row; do not retrieve numeric metrics without applicability and limitation fields."
+      }
+    },
+    {
+      "id": "VI01",
+      "claim": "UK, sight loss significantly affecting daily life",
+      "geography": "UK",
+      "population": "RNIB sight-loss populations",
+      "age_range": "all ages unless specified",
+      "period": null,
+      "denominator": "not applicable to counts/flows; any proportion uses the source-defined population and age group",
+      "source_ids": [
+        "D20"
+      ],
+      "evidence_code": "EST",
+      "reference_version": "0.2.0",
+      "reference_path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+      "reference_cells": [
+        "UK, sight loss significantly affecting daily life",
+        "More than 2 million"
+      ],
+      "reference_checked": "2026-11-15",
+      "metrics": [
+        {
+          "name": "people_with_significant_sight_loss",
+          "value": 2000000,
+          "unit": "people",
+          "uncertainty": null,
+          "uncertainty_status": "not_extracted_or_not_supplied_in_reference",
+          "qualifier": "greater_than"
+        }
+      ],
+      "calculation_allowed": true,
+      "customer_transfer_validated": false,
+      "calculation_use": "requires_population_definition_and_method_match",
+      "limitations": [
+        "source synthesis/model; underlying years vary; no uncertainty interval extracted"
+      ],
+      "required_context": {
+        "path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+        "section_anchor": "6-hearing-sight-and-ageing",
+        "instruction": "Read the section notes and source scope together with this row; do not retrieve numeric metrics without applicability and limitation fields."
+      }
+    },
+    {
+      "id": "VI02",
+      "claim": "UK, long-term irreversible sight loss",
+      "geography": "UK",
+      "population": "RNIB sight-loss populations",
+      "age_range": "all ages unless specified",
+      "period": null,
+      "denominator": "not applicable to counts/flows; any proportion uses the source-defined population and age group",
+      "source_ids": [
+        "D20"
+      ],
+      "evidence_code": "EST",
+      "reference_version": "0.2.0",
+      "reference_path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+      "reference_cells": [
+        "UK, long-term irreversible sight loss",
+        "More than 1 million"
+      ],
+      "reference_checked": "2026-11-15",
+      "metrics": [
+        {
+          "name": "people_with_irreversible_sight_loss",
+          "value": 1000000,
+          "unit": "people",
+          "uncertainty": null,
+          "uncertainty_status": "not_extracted_or_not_supplied_in_reference",
+          "qualifier": "greater_than"
+        }
+      ],
+      "calculation_allowed": true,
+      "customer_transfer_validated": false,
+      "calculation_use": "requires_population_definition_and_method_match",
+      "limitations": [
+        "source synthesis/model; underlying years vary; no uncertainty interval extracted"
+      ],
+      "required_context": {
+        "path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+        "section_anchor": "6-hearing-sight-and-ageing",
+        "instruction": "Read the section notes and source scope together with this row; do not retrieve numeric metrics without applicability and limitation fields."
+      }
+    },
+    {
+      "id": "VI03",
+      "claim": "UK, registered sight impaired/severely sight impaired",
+      "geography": "UK",
+      "population": "RNIB sight-loss populations",
+      "age_range": "all ages unless specified",
+      "period": null,
+      "denominator": "not applicable to counts/flows; any proportion uses the source-defined population and age group",
+      "source_ids": [
+        "D20"
+      ],
+      "evidence_code": "EST",
+      "reference_version": "0.2.0",
+      "reference_path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+      "reference_cells": [
+        "UK, registered sight impaired/severely sight impaired",
+        "Around 320,000"
+      ],
+      "reference_checked": "2026-11-15",
+      "metrics": [
+        {
+          "name": "registered_people",
+          "value": 320000,
+          "unit": "people",
+          "uncertainty": null,
+          "uncertainty_status": "not_extracted_or_not_supplied_in_reference",
+          "qualifier": "around"
+        }
+      ],
+      "calculation_allowed": true,
+      "customer_transfer_validated": false,
+      "calculation_use": "requires_population_definition_and_method_match",
+      "limitations": [
+        "source synthesis/model; underlying years vary; no uncertainty interval extracted"
+      ],
+      "required_context": {
+        "path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+        "section_anchor": "6-hearing-sight-and-ageing",
+        "instruction": "Read the section notes and source scope together with this row; do not retrieve numeric metrics without applicability and limitation fields."
+      }
+    },
+    {
+      "id": "VI04",
+      "claim": "UK, people starting to lose sight",
+      "geography": "UK",
+      "population": "RNIB sight-loss populations",
+      "age_range": "all ages unless specified",
+      "period": null,
+      "denominator": "not applicable to counts/flows; any proportion uses the source-defined population and age group",
+      "source_ids": [
+        "D20"
+      ],
+      "evidence_code": "EST",
+      "reference_version": "0.2.0",
+      "reference_path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+      "reference_cells": [
+        "UK, people starting to lose sight",
+        "Around 250 per day"
+      ],
+      "reference_checked": "2026-11-15",
+      "metrics": [
+        {
+          "name": "people_starting_sight_loss_daily",
+          "value": 250,
+          "unit": "people_per_day",
+          "uncertainty": null,
+          "uncertainty_status": "not_extracted_or_not_supplied_in_reference",
+          "qualifier": "around"
+        }
+      ],
+      "calculation_allowed": true,
+      "customer_transfer_validated": false,
+      "calculation_use": "requires_population_definition_and_method_match",
+      "limitations": [
+        "source synthesis/model; underlying years vary; no uncertainty interval extracted"
+      ],
+      "required_context": {
+        "path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+        "section_anchor": "6-hearing-sight-and-ageing",
+        "instruction": "Read the section notes and source scope together with this row; do not retrieve numeric metrics without applicability and limitation fields."
+      }
+    },
+    {
+      "id": "VI05",
+      "claim": "Share of people with sight loss aged 65+",
+      "geography": "UK",
+      "population": "RNIB sight-loss populations",
+      "age_range": "age composition of all-age sight-loss population",
+      "period": null,
+      "denominator": "people with sight loss; not all people aged 65+",
+      "source_ids": [
+        "D20"
+      ],
+      "evidence_code": "EST",
+      "reference_version": "0.2.0",
+      "reference_path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+      "reference_cells": [
+        "Share of people with sight loss aged 65+",
+        "Nearly 80%"
+      ],
+      "reference_checked": "2026-11-15",
+      "metrics": [
+        {
+          "name": "age_65_plus_given_sight_loss",
+          "value": 0.8,
+          "unit": "proportion",
+          "uncertainty": null,
+          "uncertainty_status": "not_extracted_or_not_supplied_in_reference",
+          "qualifier": "nearly",
+          "denominator_override": "people with sight loss"
+        }
+      ],
+      "calculation_allowed": true,
+      "customer_transfer_validated": false,
+      "calculation_use": "requires_population_definition_and_method_match",
+      "limitations": [
+        "source synthesis/model; underlying years vary; no uncertainty interval extracted"
+      ],
+      "required_context": {
+        "path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+        "section_anchor": "6-hearing-sight-and-ageing",
+        "instruction": "Read the section notes and source scope together with this row; do not retrieve numeric metrics without applicability and limitation fields."
+      }
+    },
+    {
+      "id": "VI06",
+      "claim": "UK sight loss by 2050",
+      "geography": "UK",
+      "population": "RNIB sight-loss populations",
+      "age_range": "all ages unless specified",
+      "period": "2050",
+      "denominator": "not applicable to counts/flows; any proportion uses the source-defined population and age group",
+      "source_ids": [
+        "D20"
+      ],
+      "evidence_code": "PROJ",
+      "reference_version": "0.2.0",
+      "reference_path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+      "reference_cells": [
+        "UK sight loss by 2050",
+        "Over 4 million, PROJ"
+      ],
+      "reference_checked": "2026-11-15",
+      "metrics": [
+        {
+          "name": "projected_people_with_sight_loss",
+          "value": 4000000,
+          "unit": "people",
+          "uncertainty": null,
+          "uncertainty_status": "not_extracted_or_not_supplied_in_reference",
+          "qualifier": "greater_than"
+        }
+      ],
+      "calculation_allowed": true,
+      "customer_transfer_validated": false,
+      "calculation_use": "requires_population_definition_and_method_match",
+      "limitations": [
+        "source synthesis/model; underlying years vary; no uncertainty interval extracted"
+      ],
+      "required_context": {
+        "path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+        "section_anchor": "6-hearing-sight-and-ageing",
+        "instruction": "Read the section notes and source scope together with this row; do not retrieve numeric metrics without applicability and limitation fields."
+      }
+    },
+    {
+      "id": "VI07",
+      "claim": "UK people aged 75+, sight loss",
+      "geography": "UK",
+      "population": "RNIB sight-loss populations",
+      "age_range": "75+",
+      "period": null,
+      "denominator": "people aged 75+",
+      "source_ids": [
+        "D21"
+      ],
+      "evidence_code": "EST",
+      "reference_version": "0.2.0",
+      "reference_path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+      "reference_cells": [
+        "UK people aged 75+, sight loss",
+        "About 1 in 5, EST [D21]"
+      ],
+      "reference_checked": "2026-11-15",
+      "metrics": [
+        {
+          "name": "sight_loss_given_age_75_plus",
+          "value": 0.2,
+          "unit": "proportion",
+          "uncertainty": null,
+          "uncertainty_status": "not_extracted_or_not_supplied_in_reference",
+          "qualifier": "about"
+        }
+      ],
+      "calculation_allowed": true,
+      "customer_transfer_validated": false,
+      "calculation_use": "requires_population_definition_and_method_match",
+      "limitations": [
+        "source synthesis/model; underlying years vary; no uncertainty interval extracted"
+      ],
+      "required_context": {
+        "path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+        "section_anchor": "6-hearing-sight-and-ageing",
+        "instruction": "Read the section notes and source scope together with this row; do not retrieve numeric metrics without applicability and limitation fields."
+      }
+    },
+    {
+      "id": "AG01",
+      "claim": "UK age 85+, mid-2024",
+      "geography": "UK",
+      "population": "UK population; count is 85+ subgroup and share uses all ages",
+      "age_range": "85+",
+      "period": "mid-2024",
+      "denominator": "all UK people for population-share metric",
+      "source_ids": [
+        "D22"
+      ],
+      "evidence_code": "OBS",
+      "reference_version": "0.2.0",
+      "reference_path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+      "reference_cells": [
+        "UK age 85+, mid-2024",
+        "1.75 million; 2.5% of population, OBS",
+        "D22"
+      ],
+      "reference_checked": "2026-11-15",
+      "metrics": [
+        {
+          "name": "people_age_85_plus",
+          "value": 1750000,
+          "unit": "people",
+          "uncertainty": null,
+          "uncertainty_status": "not_extracted_or_not_supplied_in_reference"
+        },
+        {
+          "name": "population_share_age_85_plus",
+          "value": 0.025,
+          "unit": "proportion",
+          "uncertainty": null,
+          "uncertainty_status": "not_extracted_or_not_supplied_in_reference"
+        }
+      ],
+      "calculation_allowed": true,
+      "customer_transfer_validated": false,
+      "calculation_use": "requires_population_definition_and_method_match",
+      "limitations": [],
+      "required_context": {
+        "path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+        "section_anchor": "6-hearing-sight-and-ageing",
+        "instruction": "Read the section notes and source scope together with this row; do not retrieve numeric metrics without applicability and limitation fields."
+      }
+    },
+    {
+      "id": "AG02",
+      "claim": "UK age 85+, mid-2049",
+      "geography": "UK",
+      "population": "projected UK population; count is 85+ subgroup and share uses all ages",
+      "age_range": "85+",
+      "period": "mid-2049",
+      "denominator": "all projected UK people for population-share metric",
+      "source_ids": [
+        "D22"
+      ],
+      "evidence_code": "PROJ",
+      "reference_version": "0.2.0",
+      "reference_path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+      "reference_cells": [
+        "UK age 85+, mid-2049",
+        "3.6 million; 4.9%, PROJ",
+        "D22"
+      ],
+      "reference_checked": "2026-11-15",
+      "metrics": [
+        {
+          "name": "projected_people_age_85_plus",
+          "value": 3600000,
+          "unit": "people",
+          "uncertainty": null,
+          "uncertainty_status": "not_extracted_or_not_supplied_in_reference"
+        },
+        {
+          "name": "projected_population_share_age_85_plus",
+          "value": 0.049,
+          "unit": "proportion",
+          "uncertainty": null,
+          "uncertainty_status": "not_extracted_or_not_supplied_in_reference"
+        }
+      ],
+      "calculation_allowed": true,
+      "customer_transfer_validated": false,
+      "calculation_use": "requires_population_definition_and_method_match",
+      "limitations": [],
+      "required_context": {
+        "path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+        "section_anchor": "6-hearing-sight-and-ageing",
+        "instruction": "Read the section notes and source scope together with this row; do not retrieve numeric metrics without applicability and limitation fields."
+      }
+    },
+    {
+      "id": "GH01",
+      "claim": "World, disabling hearing loss, WHO current synthesis",
+      "geography": "global",
+      "population": "WHO global population",
+      "age_range": "all ages unless specified",
+      "period": null,
+      "denominator": "not applicable to counts/flows; any proportion uses the source-defined population and age group",
+      "source_ids": [
+        "D23"
+      ],
+      "evidence_code": "EST",
+      "reference_version": "0.2.0",
+      "reference_path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+      "reference_cells": [
+        "World, disabling hearing loss, WHO current synthesis",
+        "Around 430 million; over 5%, EST",
+        "D23"
+      ],
+      "reference_checked": "2026-11-15",
+      "metrics": [
+        {
+          "name": "people_requiring_rehabilitation",
+          "value": 430000000,
+          "unit": "people",
+          "uncertainty": null,
+          "uncertainty_status": "not_extracted_or_not_supplied_in_reference",
+          "qualifier": "around"
+        },
+        {
+          "name": "population_share",
+          "value": 0.05,
+          "unit": "proportion",
+          "uncertainty": null,
+          "uncertainty_status": "not_extracted_or_not_supplied_in_reference",
+          "qualifier": "greater_than"
+        }
+      ],
+      "calculation_allowed": true,
+      "customer_transfer_validated": false,
+      "calculation_use": "requires_population_definition_and_method_match",
+      "limitations": [],
+      "required_context": {
+        "path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+        "section_anchor": "6-hearing-sight-and-ageing",
+        "instruction": "Read the section notes and source scope together with this row; do not retrieve numeric metrics without applicability and limitation fields."
+      },
+      "definition_context": "WHO disabling hearing loss: greater than 35 dB in better ear; GH03 separately includes any hearing loss and rehabilitation need."
+    },
+    {
+      "id": "GH02",
+      "claim": "World, older than 60, disabling hearing loss",
+      "geography": "global",
+      "population": "WHO global population",
+      "age_range": "older than 60",
+      "period": null,
+      "denominator": "not applicable to counts/flows; any proportion uses the source-defined population and age group",
+      "source_ids": [
+        "D23"
+      ],
+      "evidence_code": "EST",
+      "reference_version": "0.2.0",
+      "reference_path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+      "reference_cells": [
+        "World, older than 60, disabling hearing loss",
+        "Over 25%, EST",
+        "D23"
+      ],
+      "reference_checked": "2026-11-15",
+      "metrics": [
+        {
+          "name": "disabling_hearing_loss",
+          "value": 0.25,
+          "unit": "proportion",
+          "uncertainty": null,
+          "uncertainty_status": "not_extracted_or_not_supplied_in_reference",
+          "qualifier": "greater_than"
+        }
+      ],
+      "calculation_allowed": true,
+      "customer_transfer_validated": false,
+      "calculation_use": "requires_population_definition_and_method_match",
+      "limitations": [],
+      "required_context": {
+        "path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+        "section_anchor": "6-hearing-sight-and-ageing",
+        "instruction": "Read the section notes and source scope together with this row; do not retrieve numeric metrics without applicability and limitation fields."
+      },
+      "definition_context": "WHO disabling hearing loss: greater than 35 dB in better ear; GH03 separately includes any hearing loss and rehabilitation need."
+    },
+    {
+      "id": "GH03",
+      "claim": "World, any hearing loss / rehabilitation need by 2050",
+      "geography": "global",
+      "population": "WHO global population",
+      "age_range": "all ages unless specified",
+      "period": "2050",
+      "denominator": "not applicable to counts/flows; any proportion uses the source-defined population and age group",
+      "source_ids": [
+        "D23"
+      ],
+      "evidence_code": "PROJ",
+      "reference_version": "0.2.0",
+      "reference_path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+      "reference_cells": [
+        "World, any hearing loss / rehabilitation need by 2050",
+        "Nearly 2.5 billion / over 700 million, PROJ",
+        "D23"
+      ],
+      "reference_checked": "2026-11-15",
+      "metrics": [
+        {
+          "name": "projected_any_hearing_loss",
+          "value": 2500000000,
+          "unit": "people",
+          "uncertainty": null,
+          "uncertainty_status": "not_extracted_or_not_supplied_in_reference",
+          "qualifier": "nearly"
+        },
+        {
+          "name": "projected_rehabilitation_need",
+          "value": 700000000,
+          "unit": "people",
+          "uncertainty": null,
+          "uncertainty_status": "not_extracted_or_not_supplied_in_reference",
+          "qualifier": "greater_than"
+        }
+      ],
+      "calculation_allowed": true,
+      "customer_transfer_validated": false,
+      "calculation_use": "requires_population_definition_and_method_match",
+      "limitations": [],
+      "required_context": {
+        "path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+        "section_anchor": "6-hearing-sight-and-ageing",
+        "instruction": "Read the section notes and source scope together with this row; do not retrieve numeric metrics without applicability and limitation fields."
+      },
+      "definition_context": "WHO disabling hearing loss: greater than 35 dB in better ear; GH03 separately includes any hearing loss and rehabilitation need."
+    },
+    {
+      "id": "ST01",
+      "claim": "Short sleep, all adults",
+      "geography": "US",
+      "population": "NHIS civilian non-institutionalised adults",
+      "age_range": "18+ unless specified",
+      "period": "2024",
+      "denominator": "all source-covered people in the specified age group",
+      "source_ids": [
+        "D24"
+      ],
+      "evidence_code": "OBS",
+      "reference_version": "0.2.0",
+      "reference_path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+      "reference_cells": [
+        "Short sleep, all adults",
+        "30.5%; 29.8–31.1"
+      ],
+      "reference_checked": "2026-11-15",
+      "metrics": [
+        {
+          "name": "short_sleep",
+          "value": 0.305,
+          "unit": "proportion",
+          "uncertainty": {
+            "type": "published_95_percent_confidence_interval",
+            "lower": 0.298,
+            "upper": 0.311
+          },
+          "uncertainty_status": "published_interval_extracted"
+        }
+      ],
+      "calculation_allowed": true,
+      "customer_transfer_validated": false,
+      "calculation_use": "requires_population_definition_and_method_match",
+      "limitations": [
+        "sleep report is not measured impairment during a journey"
+      ],
+      "required_context": {
+        "path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+        "section_anchor": "7-sleep-mental-health-illness-injury-and-transient-circumstances",
+        "instruction": "Read the section notes and source scope together with this row; do not retrieve numeric metrics without applicability and limitation fields."
+      },
+      "definition_context": "Short sleep is average sleep below seven hours per 24 hours. Trouble sleeping/waking well-rested concern most days/every day. Not measured customer impairment."
+    },
+    {
+      "id": "ST02",
+      "claim": "Short sleep, 18–34",
+      "geography": "US",
+      "population": "NHIS civilian non-institutionalised adults",
+      "age_range": "18–34",
+      "period": "2024",
+      "denominator": "all source-covered people in the specified age group",
+      "source_ids": [
+        "D24"
+      ],
+      "evidence_code": "OBS",
+      "reference_version": "0.2.0",
+      "reference_path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+      "reference_cells": [
+        "Short sleep, 18–34",
+        "27.2%; 26.0–28.5"
+      ],
+      "reference_checked": "2026-11-15",
+      "metrics": [
+        {
+          "name": "short_sleep",
+          "value": 0.272,
+          "unit": "proportion",
+          "uncertainty": {
+            "type": "published_95_percent_confidence_interval",
+            "lower": 0.26,
+            "upper": 0.285
+          },
+          "uncertainty_status": "published_interval_extracted"
+        }
+      ],
+      "calculation_allowed": true,
+      "customer_transfer_validated": false,
+      "calculation_use": "requires_population_definition_and_method_match",
+      "limitations": [
+        "sleep report is not measured impairment during a journey"
+      ],
+      "required_context": {
+        "path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+        "section_anchor": "7-sleep-mental-health-illness-injury-and-transient-circumstances",
+        "instruction": "Read the section notes and source scope together with this row; do not retrieve numeric metrics without applicability and limitation fields."
+      },
+      "definition_context": "Short sleep is average sleep below seven hours per 24 hours. Trouble sleeping/waking well-rested concern most days/every day. Not measured customer impairment."
+    },
+    {
+      "id": "ST03",
+      "claim": "Short sleep, 35–49",
+      "geography": "US",
+      "population": "NHIS civilian non-institutionalised adults",
+      "age_range": "35–49",
+      "period": "2024",
+      "denominator": "all source-covered people in the specified age group",
+      "source_ids": [
+        "D24"
+      ],
+      "evidence_code": "OBS",
+      "reference_version": "0.2.0",
+      "reference_path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+      "reference_cells": [
+        "Short sleep, 35–49",
+        "33.4%; 32.1–34.8"
+      ],
+      "reference_checked": "2026-11-15",
+      "metrics": [
+        {
+          "name": "short_sleep",
+          "value": 0.334,
+          "unit": "proportion",
+          "uncertainty": {
+            "type": "published_95_percent_confidence_interval",
+            "lower": 0.321,
+            "upper": 0.348
+          },
+          "uncertainty_status": "published_interval_extracted"
+        }
+      ],
+      "calculation_allowed": true,
+      "customer_transfer_validated": false,
+      "calculation_use": "requires_population_definition_and_method_match",
+      "limitations": [
+        "sleep report is not measured impairment during a journey"
+      ],
+      "required_context": {
+        "path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+        "section_anchor": "7-sleep-mental-health-illness-injury-and-transient-circumstances",
+        "instruction": "Read the section notes and source scope together with this row; do not retrieve numeric metrics without applicability and limitation fields."
+      },
+      "definition_context": "Short sleep is average sleep below seven hours per 24 hours. Trouble sleeping/waking well-rested concern most days/every day. Not measured customer impairment."
+    },
+    {
+      "id": "ST04",
+      "claim": "Short sleep, 50–64",
+      "geography": "US",
+      "population": "NHIS civilian non-institutionalised adults",
+      "age_range": "50–64",
+      "period": "2024",
+      "denominator": "all source-covered people in the specified age group",
+      "source_ids": [
+        "D24"
+      ],
+      "evidence_code": "OBS",
+      "reference_version": "0.2.0",
+      "reference_path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+      "reference_cells": [
+        "Short sleep, 50–64",
+        "34.5%; 33.2–35.9"
+      ],
+      "reference_checked": "2026-11-15",
+      "metrics": [
+        {
+          "name": "short_sleep",
+          "value": 0.345,
+          "unit": "proportion",
+          "uncertainty": {
+            "type": "published_95_percent_confidence_interval",
+            "lower": 0.332,
+            "upper": 0.359
+          },
+          "uncertainty_status": "published_interval_extracted"
+        }
+      ],
+      "calculation_allowed": true,
+      "customer_transfer_validated": false,
+      "calculation_use": "requires_population_definition_and_method_match",
+      "limitations": [
+        "sleep report is not measured impairment during a journey"
+      ],
+      "required_context": {
+        "path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+        "section_anchor": "7-sleep-mental-health-illness-injury-and-transient-circumstances",
+        "instruction": "Read the section notes and source scope together with this row; do not retrieve numeric metrics without applicability and limitation fields."
+      },
+      "definition_context": "Short sleep is average sleep below seven hours per 24 hours. Trouble sleeping/waking well-rested concern most days/every day. Not measured customer impairment."
+    },
+    {
+      "id": "ST05",
+      "claim": "Short sleep, 65+",
+      "geography": "US",
+      "population": "NHIS civilian non-institutionalised adults",
+      "age_range": "65+",
+      "period": "2024",
+      "denominator": "all source-covered people in the specified age group",
+      "source_ids": [
+        "D24"
+      ],
+      "evidence_code": "OBS",
+      "reference_version": "0.2.0",
+      "reference_path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+      "reference_cells": [
+        "Short sleep, 65+",
+        "27.2%; 26.2–28.3"
+      ],
+      "reference_checked": "2026-11-15",
+      "metrics": [
+        {
+          "name": "short_sleep",
+          "value": 0.272,
+          "unit": "proportion",
+          "uncertainty": {
+            "type": "published_95_percent_confidence_interval",
+            "lower": 0.262,
+            "upper": 0.283
+          },
+          "uncertainty_status": "published_interval_extracted"
+        }
+      ],
+      "calculation_allowed": true,
+      "customer_transfer_validated": false,
+      "calculation_use": "requires_population_definition_and_method_match",
+      "limitations": [
+        "sleep report is not measured impairment during a journey"
+      ],
+      "required_context": {
+        "path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+        "section_anchor": "7-sleep-mental-health-illness-injury-and-transient-circumstances",
+        "instruction": "Read the section notes and source scope together with this row; do not retrieve numeric metrics without applicability and limitation fields."
+      },
+      "definition_context": "Short sleep is average sleep below seven hours per 24 hours. Trouble sleeping/waking well-rested concern most days/every day. Not measured customer impairment."
+    },
+    {
+      "id": "ST06",
+      "claim": "Trouble falling asleep, adults",
+      "geography": "US",
+      "population": "NHIS civilian non-institutionalised adults",
+      "age_range": "18+ unless specified",
+      "period": "2024",
+      "denominator": "all source-covered people in the specified age group",
+      "source_ids": [
+        "D24"
+      ],
+      "evidence_code": "OBS",
+      "reference_version": "0.2.0",
+      "reference_path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+      "reference_cells": [
+        "Trouble falling asleep, adults",
+        "15.4%; 14.9–15.9"
+      ],
+      "reference_checked": "2026-11-15",
+      "metrics": [
+        {
+          "name": "trouble_falling_asleep",
+          "value": 0.154,
+          "unit": "proportion",
+          "uncertainty": {
+            "type": "published_95_percent_confidence_interval",
+            "lower": 0.149,
+            "upper": 0.159
+          },
+          "uncertainty_status": "published_interval_extracted"
+        }
+      ],
+      "calculation_allowed": true,
+      "customer_transfer_validated": false,
+      "calculation_use": "requires_population_definition_and_method_match",
+      "limitations": [
+        "sleep report is not measured impairment during a journey"
+      ],
+      "required_context": {
+        "path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+        "section_anchor": "7-sleep-mental-health-illness-injury-and-transient-circumstances",
+        "instruction": "Read the section notes and source scope together with this row; do not retrieve numeric metrics without applicability and limitation fields."
+      },
+      "definition_context": "Short sleep is average sleep below seven hours per 24 hours. Trouble sleeping/waking well-rested concern most days/every day. Not measured customer impairment."
+    },
+    {
+      "id": "ST07",
+      "claim": "Trouble staying asleep, adults",
+      "geography": "US",
+      "population": "NHIS civilian non-institutionalised adults",
+      "age_range": "18+ unless specified",
+      "period": "2024",
+      "denominator": "all source-covered people in the specified age group",
+      "source_ids": [
+        "D24"
+      ],
+      "evidence_code": "OBS",
+      "reference_version": "0.2.0",
+      "reference_path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+      "reference_cells": [
+        "Trouble staying asleep, adults",
+        "18.1%; 17.6–18.6"
+      ],
+      "reference_checked": "2026-11-15",
+      "metrics": [
+        {
+          "name": "trouble_staying_asleep",
+          "value": 0.181,
+          "unit": "proportion",
+          "uncertainty": {
+            "type": "published_95_percent_confidence_interval",
+            "lower": 0.176,
+            "upper": 0.186
+          },
+          "uncertainty_status": "published_interval_extracted"
+        }
+      ],
+      "calculation_allowed": true,
+      "customer_transfer_validated": false,
+      "calculation_use": "requires_population_definition_and_method_match",
+      "limitations": [
+        "sleep report is not measured impairment during a journey"
+      ],
+      "required_context": {
+        "path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+        "section_anchor": "7-sleep-mental-health-illness-injury-and-transient-circumstances",
+        "instruction": "Read the section notes and source scope together with this row; do not retrieve numeric metrics without applicability and limitation fields."
+      },
+      "definition_context": "Short sleep is average sleep below seven hours per 24 hours. Trouble sleeping/waking well-rested concern most days/every day. Not measured customer impairment."
+    },
+    {
+      "id": "ST08",
+      "claim": "Waking well-rested, adults",
+      "geography": "US",
+      "population": "NHIS civilian non-institutionalised adults",
+      "age_range": "18+ unless specified",
+      "period": "2024",
+      "denominator": "all source-covered people in the specified age group",
+      "source_ids": [
+        "D24"
+      ],
+      "evidence_code": "OBS",
+      "reference_version": "0.2.0",
+      "reference_path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+      "reference_cells": [
+        "Waking well-rested, adults",
+        "54.8%; 54.1–55.6"
+      ],
+      "reference_checked": "2026-11-15",
+      "metrics": [
+        {
+          "name": "waking_well_rested",
+          "value": 0.548,
+          "unit": "proportion",
+          "uncertainty": {
+            "type": "published_95_percent_confidence_interval",
+            "lower": 0.541,
+            "upper": 0.556
+          },
+          "uncertainty_status": "published_interval_extracted"
+        }
+      ],
+      "calculation_allowed": true,
+      "customer_transfer_validated": false,
+      "calculation_use": "requires_population_definition_and_method_match",
+      "limitations": [
+        "sleep report is not measured impairment during a journey"
+      ],
+      "required_context": {
+        "path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+        "section_anchor": "7-sleep-mental-health-illness-injury-and-transient-circumstances",
+        "instruction": "Read the section notes and source scope together with this row; do not retrieve numeric metrics without applicability and limitation fields."
+      },
+      "definition_context": "Short sleep is average sleep below seven hours per 24 hours. Trouble sleeping/waking well-rested concern most days/every day. Not measured customer impairment."
+    },
+    {
+      "id": "MH01",
+      "claim": "All adults, any assessed common mental-health condition",
+      "geography": "England",
+      "population": "APMS private-household adults",
+      "age_range": "16+ unless specified",
+      "period": "March 2023–July 2024",
+      "denominator": "source-defined population for the stated estimate; metric-level subgroup overrides apply",
+      "source_ids": [
+        "D25"
+      ],
+      "evidence_code": "OBS",
+      "reference_version": "0.2.0",
+      "reference_path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+      "reference_cells": [
+        "All adults, any assessed common mental-health condition",
+        "20.2%"
+      ],
+      "reference_checked": "2026-11-15",
+      "metrics": [
+        {
+          "name": "common_mental_health_condition",
+          "value": 0.202,
+          "unit": "proportion",
+          "uncertainty": null,
+          "uncertainty_status": "not_extracted_or_not_supplied_in_reference"
+        }
+      ],
+      "calculation_allowed": true,
+      "customer_transfer_validated": false,
+      "calculation_use": "requires_population_definition_and_method_match",
+      "limitations": [
+        "assessed CMHC is not decision-making incapacity or grief prevalence"
+      ],
+      "required_context": {
+        "path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+        "section_anchor": "7-sleep-mental-health-illness-injury-and-transient-circumstances",
+        "instruction": "Read the section notes and source scope together with this row; do not retrieve numeric metrics without applicability and limitation fields."
+      },
+      "definition_context": "APMS assessed common mental-health conditions in past week; not all distress, grief or impaired decision-making.",
+      "reference_window": "past week"
+    },
+    {
+      "id": "MH02",
+      "claim": "Ages 16–64, same construct",
+      "geography": "England",
+      "population": "APMS private-household adults",
+      "age_range": "16–64",
+      "period": "March 2023–July 2024",
+      "denominator": "source-defined population for the stated estimate; metric-level subgroup overrides apply",
+      "source_ids": [
+        "D25"
+      ],
+      "evidence_code": "OBS",
+      "reference_version": "0.2.0",
+      "reference_path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+      "reference_cells": [
+        "Ages 16–64, same construct",
+        "22.6%; 95% CI 21.0–24.3%"
+      ],
+      "reference_checked": "2026-11-15",
+      "metrics": [
+        {
+          "name": "common_mental_health_condition",
+          "value": 0.226,
+          "unit": "proportion",
+          "uncertainty": {
+            "type": "published_95_percent_confidence_interval",
+            "lower": 0.21,
+            "upper": 0.243
+          },
+          "uncertainty_status": "published_interval_extracted"
+        }
+      ],
+      "calculation_allowed": true,
+      "customer_transfer_validated": false,
+      "calculation_use": "requires_population_definition_and_method_match",
+      "limitations": [
+        "assessed CMHC is not decision-making incapacity or grief prevalence"
+      ],
+      "required_context": {
+        "path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+        "section_anchor": "7-sleep-mental-health-illness-injury-and-transient-circumstances",
+        "instruction": "Read the section notes and source scope together with this row; do not retrieve numeric metrics without applicability and limitation fields."
+      },
+      "definition_context": "APMS assessed common mental-health conditions in past week; not all distress, grief or impaired decision-making.",
+      "reference_window": "past week"
+    },
+    {
+      "id": "MH03",
+      "claim": "Ages 16–24 / 75+",
+      "geography": "England",
+      "population": "APMS private-household adults",
+      "age_range": "16–24 and 75+; separate metrics",
+      "period": "March 2023–July 2024",
+      "denominator": "source-defined population for the stated estimate; metric-level subgroup overrides apply",
+      "source_ids": [
+        "D25"
+      ],
+      "evidence_code": "OBS",
+      "reference_version": "0.2.0",
+      "reference_path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+      "reference_cells": [
+        "Ages 16–24 / 75+",
+        "25.8% / 10.2%"
+      ],
+      "reference_checked": "2026-11-15",
+      "metrics": [
+        {
+          "name": "age_16_24",
+          "value": 0.258,
+          "unit": "proportion",
+          "uncertainty": null,
+          "uncertainty_status": "not_extracted_or_not_supplied_in_reference",
+          "age_override": "16–24"
+        },
+        {
+          "name": "age_75_plus",
+          "value": 0.102,
+          "unit": "proportion",
+          "uncertainty": null,
+          "uncertainty_status": "not_extracted_or_not_supplied_in_reference",
+          "age_override": "75+"
+        }
+      ],
+      "calculation_allowed": true,
+      "customer_transfer_validated": false,
+      "calculation_use": "requires_population_definition_and_method_match",
+      "limitations": [
+        "assessed CMHC is not decision-making incapacity or grief prevalence"
+      ],
+      "required_context": {
+        "path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+        "section_anchor": "7-sleep-mental-health-illness-injury-and-transient-circumstances",
+        "instruction": "Read the section notes and source scope together with this row; do not retrieve numeric metrics without applicability and limitation fields."
+      },
+      "definition_context": "APMS assessed common mental-health conditions in past week; not all distress, grief or impaired decision-making.",
+      "reference_window": "past week"
+    },
+    {
+      "id": "MH04",
+      "claim": "People with problem debt / without problem debt",
+      "geography": "England",
+      "population": "APMS private-household adults",
+      "age_range": "16+ unless specified",
+      "period": "March 2023–July 2024",
+      "denominator": "source-defined population for the stated estimate; metric-level subgroup overrides apply",
+      "source_ids": [
+        "D25"
+      ],
+      "evidence_code": "OBS",
+      "reference_version": "0.2.0",
+      "reference_path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+      "reference_cells": [
+        "People with problem debt / without problem debt",
+        "39.0% / 18.4%"
+      ],
+      "reference_checked": "2026-11-15",
+      "metrics": [
+        {
+          "name": "with_problem_debt",
+          "value": 0.39,
+          "unit": "proportion",
+          "uncertainty": null,
+          "uncertainty_status": "not_extracted_or_not_supplied_in_reference",
+          "denominator_override": "people with problem debt"
+        },
+        {
+          "name": "without_problem_debt",
+          "value": 0.184,
+          "unit": "proportion",
+          "uncertainty": null,
+          "uncertainty_status": "not_extracted_or_not_supplied_in_reference",
+          "denominator_override": "people without problem debt"
+        }
+      ],
+      "calculation_allowed": true,
+      "customer_transfer_validated": false,
+      "calculation_use": "requires_population_definition_and_method_match",
+      "limitations": [
+        "assessed CMHC is not decision-making incapacity or grief prevalence"
+      ],
+      "required_context": {
+        "path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+        "section_anchor": "7-sleep-mental-health-illness-injury-and-transient-circumstances",
+        "instruction": "Read the section notes and source scope together with this row; do not retrieve numeric metrics without applicability and limitation fields."
+      },
+      "definition_context": "APMS assessed common mental-health conditions in past week; not all distress, grief or impaired decision-making.",
+      "reference_window": "past week"
+    },
+    {
+      "id": "MH05",
+      "claim": "Limiting physical-health condition / no limiting physical-health condition",
+      "geography": "England",
+      "population": "APMS private-household adults",
+      "age_range": "16+ unless specified",
+      "period": "March 2023–July 2024",
+      "denominator": "source-defined population for the stated estimate; metric-level subgroup overrides apply",
+      "source_ids": [
+        "D25"
+      ],
+      "evidence_code": "OBS",
+      "reference_version": "0.2.0",
+      "reference_path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+      "reference_cells": [
+        "Limiting physical-health condition / no limiting physical-health condition",
+        "32.9% / 12.6%"
+      ],
+      "reference_checked": "2026-11-15",
+      "metrics": [
+        {
+          "name": "with_limiting_physical_condition",
+          "value": 0.329,
+          "unit": "proportion",
+          "uncertainty": null,
+          "uncertainty_status": "not_extracted_or_not_supplied_in_reference",
+          "denominator_override": "people with limiting physical-health condition"
+        },
+        {
+          "name": "without_limiting_physical_condition",
+          "value": 0.126,
+          "unit": "proportion",
+          "uncertainty": null,
+          "uncertainty_status": "not_extracted_or_not_supplied_in_reference",
+          "denominator_override": "people without limiting physical-health condition"
+        }
+      ],
+      "calculation_allowed": true,
+      "customer_transfer_validated": false,
+      "calculation_use": "requires_population_definition_and_method_match",
+      "limitations": [
+        "assessed CMHC is not decision-making incapacity or grief prevalence"
+      ],
+      "required_context": {
+        "path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+        "section_anchor": "7-sleep-mental-health-illness-injury-and-transient-circumstances",
+        "instruction": "Read the section notes and source scope together with this row; do not retrieve numeric metrics without applicability and limitation fields."
+      },
+      "definition_context": "APMS assessed common mental-health conditions in past week; not all distress, grief or impaired decision-making.",
+      "reference_window": "past week"
+    },
+    {
+      "id": "TR01",
+      "claim": "Great Britain workers, work-related ill health, 2024/25",
+      "geography": "Great Britain",
+      "population": "LFS workers who worked in last 12 months",
+      "age_range": "source-covered working population",
+      "period": "2024/25",
+      "denominator": "not applicable to counts/flows; any proportion uses the source-defined population and age group",
+      "source_ids": [
+        "D26"
+      ],
+      "evidence_code": "OBS",
+      "reference_version": "0.2.0",
+      "reference_path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+      "reference_cells": [
+        "Great Britain workers, work-related ill health, 2024/25",
+        "1.9 million",
+        "OBS, HSE self-report LFS [D26]; includes new and longstanding conditions; not all illness."
+      ],
+      "reference_checked": "2026-11-15",
+      "metrics": [
+        {
+          "name": "work_related_ill_health",
+          "value": 1900000,
+          "unit": "people",
+          "uncertainty": null,
+          "uncertainty_status": "not_extracted_or_not_supplied_in_reference",
+          "qualifier": "estimated"
+        }
+      ],
+      "calculation_allowed": true,
+      "customer_transfer_validated": false,
+      "calculation_use": "requires_population_definition_and_method_match",
+      "limitations": [
+        "not a point-prevalence measure of impaired customer interaction",
+        "OBS, HSE self-report LFS [D26]; includes new and longstanding conditions; not all illness."
+      ],
+      "required_context": {
+        "path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+        "section_anchor": "7-sleep-mental-health-illness-injury-and-transient-circumstances",
+        "instruction": "Read the section notes and source scope together with this row; do not retrieve numeric metrics without applicability and limitation fields."
+      }
+    },
+    {
+      "id": "TR02",
+      "claim": "Same scope, work-related stress/depression/anxiety",
+      "geography": "Great Britain",
+      "population": "LFS workers who worked in last 12 months",
+      "age_range": "source-covered working population",
+      "period": "2024/25",
+      "denominator": "not applicable to counts/flows; any proportion uses the source-defined population and age group",
+      "source_ids": [
+        "D26"
+      ],
+      "evidence_code": "OBS",
+      "reference_version": "0.2.0",
+      "reference_path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+      "reference_cells": [
+        "Same scope, work-related stress/depression/anxiety",
+        "964,000",
+        "OBS [D26]; subset, not extra to TR01."
+      ],
+      "reference_checked": "2026-11-15",
+      "metrics": [
+        {
+          "name": "work_related_stress_depression_anxiety",
+          "value": 964000,
+          "unit": "people",
+          "uncertainty": null,
+          "uncertainty_status": "not_extracted_or_not_supplied_in_reference",
+          "qualifier": "estimated"
+        }
+      ],
+      "calculation_allowed": true,
+      "customer_transfer_validated": false,
+      "calculation_use": "requires_population_definition_and_method_match",
+      "limitations": [
+        "not a point-prevalence measure of impaired customer interaction",
+        "OBS [D26]; subset, not extra to TR01."
+      ],
+      "required_context": {
+        "path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+        "section_anchor": "7-sleep-mental-health-illness-injury-and-transient-circumstances",
+        "instruction": "Read the section notes and source scope together with this row; do not retrieve numeric metrics without applicability and limitation fields."
+      }
+    },
+    {
+      "id": "TR03",
+      "claim": "Same scope, musculoskeletal disorders",
+      "geography": "Great Britain",
+      "population": "LFS workers who worked in last 12 months",
+      "age_range": "source-covered working population",
+      "period": "2024/25",
+      "denominator": "not applicable to counts/flows; any proportion uses the source-defined population and age group",
+      "source_ids": [
+        "D26"
+      ],
+      "evidence_code": "OBS",
+      "reference_version": "0.2.0",
+      "reference_path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+      "reference_cells": [
+        "Same scope, musculoskeletal disorders",
+        "511,000",
+        "OBS [D26]; not all motor difficulty."
+      ],
+      "reference_checked": "2026-11-15",
+      "metrics": [
+        {
+          "name": "work_related_musculoskeletal",
+          "value": 511000,
+          "unit": "people",
+          "uncertainty": null,
+          "uncertainty_status": "not_extracted_or_not_supplied_in_reference",
+          "qualifier": "estimated"
+        }
+      ],
+      "calculation_allowed": true,
+      "customer_transfer_validated": false,
+      "calculation_use": "requires_population_definition_and_method_match",
+      "limitations": [
+        "not a point-prevalence measure of impaired customer interaction",
+        "OBS [D26]; not all motor difficulty."
+      ],
+      "required_context": {
+        "path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+        "section_anchor": "7-sleep-mental-health-illness-injury-and-transient-circumstances",
+        "instruction": "Read the section notes and source scope together with this row; do not retrieve numeric metrics without applicability and limitation fields."
+      }
+    },
+    {
+      "id": "TR04",
+      "claim": "Great Britain workers, non-fatal workplace injury, 2024/25",
+      "geography": "Great Britain",
+      "population": "LFS workers who worked in last 12 months",
+      "age_range": "source-covered working population",
+      "period": "2024/25",
+      "denominator": "not applicable to counts/flows; any proportion uses the source-defined population and age group",
+      "source_ids": [
+        "D26"
+      ],
+      "evidence_code": "OBS",
+      "reference_version": "0.2.0",
+      "reference_path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+      "reference_cells": [
+        "Great Britain workers, non-fatal workplace injury, 2024/25",
+        "680,000",
+        "OBS, LFS [D26]; workers, not a complete injury-episode incidence count."
+      ],
+      "reference_checked": "2026-11-15",
+      "metrics": [
+        {
+          "name": "nonfatal_workplace_injury",
+          "value": 680000,
+          "unit": "people",
+          "uncertainty": null,
+          "uncertainty_status": "not_extracted_or_not_supplied_in_reference",
+          "qualifier": "estimated"
+        }
+      ],
+      "calculation_allowed": true,
+      "customer_transfer_validated": false,
+      "calculation_use": "requires_population_definition_and_method_match",
+      "limitations": [
+        "not a point-prevalence measure of impaired customer interaction",
+        "OBS, LFS [D26]; workers, not a complete injury-episode incidence count."
+      ],
+      "required_context": {
+        "path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+        "section_anchor": "7-sleep-mental-health-illness-injury-and-transient-circumstances",
+        "instruction": "Read the section notes and source scope together with this row; do not retrieve numeric metrics without applicability and limitation fields."
+      }
+    },
+    {
+      "id": "TR05",
+      "claim": "Work-related ill health/injury, working days lost, 2024/25",
+      "geography": "Great Britain",
+      "population": "LFS workers who worked in last 12 months",
+      "age_range": "source-covered working population",
+      "period": "2024/25",
+      "denominator": "not applicable to counts/flows; any proportion uses the source-defined population and age group",
+      "source_ids": [
+        "D26"
+      ],
+      "evidence_code": "OBS",
+      "reference_version": "0.2.0",
+      "reference_path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+      "reference_cells": [
+        "Work-related ill health/injury, working days lost, 2024/25",
+        "40.1 million",
+        "OBS [D26]; work absence days, not all days of functional difficulty."
+      ],
+      "reference_checked": "2026-11-15",
+      "metrics": [
+        {
+          "name": "ill_health_injury_days_lost",
+          "value": 40100000,
+          "unit": "working_days",
+          "uncertainty": null,
+          "uncertainty_status": "not_extracted_or_not_supplied_in_reference",
+          "qualifier": "estimated"
+        }
+      ],
+      "calculation_allowed": true,
+      "customer_transfer_validated": false,
+      "calculation_use": "requires_population_definition_and_method_match",
+      "limitations": [
+        "not a point-prevalence measure of impaired customer interaction",
+        "OBS [D26]; work absence days, not all days of functional difficulty."
+      ],
+      "required_context": {
+        "path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+        "section_anchor": "7-sleep-mental-health-illness-injury-and-transient-circumstances",
+        "instruction": "Read the section notes and source scope together with this row; do not retrieve numeric metrics without applicability and limitation fields."
+      }
+    },
+    {
+      "id": "TR06",
+      "claim": "Work-related stress/depression/anxiety, working days lost, 2024/25",
+      "geography": "Great Britain",
+      "population": "LFS workers who worked in last 12 months",
+      "age_range": "source-covered working population",
+      "period": "2024/25",
+      "denominator": "not applicable to counts/flows; any proportion uses the source-defined population and age group",
+      "source_ids": [
+        "D26"
+      ],
+      "evidence_code": "OBS",
+      "reference_version": "0.2.0",
+      "reference_path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+      "reference_cells": [
+        "Work-related stress/depression/anxiety, working days lost, 2024/25",
+        "22.1 million",
+        "OBS [D26]; subset of absence burden."
+      ],
+      "reference_checked": "2026-11-15",
+      "metrics": [
+        {
+          "name": "stress_depression_anxiety_days_lost",
+          "value": 22100000,
+          "unit": "working_days",
+          "uncertainty": null,
+          "uncertainty_status": "not_extracted_or_not_supplied_in_reference",
+          "qualifier": "estimated"
+        }
+      ],
+      "calculation_allowed": true,
+      "customer_transfer_validated": false,
+      "calculation_use": "requires_population_definition_and_method_match",
+      "limitations": [
+        "not a point-prevalence measure of impaired customer interaction",
+        "OBS [D26]; subset of absence burden."
+      ],
+      "required_context": {
+        "path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+        "section_anchor": "7-sleep-mental-health-illness-injury-and-transient-circumstances",
+        "instruction": "Read the section notes and source scope together with this row; do not retrieve numeric metrics without applicability and limitation fields."
+      }
+    },
+    {
+      "id": "TR07",
+      "claim": "US adults, typical annual common-cold frequency",
+      "geography": "US",
+      "population": "adults in CDC public-health synthesis",
+      "age_range": "adult",
+      "period": null,
+      "denominator": "not applicable to counts/flows; any proportion uses the source-defined population and age group",
+      "source_ids": [
+        "D27"
+      ],
+      "evidence_code": "EST",
+      "reference_version": "0.2.0",
+      "reference_path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+      "reference_cells": [
+        "US adults, typical annual common-cold frequency",
+        "Average 2–3 episodes per year",
+        "EST, CDC public-health summary [D27]; not 2–3 unique people or a population point-prevalence percentage."
+      ],
+      "reference_checked": "2026-11-15",
+      "metrics": [
+        {
+          "name": "annual_cold_episode_frequency",
+          "value": null,
+          "unit": "episodes_per_person_year",
+          "uncertainty": null,
+          "uncertainty_status": "not_extracted_or_not_supplied_in_reference",
+          "planning_range": {
+            "lower": 2,
+            "upper": 3,
+            "unit": "episodes_per_person_year",
+            "type": "published_average_frequency_range_not_confidence_interval"
+          },
+          "missing_point_estimate": "Do not invent a sourced midpoint"
+        }
+      ],
+      "calculation_allowed": true,
+      "customer_transfer_validated": false,
+      "calculation_use": "requires_population_definition_and_method_match",
+      "limitations": [
+        "not a point-prevalence measure of impaired customer interaction",
+        "EST, CDC public-health summary [D27]; not 2–3 unique people or a population point-prevalence percentage."
+      ],
+      "reference_window": "per typical year",
+      "required_context": {
+        "path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+        "section_anchor": "7-sleep-mental-health-illness-injury-and-transient-circumstances",
+        "instruction": "Read the section notes and source scope together with this row; do not retrieve numeric metrics without applicability and limitation fields."
+      }
+    },
+    {
+      "id": "TR08",
+      "claim": "England/Wales, ages 16–59, any illicit drug use in past year, YE March 2025",
+      "geography": "England and Wales",
+      "population": "CSEW household population",
+      "age_range": "16–59",
+      "period": "year ending March 2025",
+      "denominator": "not applicable to counts/flows; any proportion uses the source-defined population and age group",
+      "source_ids": [
+        "D28"
+      ],
+      "evidence_code": "OBS",
+      "reference_version": "0.2.0",
+      "reference_path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+      "reference_cells": [
+        "England/Wales, ages 16–59, any illicit drug use in past year, YE March 2025",
+        "8.7%",
+        "OBS, CSEW [D28]; any use, not intoxication during service use."
+      ],
+      "reference_checked": "2026-11-15",
+      "metrics": [
+        {
+          "name": "past_year_any_illicit_drug_use",
+          "value": 0.087,
+          "unit": "proportion",
+          "uncertainty": null,
+          "uncertainty_status": "not_extracted_or_not_supplied_in_reference"
+        }
+      ],
+      "calculation_allowed": true,
+      "customer_transfer_validated": false,
+      "calculation_use": "requires_population_definition_and_method_match",
+      "limitations": [
+        "not a point-prevalence measure of impaired customer interaction",
+        "OBS, CSEW [D28]; any use, not intoxication during service use."
+      ],
+      "reference_window": "past 12 months",
+      "published": "2025-12-11",
+      "required_context": {
+        "path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+        "section_anchor": "7-sleep-mental-health-illness-injury-and-transient-circumstances",
+        "instruction": "Read the section notes and source scope together with this row; do not retrieve numeric metrics without applicability and limitation fields."
+      }
+    },
+    {
+      "id": "TR09",
+      "claim": "Same source, ages 16–24 / 25–59",
+      "geography": "England and Wales",
+      "population": "CSEW household population",
+      "age_range": "16–24 and 25–59; separate metrics",
+      "period": "year ending March 2025",
+      "denominator": "not applicable to counts/flows; any proportion uses the source-defined population and age group",
+      "source_ids": [
+        "D28"
+      ],
+      "evidence_code": "OBS",
+      "reference_version": "0.2.0",
+      "reference_path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+      "reference_cells": [
+        "Same source, ages 16–24 / 25–59",
+        "15.1% / 7.3%",
+        "OBS [D28]; no duration or functional-effect estimate follows."
+      ],
+      "reference_checked": "2026-11-15",
+      "metrics": [
+        {
+          "name": "age_16_24",
+          "value": 0.151,
+          "unit": "proportion",
+          "uncertainty": null,
+          "uncertainty_status": "not_extracted_or_not_supplied_in_reference",
+          "age_override": "16–24"
+        },
+        {
+          "name": "age_25_59",
+          "value": 0.073,
+          "unit": "proportion",
+          "uncertainty": null,
+          "uncertainty_status": "not_extracted_or_not_supplied_in_reference",
+          "age_override": "25–59"
+        }
+      ],
+      "calculation_allowed": true,
+      "customer_transfer_validated": false,
+      "calculation_use": "requires_population_definition_and_method_match",
+      "limitations": [
+        "not a point-prevalence measure of impaired customer interaction",
+        "OBS [D28]; no duration or functional-effect estimate follows."
+      ],
+      "reference_window": "past 12 months",
+      "published": "2025-12-11",
+      "required_context": {
+        "path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+        "section_anchor": "7-sleep-mental-health-illness-injury-and-transient-circumstances",
+        "instruction": "Read the section notes and source scope together with this row; do not retrieve numeric metrics without applicability and limitation fields."
+      }
     }
   ]
 }

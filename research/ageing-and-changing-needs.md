@@ -1,7 +1,7 @@
 ---
 title: "Ageing and changing customer needs"
-version: "0.1.0"
-date: "2026-11-14"
+version: "0.2.0"
+date: "2026-11-15"
 status: "exploratory guidance; independent review pending"
 language: "en-GB"
 document_type: "guide"
@@ -37,3 +37,9 @@ Recruit by functional need, experience and context as well as age. Include older
 Measure independent and chosen-assisted completion separately, comprehension, effort, confidence, continued use and retention. Avoid treating compulsory help as success equivalent to independent access.
 
 Sources: [S08](../evidence/source-register.md). Methods: [estimation](../methods/estimating-demographics.md) and [lifetime value](../methods/customer-and-lifetime-value.md).
+
+## Available age-related evidence
+
+The [hearing, sight and ageing section](../Accessibility_Demographic_Statistics_and_Estimation_Methods.md#6-hearing-sight-and-ageing) supplies HE01–HE05, VI01–VI07, AG01–AG02 and GH01–GH03. UK04/UK07 and US03 provide additional age-related functional context. International hearing estimates remain context rather than automatic UK/EU/US customer multipliers.
+
+HE03 age thresholds are cumulative and overlap: use original disjoint bands where possible, or the count-based approach in [F05](../Accessibility_Demographic_Statistics_and_Estimation_Methods.md#f05--recover-disjoint-age-bands-from-cumulative-thresholds) with compatible source-population counts. VI05 describes the age composition of the sight-loss population, not sight-loss prevalence among older people. Apply [F02](../Accessibility_Demographic_Statistics_and_Estimation_Methods.md#f02--demographic-weighting) for customer weighting, [F12](../Accessibility_Demographic_Statistics_and_Estimation_Methods.md#f12--future-audience-composition) for future composition and [F16](../Accessibility_Demographic_Statistics_and_Estimation_Methods.md#f16--retained-relationship-value) for relationship value. Detailed motor/cognitive age profiles and customer transitions remain open work.

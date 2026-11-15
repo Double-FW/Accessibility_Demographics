@@ -1,7 +1,7 @@
 ---
 title: "Human and agentic workflows"
-version: "0.1.0"
-date: "2026-11-14"
+version: "0.2.0"
+date: "2026-11-15"
 status: "exploratory guidance; independent review pending"
 language: "en-GB"
 document_type: "guide"
@@ -40,3 +40,13 @@ This repository grants no operational permission and implements no API, preferen
 ## Response format
 
 Return scope; evidence; calculation and assumptions; opportunity; customer benefit; financial/brand implications; limitations; next validation. Follow [AGENTS.md](../AGENTS.md) and use [the research prompts](../prompts/opportunity-research.md).
+
+## Statistical retrieval and calculation handoff
+
+1. Retrieve [the reference](../Accessibility_Demographic_Statistics_and_Estimation_Methods.md), [the source register](../evidence/source-register.md) and [typed observations](../evidence/population-observations.json).
+2. Select statistic ID and metric; check source/date, denominator, age, geography, standardisation, evidence status and calculation restrictions.
+3. Select an identified formula. Keep formula version, inputs, units, derivation and rounding with the result.
+4. Separate source uncertainty, audience-transfer assumptions, overlap assumptions and model assumptions. Return unknown where a required input is missing.
+5. Ask the accountable team to assess relevance and validate service outcomes. Keep a correction trail if sources or representations disagree.
+
+OBS, EST, PROJ and DER do not imply automatic customer applicability; EXCLUDE prohibits use. ND11 must remain blocked. The input/output contract in section 10 of the reference is the calculation handoff. S-series source aliases do not create independent corroboration, and formula identifiers are not executable tools.

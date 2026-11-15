@@ -1,7 +1,7 @@
 ---
 title: "Combined needs and proportional reach"
-version: "0.1.0"
-date: "2026-11-14"
+version: "0.2.0"
+date: "2026-11-15"
 status: "exploratory guidance; independent review pending"
 language: "en-GB"
 document_type: "guide"
@@ -38,3 +38,11 @@ Two manageable demands may combine into a difficult journey, but do not assign a
 Prioritise scenarios by service relevance, frequency evidence, customer consequence and improvement feasibility. A rare high-consequence failure can justify action without a large market-size estimate.
 
 Use [the scenario catalogue](../research/everyday-contexts.md), [customer research](../guides/research-and-measurement.md) and [value modelling](customer-and-lifetime-value.md).
+
+## Link combined reach to the statistical reference
+
+Use [F04](../Accessibility_Demographic_Statistics_and_Estimation_Methods.md#f04--combined-reach-and-co-occurrence) for unions, joint probabilities and bounds. A statistic such as ND10 is conditional prevalence within a defined research population; do not apply it to incompatible autism or ADHD marginals. Cite the metric as well as its row ID.
+
+Use [F06](../Accessibility_Demographic_Statistics_and_Estimation_Methods.md#f06--episode-burden-and-average-time-affected)–[F09](../Accessibility_Demographic_Statistics_and_Estimation_Methods.md#f09--observed-person-time-and-interaction-exposure) for time and repeated-episode combinations. A person can have several overlapping episodes, and several contexts can affect one journey: merge relevant intervals or deduplicate journey records before counting. Use [F10](../Accessibility_Demographic_Statistics_and_Estimation_Methods.md#f10--time-of-day-and-environment-weighting) where interaction timing is relevant. Modelled time prevalence is not necessarily exposure during service use.
+
+For uncertainty, follow [F17](../Accessibility_Demographic_Statistics_and_Estimation_Methods.md#f17--uncertainty-and-scenario-propagation); broad overlap bounds are not a 95% interval. The [reference examples](../Accessibility_Demographic_Statistics_and_Estimation_Methods.md#9-worked-customer-examples) remain assumption-based illustrations, not joint population evidence.

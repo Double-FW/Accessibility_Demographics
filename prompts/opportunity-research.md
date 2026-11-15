@@ -1,7 +1,7 @@
 ---
 title: "Prompts for accessibility opportunity research"
-version: "0.1.0"
-date: "2026-11-14"
+version: "0.2.0"
+date: "2026-11-15"
 status: "exploratory guidance; independent review pending"
 language: "en-GB"
 document_type: "research prompts"
@@ -38,3 +38,11 @@ Use the following prompt with this repository available for retrieval.
 ## Evidence challenge prompt
 
 > Review this opportunity assessment critically. Check denominators, age bands, geography, periods, source definitions, overlap, selection effects, projection assumptions, customer/account distinctions, revenue versus contribution, and double-counted benefits. Identify unsupported causal claims and universal design claims. Recalculate supplied examples. Separate correctable errors from research gaps; preserve uncertainty and provide concrete next actions.
+
+## Statistics integration instruction
+
+Add this instruction to the assessment, demographic and evidence-review prompts above:
+
+> Retrieve Accessibility_Demographic_Statistics_and_Estimation_Methods.md, evidence/source-register.md and evidence/population-observations.json. Cite statistic IDs, named metrics, canonical source IDs and formula IDs in calculations. Use the source crosswalk for S-series aliases; do not count aliases as independent evidence. Keep OBS/EST/PROJ/DER/ASSUMP/EXCLUDE distinct and never calculate from EXCLUDE records, including ND11. Check population, geography, age, recall period, units, standardisation and customer transfer before using a value. A planning range is not a confidence interval. Use F04 for overlap, F06–F10 for transient exposure, F12 for conditional composition and F14–F17 for value and uncertainty where applicable. Return the formula/version, inputs, derivation, rounding, assumptions, result meaning and next validation. Do not infer missing effect sizes, durations or customer behaviour from prevalence. If required data are absent or representations conflict, state the gap and continue with the supported analysis.
+
+This instruction supplements the task-specific questions; it does not convert national estimates into approved organisational inputs.

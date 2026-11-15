@@ -1,7 +1,7 @@
 ---
 title: "Illness, injury, distress and demanding services"
-version: "0.1.0"
-date: "2026-11-14"
+version: "0.2.0"
+date: "2026-11-15"
 status: "exploratory guidance; independent review pending"
 language: "en-GB"
 document_type: "guide"
@@ -42,3 +42,9 @@ Explore time flexibility, plain explanations, save-and-return, trusted or author
 Record successful access to the intended service, comprehension, time and effort, avoidable repetition, unwanted assistance, confidence, escalation quality and resolution. Evaluate service benefit alongside cost; fewer support contacts can mean a better journey or blocked support, so interpretation needs evidence.
 
 Use the [service optimisation guide](../guides/service-optimisation.md) and [research plan](../guides/research-and-measurement.md).
+
+## Evidence and service-specific estimates
+
+Use MH01–MH05 and TR01–TR09 in [section 7 of the statistical reference](../Accessibility_Demographic_Statistics_and_Estimation_Methods.md#7-sleep-mental-health-illness-injury-and-transient-circumstances) as bounded context. HSE records concern work-related conditions and absence; they do not measure all illness, all injury episodes or every day of functional difficulty. Mental-health prevalence does not establish decision-making incapacity, grief duration or an impairment rate for every support service.
+
+Apply [F11](../Accessibility_Demographic_Statistics_and_Estimation_Methods.md#f11--service-specific-selection) to the actual service audience, supported by local research. Use [F06](../Accessibility_Demographic_Statistics_and_Estimation_Methods.md#f06--episode-burden-and-average-time-affected)–[F09](../Accessibility_Demographic_Statistics_and_Estimation_Methods.md#f09--observed-person-time-and-interaction-exposure) to distinguish episode flows, average occupied time, unique people and affected journeys. Bereavement, justice, healthcare and support tasks still need service-selected evidence. No universal multiplier from deaths to grieving customers is adopted.

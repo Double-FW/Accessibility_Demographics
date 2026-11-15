@@ -1,7 +1,7 @@
 ---
 title: "UK, EU and US evidence: how to compare"
-version: "0.1.0"
-date: "2026-11-14"
+version: "0.2.0"
+date: "2026-11-15"
 status: "exploratory guidance; independent review pending"
 language: "en-GB"
 document_type: "guide"
@@ -38,3 +38,9 @@ Keep functional domains, diagnosed conditions, equipment use, support use and la
 ## Next evidence releases
 
 Prioritise compatible age-specific functional tables, neurodevelopmental prevalence studies and longitudinal evidence. Check source revisions before every publication. Record gaps explicitly rather than filling EU or US cells with UK ratios. The [research backlog](../RESEARCH_BACKLOG.md) owns the remaining work.
+
+## Expanded statistics and derivations
+
+Use [sections 2–4 of the statistical reference](../Accessibility_Demographic_Statistics_and_Estimation_Methods.md#2-uk-disability-and-functional-needs) for UK01–UK07, DR01–DR06, EU01–EU05 and US01–US09. The derived DR records are disability-and-impairment intersections, not all people with a functional difficulty. EU digital-participation measures concern ages 16–74 and their stated recall periods; they do not share the age base of EU01.
+
+Use [F03](../Accessibility_Demographic_Statistics_and_Estimation_Methods.md#f03--conditional-proportions-and-denominator-correction) to convert a proportion among disabled respondents into a compatible whole-group joint estimate. Keep thresholds and crude/standardised status visible. Source IDs S04–S07 remain valid aliases through [the source register](../evidence/source-register.md), rather than separate supporting studies.

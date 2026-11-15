@@ -1,7 +1,7 @@
 ---
 title: "Estimating individual demographics"
-version: "0.1.0"
-date: "2026-11-14"
+version: "0.2.0"
+date: "2026-11-15"
 status: "exploratory guidance; independent review pending"
 language: "en-GB"
 document_type: "guide"
@@ -43,3 +43,20 @@ For an apparently precise number, ask: what exactly was counted, who was exclude
 Use aggregate, minimum-necessary information. Offer voluntary, accessible ways to describe access needs without requiring diagnosis. Keep participant-level information in approved organisational systems. Do not turn population probabilities into individual labels or advertising audiences based on inferred health.
 
 Output: audience definition, source records, calculation, assumptions, uncertainty, overlap treatment, decision relevance and next validation. Continue with [combined reach](combined-needs-and-reach.md).
+
+## Formula catalogue and traceable inputs
+
+Use [the statistical reference](../Accessibility_Demographic_Statistics_and_Estimation_Methods.md) as the owning statistical and formula catalogue. This guide explains selection and application; abbreviated formulae here must remain consistent with that reference.
+
+| Decision | Formula route |
+| --- | --- |
+| Count a relevant audience | [F01](../Accessibility_Demographic_Statistics_and_Estimation_Methods.md#f01--basic-audience-estimate), [F02](../Accessibility_Demographic_Statistics_and_Estimation_Methods.md#f02--demographic-weighting) |
+| Correct a conditional denominator | [F03](../Accessibility_Demographic_Statistics_and_Estimation_Methods.md#f03--conditional-proportions-and-denominator-correction) |
+| Recover disjoint bands from cumulative ages | [F05](../Accessibility_Demographic_Statistics_and_Estimation_Methods.md#f05--recover-disjoint-age-bands-from-cumulative-thresholds) |
+| Estimate episode burden or active states | [F06](../Accessibility_Demographic_Statistics_and_Estimation_Methods.md#f06--episode-burden-and-average-time-affected), [F07](../Accessibility_Demographic_Statistics_and_Estimation_Methods.md#f07--probability-of-an-active-episode-under-a-stated-model), [F08](../Accessibility_Demographic_Statistics_and_Estimation_Methods.md#f08--people-with-an-episode-during-a-window) |
+| Measure person-time and journey exposure | [F09](../Accessibility_Demographic_Statistics_and_Estimation_Methods.md#f09--observed-person-time-and-interaction-exposure), [F10](../Accessibility_Demographic_Statistics_and_Estimation_Methods.md#f10--time-of-day-and-environment-weighting) |
+| Account for service-selected audiences | [F11](../Accessibility_Demographic_Statistics_and_Estimation_Methods.md#f11--service-specific-selection) |
+| Explore composition and descriptive change | [F12](../Accessibility_Demographic_Statistics_and_Estimation_Methods.md#f12--future-audience-composition), [F13](../Accessibility_Demographic_Statistics_and_Estimation_Methods.md#f13--changes-over-time) |
+| Preserve uncertainty | [F17](../Accessibility_Demographic_Statistics_and_Estimation_Methods.md#f17--uncertainty-and-scenario-propagation) |
+
+Reference a statistic ID and named metric, not just a source URL. Record missing values, published ranges, lower bounds and approximations explicitly. Use [structured observations](../evidence/population-observations.json) alongside the reference; do not turn contextual evidence into a default customer multiplier.

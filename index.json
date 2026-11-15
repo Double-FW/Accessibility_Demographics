@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "repository": "https://github.com/Double-FW/Accessibility_Demographics",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "language": "en-GB",
   "purpose": "Customer reach, engagement and relationship opportunity through accessibility",
   "agent_instructions": "AGENTS.md",
@@ -18,13 +18,22 @@
       "path": "AGENTS.md",
       "title": "Instructions for agents working with this repository",
       "kind": "root",
-      "status": "exploratory guidance; independent review pending"
+      "status": "exploratory guidance; independent review pending",
+      "version": "0.2.0"
+    },
+    {
+      "path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+      "title": "Accessibility demographics: statistics and estimation methods",
+      "kind": "statistical_reference",
+      "status": "source-checked reference; customer transfer and independent review pending",
+      "version": "0.2.0"
     },
     {
       "path": "CHANGELOG.md",
       "title": "Changelog",
       "kind": "root",
-      "status": "exploratory guidance; independent review pending"
+      "status": "exploratory guidance; independent review pending",
+      "version": "0.2.0"
     },
     {
       "path": "CONTRIBUTING.md",
@@ -33,28 +42,25 @@
       "status": "exploratory guidance; independent review pending"
     },
     {
-      "path": "INSTALL.md",
-      "title": "Applying this repository update",
-      "kind": "root",
-      "status": "exploratory guidance; independent review pending"
-    },
-    {
       "path": "README.md",
       "title": "Accessibility Demographics",
       "kind": "root",
-      "status": "exploratory guidance; independent review pending"
+      "status": "exploratory guidance; independent review pending",
+      "version": "0.2.0"
     },
     {
       "path": "RESEARCH_BACKLOG.md",
       "title": "Research backlog and development priorities",
       "kind": "root",
-      "status": "exploratory guidance; independent review pending"
+      "status": "exploratory guidance; independent review pending",
+      "version": "0.2.0"
     },
     {
       "path": "VALIDATION.md",
       "title": "Validation record",
       "kind": "root",
-      "status": "exploratory guidance; independent review pending"
+      "status": "exploratory guidance; independent review pending",
+      "version": "0.2.0"
     },
     {
       "path": "evidence/apparent-disability-review.md",
@@ -72,13 +78,15 @@
       "path": "evidence/population-observations.json",
       "title": "population-observations",
       "kind": "evidence",
-      "status": "exploratory guidance; independent review pending"
+      "status": "exploratory guidance; independent review pending",
+      "version": "0.2.0"
     },
     {
       "path": "evidence/source-register.md",
       "title": "Evidence and source register",
       "kind": "evidence",
-      "status": "exploratory guidance; independent review pending"
+      "status": "exploratory guidance; independent review pending",
+      "version": "0.2.0"
     },
     {
       "path": "evidence/supplied/Apparent_Disability_Proportions_UK_Report.md",
@@ -108,7 +116,8 @@
       "path": "guides/agentic-workflow.md",
       "title": "Human and agentic workflows",
       "kind": "guides",
-      "status": "exploratory guidance; independent review pending"
+      "status": "exploratory guidance; independent review pending",
+      "version": "0.2.0"
     },
     {
       "path": "guides/brand-and-engagement.md",
@@ -132,37 +141,43 @@
       "path": "index.json",
       "title": "index",
       "kind": "root",
-      "status": "exploratory guidance; independent review pending"
+      "status": "exploratory guidance; independent review pending",
+      "version": "0.2.0"
     },
     {
       "path": "methods/combined-needs-and-reach.md",
       "title": "Combined needs and proportional reach",
       "kind": "methods",
-      "status": "exploratory guidance; independent review pending"
+      "status": "exploratory guidance; independent review pending",
+      "version": "0.2.0"
     },
     {
       "path": "methods/customer-and-lifetime-value.md",
       "title": "Customer value and long-term relationships",
       "kind": "methods",
-      "status": "exploratory guidance; independent review pending"
+      "status": "exploratory guidance; independent review pending",
+      "version": "0.2.0"
     },
     {
       "path": "methods/estimating-demographics.md",
       "title": "Estimating individual demographics",
       "kind": "methods",
-      "status": "exploratory guidance; independent review pending"
+      "status": "exploratory guidance; independent review pending",
+      "version": "0.2.0"
     },
     {
       "path": "prompts/opportunity-research.md",
       "title": "Prompts for accessibility opportunity research",
       "kind": "prompts",
-      "status": "exploratory guidance; independent review pending"
+      "status": "exploratory guidance; independent review pending",
+      "version": "0.2.0"
     },
     {
       "path": "research/ageing-and-changing-needs.md",
       "title": "Ageing and changing customer needs",
       "kind": "research",
-      "status": "exploratory guidance; independent review pending"
+      "status": "exploratory guidance; independent review pending",
+      "version": "0.2.0"
     },
     {
       "path": "research/apparent-disability.md",
@@ -174,25 +189,29 @@
       "path": "research/everyday-contexts.md",
       "title": "Everyday contexts and changing interaction",
       "kind": "research",
-      "status": "exploratory guidance; independent review pending"
+      "status": "exploratory guidance; independent review pending",
+      "version": "0.2.0"
     },
     {
       "path": "research/illness-injury-and-distress.md",
       "title": "Illness, injury, distress and demanding services",
       "kind": "research",
-      "status": "exploratory guidance; independent review pending"
+      "status": "exploratory guidance; independent review pending",
+      "version": "0.2.0"
     },
     {
       "path": "research/neurodivergence-and-perception.md",
       "title": "Neurodivergence and perceptual differences",
       "kind": "research",
-      "status": "exploratory guidance; independent review pending"
+      "status": "exploratory guidance; independent review pending",
+      "version": "0.2.0"
     },
     {
       "path": "research/uk-eu-us-evidence.md",
       "title": "UK, EU and US evidence: how to compare",
       "kind": "research",
-      "status": "exploratory guidance; independent review pending"
+      "status": "exploratory guidance; independent review pending",
+      "version": "0.2.0"
     },
     {
       "path": "resources/double-fw-resource-map.md",
@@ -204,7 +223,8 @@
       "path": "templates/evidence-record.md",
       "title": "Evidence record template",
       "kind": "templates",
-      "status": "exploratory guidance; independent review pending"
+      "status": "exploratory guidance; independent review pending",
+      "version": "0.2.0"
     },
     {
       "path": "templates/opportunity-assessment.md",
@@ -218,5 +238,139 @@
       "kind": "templates",
       "status": "exploratory guidance; independent review pending"
     }
-  ]
+  ],
+  "statistics_reference": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+  "statistics_records": "evidence/population-observations.json",
+  "formula_catalogue": [
+    {
+      "id": "F01",
+      "title": "Basic audience estimate",
+      "path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+      "anchor": "f01--basic-audience-estimate",
+      "version": "0.2.0"
+    },
+    {
+      "id": "F02",
+      "title": "Demographic weighting",
+      "path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+      "anchor": "f02--demographic-weighting",
+      "version": "0.2.0"
+    },
+    {
+      "id": "F03",
+      "title": "Conditional proportions and denominator correction",
+      "path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+      "anchor": "f03--conditional-proportions-and-denominator-correction",
+      "version": "0.2.0"
+    },
+    {
+      "id": "F04",
+      "title": "Combined reach and co-occurrence",
+      "path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+      "anchor": "f04--combined-reach-and-co-occurrence",
+      "version": "0.2.0"
+    },
+    {
+      "id": "F05",
+      "title": "Recover disjoint age bands from cumulative thresholds",
+      "path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+      "anchor": "f05--recover-disjoint-age-bands-from-cumulative-thresholds",
+      "version": "0.2.0"
+    },
+    {
+      "id": "F06",
+      "title": "Episode burden and average time affected",
+      "path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+      "anchor": "f06--episode-burden-and-average-time-affected",
+      "version": "0.2.0"
+    },
+    {
+      "id": "F07",
+      "title": "Probability of an active episode under a stated model",
+      "path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+      "anchor": "f07--probability-of-an-active-episode-under-a-stated-model",
+      "version": "0.2.0"
+    },
+    {
+      "id": "F08",
+      "title": "People with an episode during a window",
+      "path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+      "anchor": "f08--people-with-an-episode-during-a-window",
+      "version": "0.2.0"
+    },
+    {
+      "id": "F09",
+      "title": "Observed person-time and interaction exposure",
+      "path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+      "anchor": "f09--observed-person-time-and-interaction-exposure",
+      "version": "0.2.0"
+    },
+    {
+      "id": "F10",
+      "title": "Time-of-day and environment weighting",
+      "path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+      "anchor": "f10--time-of-day-and-environment-weighting",
+      "version": "0.2.0"
+    },
+    {
+      "id": "F11",
+      "title": "Service-specific selection",
+      "path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+      "anchor": "f11--service-specific-selection",
+      "version": "0.2.0"
+    },
+    {
+      "id": "F12",
+      "title": "Future audience composition",
+      "path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+      "anchor": "f12--future-audience-composition",
+      "version": "0.2.0"
+    },
+    {
+      "id": "F13",
+      "title": "Changes over time",
+      "path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+      "anchor": "f13--changes-over-time",
+      "version": "0.2.0"
+    },
+    {
+      "id": "F14",
+      "title": "Existing business associated with an audience",
+      "path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+      "anchor": "f14--existing-business-associated-with-an-audience",
+      "version": "0.2.0"
+    },
+    {
+      "id": "F15",
+      "title": "Additional completion and commercial value",
+      "path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+      "anchor": "f15--additional-completion-and-commercial-value",
+      "version": "0.2.0"
+    },
+    {
+      "id": "F16",
+      "title": "Retained relationship value",
+      "path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+      "anchor": "f16--retained-relationship-value",
+      "version": "0.2.0"
+    },
+    {
+      "id": "F17",
+      "title": "Uncertainty and scenario propagation",
+      "path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
+      "anchor": "f17--uncertainty-and-scenario-propagation",
+      "version": "0.2.0"
+    }
+  ],
+  "legacy_source_aliases": {
+    "S04": "D01",
+    "S05": "D02",
+    "S06": "D07",
+    "S07": "D05"
+  },
+  "legacy_observation_aliases": {
+    "S04": "UK01",
+    "S05": "EU01",
+    "S07": "US01"
+  }
 }

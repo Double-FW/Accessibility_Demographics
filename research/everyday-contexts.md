@@ -1,7 +1,7 @@
 ---
 title: "Everyday contexts and changing interaction"
-version: "0.1.0"
-date: "2026-11-14"
+version: "0.2.0"
+date: "2026-11-15"
 status: "exploratory guidance; independent review pending"
 language: "en-GB"
 document_type: "guide"
@@ -39,3 +39,9 @@ Record person/need where volunteered; state; environment/device; task; relations
 Never ask participants to become intoxicated, drive while testing a distracting interface or reproduce unsafe travel conditions. Investigate safely through appropriate existing evidence and controlled alternatives.
 
 W3C discusses situational limitations such as bright sunlight and inability to listen to audio [S03]. The specific service impacts above require local research, not extrapolation from that general observation.
+
+## Statistical context and exposure calculation
+
+[Section 7 of the statistical reference](../Accessibility_Demographic_Statistics_and_Estimation_Methods.md#7-sleep-mental-health-illness-injury-and-transient-circumstances) provides sleep records ST01–ST08 and drug-use context TR08–TR09. Sleep reports and annual drug use are not measurements of impaired service use at a particular moment.
+
+Use [F06](../Accessibility_Demographic_Statistics_and_Estimation_Methods.md#f06--episode-burden-and-average-time-affected)–[F08](../Accessibility_Demographic_Statistics_and_Estimation_Methods.md#f08--people-with-an-episode-during-a-window) only for justified episode/duration models, [F09](../Accessibility_Demographic_Statistics_and_Estimation_Methods.md#f09--observed-person-time-and-interaction-exposure) for observed person-time and journey exposure, and [F10](../Accessibility_Demographic_Statistics_and_Estimation_Methods.md#f10--time-of-day-and-environment-weighting) for time-of-day weighting. Measure whether the setting actually creates a task barrier. One-handed use, glare, muted audio and low brightness still require local exposure evidence; do not fill these gaps using sleep or drug-use percentages.
