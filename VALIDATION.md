@@ -21,3 +21,11 @@ The initial framework validation recorded 84 relative links, three JSON files, s
 This update adds no new prevalence study, customer research, organisational pilot, measured conversion effect or commercial attribution. It has not independently validated the complete external bibliography or the transfer of source rates to any organisation's customers. Mathematical and structural consistency do not establish model applicability or accessible service outcomes.
 
 Publication of this integration remains pending because the connection reported no write access to the repository. Record the actual publication commit after upload. Do not substitute the baseline commit above for an integration commit.
+
+## Human-first quick-guide addition — 15 November 2026
+
+The addition comprises six guides and a folder reading menu. Checks cover the eleven EAA paragraph references (a–k), cross-cutting privacy, source availability, relative paths/headings, index entries, guide length, preserved statistical records and illustrative financial arithmetic. The text distinguishes age-pattern explanation from unsupported curve fitting and inclusive research from guaranteed improvement.
+
+The package retains the prepared statistics integration because it was not present in the retrieved live baseline. No remote publication, independent legal assessment, reader evaluation or new empirical outcome is claimed. Direct EUR-Lex retrieval was blocked by a JavaScript wall; the source-use note records the alternative official text used.
+
+Executed quick-guide integration checks: 180 relative links, including 58 linked headings, resolved; all three JSON files parsed; 41 indexed paths existed. All eleven functional lenses were present, guide lengths were below 650 words, and both illustrative financial calculations were checked. Statistical-reference and typed-record bytes matched the previously validated integration.

@@ -1,6 +1,6 @@
 ---
 title: "Changelog"
-version: "0.2.0"
+version: "0.3.0"
 date: "2026-11-15"
 status: "exploratory guidance; independent review pending"
 language: "en-GB"
@@ -31,3 +31,11 @@ Subsequent repository observation: the framework and statistical reference were 
 - Preserved the statistical reference, supplied report and MIT licence; no new prevalence research or empirical service outcomes are claimed.
 
 Publication of this integration is pending: the connection reported no write access. The baseline above identifies the source used for preparation, not a commit containing these changes. Record the actual publication commit after upload.
+
+## 0.3.0 quick guides — 15 November 2026 — prepared update
+
+- Added quick-guides/ with six human-first guides and a beginner reading menu.
+- Connected medical/social models, EAA functional lenses, ageing/retention, financial value, everyday barriers and neurodivergent research to practical customer decisions.
+- Linked selected public Double-FW guidance, including the EAA customer-outcomes guide; retained official-law and source limitations.
+- Added navigation and index entries while preserving the prepared statistics integration.
+- The guide set does not add new epidemiological estimates or claim completed customer studies. Publication and independent reader evaluation remain pending.

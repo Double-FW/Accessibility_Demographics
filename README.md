@@ -1,6 +1,6 @@
 ---
 title: "Accessibility Demographics"
-version: "0.2.0"
+version: "0.3.0"
 date: "2026-11-15"
 status: "exploratory guidance; independent review pending"
 language: "en-GB"
@@ -14,6 +14,10 @@ document_type: "repository overview"
 This is an evolving research and decision resource for marketing, product, design, accessibility, service strategy, research and policy teams. It connects audience evidence to practical opportunities to reach, engage, serve and retain customers across changing needs and circumstances.
 
 It supports people working directly and authorised agents supporting research, analysis and design. It can inform Skills, retrieval-augmented generation (RAG) and Model Context Protocol (MCP) services; it is not itself a deployed agent or server.
+
+## New to disability demographics?
+
+Start with the [six quick guides](quick-guides/README.md). They explain disability models, functional needs, ageing, customer value, everyday contexts and neurodivergence in plain language, with practical next steps and links to public Double-FW guidance.
 
 ## Start with a decision
 
@@ -56,7 +60,7 @@ The reference owns the statistical wording and formula definitions. [Structured 
 
 ## Evidence and status
 
-Version 0.2.0 integrates the statistical reference with the working methods, substantive guides, templates and explicitly synthetic examples. It is not a completed epidemiological review or a validated forecasting model. [The evidence register](evidence/source-register.md) distinguishes checked sources, supplied background and research still required. Country figures describe different populations and must not be ranked as directly comparable measures.
+Version 0.3.0 combines the beginner quick guides with the statistical reference, working methods, substantive guides, templates and explicitly synthetic examples. It is not a completed epidemiological review or a validated forecasting model. [The evidence register](evidence/source-register.md) distinguishes checked sources, supplied background and research still required. Country figures describe different populations and must not be ranked as directly comparable measures.
 
 The supplied [UK apparent-disability report](evidence/supplied/Apparent_Disability_Proportions_UK_Report.md) is preserved unchanged. Its proposed 6–8% range and 7% midpoint are **unvalidated hypotheses for this repository**, not accepted audience benchmarks. Read the [methodological review](evidence/apparent-disability-review.md) before reuse. The existing root Word file is retained in the remote repository.
 

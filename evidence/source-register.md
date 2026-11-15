@@ -80,3 +80,11 @@ The [resource map](../resources/double-fw-resource-map.md) records eight public 
 ## Revision and reuse
 
 Recheck before consequential reuse, after corrections or when scope/definitions change. Record old/new values, the reason, affected documents and actual review. Structural checks do not establish source truth, customer transfer or independent approval. Linked documents retain their own rights; repository MIT terms do not relicense them.
+
+## Quick-guide source use — 15 November 2026
+
+The human-first quick guides draw on the existing statistical reference and selected public Double-FW material: Nothing About Us Without Us; Cognitive UX task continuity; accessible typography; POUR for Branding Systems and CX; and the EAA customer-outcomes and research guide. These were retrieved for this addition; their draft/advisory status is retained. The knowledge-base README was also reviewed for context. Source links appear in each guide.
+
+The EAA explanation was checked against Annex I Section VII of Directive (EU) 2019/882 through official indexed text and the UK legislation copy; direct EUR-Lex page retrieval encountered a JavaScript wall. The guide paraphrases the a–k lenses and distinguishes their legal role from broader research use. It does not rely on the separate legacy Annex-I matrix, which was reviewed but not adopted as a statement of statutory clause numbering.
+
+Scope's social-model explanation and W3C's accessibility/older-user guidance support introductory framing. RNID hearing context was rechecked; the age examples otherwise retain the statistical reference's dates, definitions and limits. No new dementia prevalence figure is added: available NHS summaries use different estimates, and this quick-guide set does not resolve those differences.

@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "repository": "https://github.com/Double-FW/Accessibility_Demographics",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "language": "en-GB",
   "purpose": "Customer reach, engagement and relationship opportunity through accessibility",
   "agent_instructions": "AGENTS.md",
@@ -19,7 +19,7 @@
       "title": "Instructions for agents working with this repository",
       "kind": "root",
       "status": "exploratory guidance; independent review pending",
-      "version": "0.2.0"
+      "version": "0.3.0"
     },
     {
       "path": "Accessibility_Demographic_Statistics_and_Estimation_Methods.md",
@@ -33,7 +33,7 @@
       "title": "Changelog",
       "kind": "root",
       "status": "exploratory guidance; independent review pending",
-      "version": "0.2.0"
+      "version": "0.3.0"
     },
     {
       "path": "CONTRIBUTING.md",
@@ -46,7 +46,7 @@
       "title": "Accessibility Demographics",
       "kind": "root",
       "status": "exploratory guidance; independent review pending",
-      "version": "0.2.0"
+      "version": "0.3.0"
     },
     {
       "path": "RESEARCH_BACKLOG.md",
@@ -60,7 +60,7 @@
       "title": "Validation record",
       "kind": "root",
       "status": "exploratory guidance; independent review pending",
-      "version": "0.2.0"
+      "version": "0.3.0"
     },
     {
       "path": "evidence/apparent-disability-review.md",
@@ -86,7 +86,7 @@
       "title": "Evidence and source register",
       "kind": "evidence",
       "status": "exploratory guidance; independent review pending",
-      "version": "0.2.0"
+      "version": "0.3.0"
     },
     {
       "path": "evidence/supplied/Apparent_Disability_Proportions_UK_Report.md",
@@ -142,7 +142,7 @@
       "title": "index",
       "kind": "root",
       "status": "exploratory guidance; independent review pending",
-      "version": "0.2.0"
+      "version": "0.3.0"
     },
     {
       "path": "methods/combined-needs-and-reach.md",
@@ -171,6 +171,62 @@
       "kind": "prompts",
       "status": "exploratory guidance; independent review pending",
       "version": "0.2.0"
+    },
+    {
+      "path": "quick-guides/01-medical-and-social-models.md",
+      "title": "Medical and social models: a marketing and product guide",
+      "kind": "human_quick_guide",
+      "audience": "people new to disability demographics",
+      "version": "0.1.0",
+      "status": "prepared guidance; independent reader review pending"
+    },
+    {
+      "path": "quick-guides/02-functional-needs-and-the-eaa.md",
+      "title": "Understanding audiences through functional needs: the EAA approach",
+      "kind": "human_quick_guide",
+      "audience": "people new to disability demographics",
+      "version": "0.1.0",
+      "status": "prepared guidance; independent reader review pending"
+    },
+    {
+      "path": "quick-guides/03-ageing-and-customer-retention.md",
+      "title": "Age, changing needs and long-term customer retention",
+      "kind": "human_quick_guide",
+      "audience": "people new to disability demographics",
+      "version": "0.1.0",
+      "status": "prepared guidance; independent reader review pending"
+    },
+    {
+      "path": "quick-guides/04-financial-value-of-existing-customers.md",
+      "title": "Working out the value of customers with access needs",
+      "kind": "human_quick_guide",
+      "audience": "people new to disability demographics",
+      "version": "0.1.0",
+      "status": "prepared guidance; independent reader review pending"
+    },
+    {
+      "path": "quick-guides/05-environment-and-situations.md",
+      "title": "Environmental and situational barriers: planning for real life",
+      "kind": "human_quick_guide",
+      "audience": "people new to disability demographics",
+      "version": "0.1.0",
+      "status": "prepared guidance; independent reader review pending"
+    },
+    {
+      "path": "quick-guides/06-neurodivergence-and-usability.md",
+      "title": "Neurodivergence and better usability research",
+      "kind": "human_quick_guide",
+      "audience": "people new to disability demographics",
+      "version": "0.1.0",
+      "status": "prepared guidance; independent reader review pending"
+    },
+    {
+      "path": "quick-guides/README.md",
+      "title": "Quick guides: accessibility demographics for newcomers",
+      "kind": "quick_guide_navigation",
+      "audience": "people new to disability demographics",
+      "version": "0.1.0",
+      "status": "prepared guidance; independent reader review pending"
     },
     {
       "path": "research/ageing-and-changing-needs.md",
@@ -372,5 +428,6 @@
     "S04": "UK01",
     "S05": "EU01",
     "S07": "US01"
-  }
+  },
+  "quick_guides": "quick-guides/README.md"
 }

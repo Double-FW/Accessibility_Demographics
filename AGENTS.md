@@ -1,6 +1,6 @@
 ---
 title: "Instructions for agents working with this repository"
-version: "0.2.0"
+version: "0.3.0"
 date: "2026-11-15"
 status: "exploratory guidance; independent review pending"
 language: "en-GB"
@@ -58,3 +58,9 @@ Read [Accessibility_Demographic_Statistics_and_Estimation_Methods.md](Accessibil
 - If Markdown, JSON or an external source conflicts, stop the affected calculation and report the discrepancy. Update all dependent views after correction, preserving historical identities and withdrawn status.
 
 Publication of this integration is separate from source-checking and customer validation. Never report a prepared package as a remote commit.
+
+## Human-first quick guides
+
+quick-guides/ contains six beginner explanations and a reading menu. Keep these documents aimed at people: plain language, short examples, practical actions and useful sources. Do not add agent execution contracts or implementation metadata to their visible content.
+
+When using them for retrieval, retain their qualifications: EAA functional lenses are not disjoint demographic counts; privacy is cross-cutting; age-group prevalence is not an individual transition probability; estimated associated revenue is not measured incremental benefit; and neurodivergent participation creates learning opportunities without guaranteeing universal usability gains. Numerical calculations still require the statistical reference and the owning method.
