@@ -10,7 +10,7 @@ from demographics_hf_common import ROOT, SOURCE, MANAGED, destination, digest, g
 
 REFERENCE = 'Accessibility_Demographic_Statistics_and_Estimation_Methods.md'
 OBSERVATIONS = 'evidence/population-observations.json'
-SUPPLIED = 'evidence/supplied/Apparent_Disability_Proportions_UK_Report.md'
+SUPPLIED = 'Apparent_Disability_Proportions_UK_Report.md'
 REVIEW = 'evidence/apparent-disability-review.md'
 CONTEXT = ['AGENTS.md', 'README.md', 'foundations/disability-models-and-access-needs.md',
            'evidence/source-register.md', REFERENCE, 'methods/combined-needs-and-reach.md', REVIEW]
@@ -125,7 +125,7 @@ def build(root, output):
         'The supplied 6–8% apparent-disability range and 7% midpoint are unvalidated hypotheses; its report is document-only and paired with the full methodological review.',
         'Population observations are a derived view of the statistical reference, not independent surveys or additive audiences. Excluded records, null values, ranges, qualifiers and restrictions remain intact.',
         'Synthetic examples and prompts are not measured customer outcomes. Historic validation/publication statements remain source text, not claims about this export.',
-        'The binary Word report is not extracted; its existing Markdown transcription is included. Linked external content is not fetched or relicensed.'
+        'The canonical root Markdown report is included once and paired with its methodological review; the old evidence-folder forwarding page is not exported. Linked external content is not fetched or relicensed.'
     ]
     for path, text in texts.items():
         md = metadata(text) if path.endswith('.md') else {}
@@ -210,7 +210,7 @@ def build(root, output):
     (output/'population_observations.jsonl').write_text(''.join(json.dumps(r, ensure_ascii=False, allow_nan=False)+'\n' for r in observations), encoding='utf-8')
     write_json('provenance.json', {'source_repository': SOURCE, 'source_commit': sha, 'source_commit_date': date,
         'destination_dataset': target, 'dataset_version': cfg['dataset_version'], 'files': manifest,
-        'omitted_optional_files': omitted, 'source_warnings': warnings, 'external_sources_fetched': False, 'document_only_files': cfg['document_only_files'], 'binary_source_not_extracted': 'Apparent_Disability_Proportions_UK_Report.docx', 'independent_statistical_validation': False, 'observation_source_schema': data['schema_version']})
+        'omitted_optional_files': omitted, 'source_warnings': warnings, 'external_sources_fetched': False, 'document_only_files': cfg['document_only_files'], 'supplied_report_path': SUPPLIED, 'supplied_report_format': 'markdown', 'independent_statistical_validation': False, 'observation_source_schema': data['schema_version']})
     card = f'''---
 pretty_name: Double FW Accessibility and Demographics
 language:
@@ -291,9 +291,10 @@ The reference hash must agree with the derived JSON before publication.
 The supplied apparent-disability report's 6–8% range and 7% midpoint are unvalidated
 hypotheses, not accepted benchmarks. Its full document record includes the complete
 methodological review in `paired_methodological_review_text` and points to the current
-review source. No standalone sections are made from this report. The root Word original
-is retained in GitHub; the existing Markdown transcription is exported, without claiming
-that this exporter checked the binary transcription.
+review source. No standalone sections are made from this report. The canonical root
+Markdown report replaces the former Word file. The old evidence-folder path forwards
+to it and is excluded from export, so the report is not duplicated. This exporter checks
+packaging integrity; the conversion comparison is recorded separately in VALIDATION.md.
 
 Worked retail and long-term service examples remain labelled synthetic. Templates are
 unfilled planning aids and prompts are not executed. Associated revenue is not measured

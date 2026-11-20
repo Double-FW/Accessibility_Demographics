@@ -71,7 +71,7 @@ F01–F17 identify formulae in section 8 of the reference. Record the reference 
 
 | ID | Material | Status and reuse |
 | --- | --- | --- |
-| U01 | [Apparent Disability in UK Society](supplied/Apparent_Disability_Proportions_UK_Report.md), received 14 November 2026; authorship not independently verified | Preserved unchanged. Its 6–8% range and 7% midpoint remain unvalidated hypotheses. Always pair retrieval with [the review](apparent-disability-review.md). Its external bibliography has not been audited in full. |
+| U01 | [Apparent Disability in UK Society](../Apparent_Disability_Proportions_UK_Report.md), received 14 November 2026; authorship not independently verified | Report wording preserved in the root Markdown conversion, with a separate editorial status note. Its 6–8% range and 7% midpoint remain unvalidated hypotheses. Always pair retrieval with [the review](apparent-disability-review.md). Its external bibliography has not been audited in full. |
 
 ## Double-FW guidance
 

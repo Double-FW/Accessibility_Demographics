@@ -10,7 +10,7 @@ The statistical reference has 80 entries, including one excluded record, and 28 
 
 Schema 2.0 migration is explicit: old S-series observation IDs resolve through legacy_observation_aliases; source aliases resolve separately. ND11 has no numeric metrics and is prohibited for calculation. Published planning ranges do not acquire fabricated point estimates. Null means unknown, not zero.
 
-The stale index entry for INSTALL.md, absent from the retrieved repository, was removed. Existing historical source dates and scope are retained. The statistical reference, supplied Markdown report and existing MIT licence remain unchanged in the prepared update. The existing root Word file is not part of the replacement package and must be retained.
+The stale index entry for INSTALL.md, absent from the retrieved repository, was removed. Existing historical source dates and scope are retained. The statistical reference, supplied Markdown report and existing MIT licence remain unchanged in the prepared update. At that historical stage the existing root Word file was outside the replacement package and was to be retained. That preservation decision is superseded by the authorised Markdown replacement recorded below.
 
 ## Earlier checks retained as historical scope
 
@@ -29,3 +29,11 @@ The addition comprises six guides and a folder reading menu. Checks cover the el
 The package retains the prepared statistics integration because it was not present in the retrieved live baseline. No remote publication, independent legal assessment, reader evaluation or new empirical outcome is claimed. Direct EUR-Lex retrieval was blocked by a JavaScript wall; the source-use note records the alternative official text used.
 
 Executed quick-guide integration checks: 180 relative links, including 58 linked headings, resolved; all three JSON files parsed; 41 indexed paths existed. All eleven functional lenses were present, guide lengths were below 650 words, and both illustrative financial calculations were checked. Statistical-reference and typed-record bytes matched the previously validated integration.
+
+## Word-to-Markdown replacement — 20 November 2026
+
+The root Markdown report is the canonical supplied report. The former Word version is removed from the current tree and remains recoverable through Git history. The former evidence-folder Markdown path is a forwarding page, excluded from the dataset allowlist so the full report is exported only once.
+
+Conversion checks compare the existing transcription with every non-empty top-level Word paragraph and every table cell, normalising typography and Markdown formatting. Equivalent Word DrawingML/VML fallback copies are counted once. The report retains its four-column table with seven data rows and all eleven hyperlink destinations. These checks concern transcription completeness, not the accuracy or currency of the report's statistical claims.
+
+The editorial status note is separate from the supplied report wording. The methodological review remains paired with the report in the dataset, and no standalone report chunks are produced. The original statistical reference, typed population observations, methodological review and MIT licence are unchanged.

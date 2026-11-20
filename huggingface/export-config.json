@@ -14,7 +14,7 @@
     "evidence/double-fw-retrieval.json",
     "evidence/population-observations.json",
     "evidence/source-register.md",
-    "evidence/supplied/Apparent_Disability_Proportions_UK_Report.md",
+    "Apparent_Disability_Proportions_UK_Report.md",
     "examples/retail-and-long-term-services.md",
     "foundations/disability-models-and-access-needs.md",
     "foundations/objectives-and-scope.md",
@@ -58,7 +58,7 @@
     "evidence/double-fw-retrieval.json",
     "evidence/population-observations.json",
     "evidence/source-register.md",
-    "evidence/supplied/Apparent_Disability_Proportions_UK_Report.md",
+    "Apparent_Disability_Proportions_UK_Report.md",
     "examples/retail-and-long-term-services.md",
     "foundations/disability-models-and-access-needs.md",
     "foundations/objectives-and-scope.md",
@@ -93,7 +93,7 @@
   ],
   "document_only_files": [
     "opportunity-research.md",
-    "evidence/supplied/Apparent_Disability_Proportions_UK_Report.md",
+    "Apparent_Disability_Proportions_UK_Report.md",
     "evidence/double-fw-retrieval.json",
     "evidence/population-observations.json",
     "index.json"
