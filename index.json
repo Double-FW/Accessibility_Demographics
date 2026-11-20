@@ -8,7 +8,7 @@
   "evidence_register": "evidence/source-register.md",
   "source_pairing_rules": [
     {
-      "source": "evidence/supplied/Apparent_Disability_Proportions_UK_Report.md",
+      "source": "Apparent_Disability_Proportions_UK_Report.md",
       "always_include": "evidence/apparent-disability-review.md",
       "reason": "Aggregate apparent-disability range is unvalidated"
     }
@@ -89,7 +89,7 @@
       "version": "0.3.0"
     },
     {
-      "path": "evidence/supplied/Apparent_Disability_Proportions_UK_Report.md",
+      "path": "Apparent_Disability_Proportions_UK_Report.md",
       "title": "Apparent Disability in UK Society",
       "kind": "evidence",
       "status": "supplied background; headline unvalidated"

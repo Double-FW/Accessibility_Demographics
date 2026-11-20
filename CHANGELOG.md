@@ -9,6 +9,17 @@ document_type: "guide"
 
 # Changelog
 
+## 20 November 2026 — Word report replaced with Markdown
+
+- Replaced the root Word report with `Apparent_Disability_Proportions_UK_Report.md`, using the existing supplied transcription after comparison with the Word source.
+- Preserved all report paragraphs, the four-column table with seven data rows, and all eleven external source hyperlinks. Equivalent Word fallback text-box copies are represented once.
+- Added a clearly labelled editorial status note and retained the separate methodological review and unvalidated-hypothesis status.
+- Updated navigation, agent guidance, source/index references, export configuration and dataset documentation to the canonical root Markdown path. Kept the old evidence-folder path as an unexported forwarding page to preserve existing links.
+- The original Word file remains in Git history at source commit `986b1d13a4b0da97e91b8322065d53a4f6b9f98c`; its SHA-256 is `824fba3dc50c19ace888fdc13c62e38ed605e33468777a8a17a01490652ecd71`.
+- Report document IDs/source paths in regenerated datasets now use the root Markdown path instead of the evidence-folder path. Consumers using the old path should update it; the review-pairing requirement is unchanged. No new prevalence research, source audit or licence change is claimed.
+
+Earlier entries below describe their historical updates, including the previous decision to retain Word. They do not override this replacement.
+
 ## 0.1.0 — 14 November 2026 — prepared update
 
 - Reframed the repository around customer reach, engagement, service quality, brand and relationship opportunity.

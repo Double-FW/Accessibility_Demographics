@@ -24,7 +24,7 @@ Read README.md, foundations/disability-models-and-access-needs.md and evidence/s
 - Do not use age-standardised rates as direct headcount multipliers or compare incompatible country rates as a common measure.
 - Do not fabricate prevalence, joint distributions, confidence intervals, projections, participants, user research or commercial returns.
 - Do not add overlapping groups. Use compatible joint evidence, mathematical bounds or explicit scenarios under methods/combined-needs-and-reach.md.
-- Treat evidence/supplied/Apparent_Disability_Proportions_UK_Report.md as supplied background. Its 6–8% range and 7% midpoint are unvalidated hypotheses, not adopted benchmarks. Keep evidence/apparent-disability-review.md attached to any retrieval or summary of that estimate.
+- Treat Apparent_Disability_Proportions_UK_Report.md as supplied background. Its 6–8% range and 7% midpoint are unvalidated hypotheses, not adopted benchmarks. Keep evidence/apparent-disability-review.md attached to any retrieval or summary of that estimate.
 - Do not transfer working-age estimates to all ages, UK estimates to EU/US, registration counts to all people with a condition, or diagnosis counts to total prevalence.
 
 ## Human and customer boundaries
@@ -41,7 +41,7 @@ Use public Double-FW resources through resources/double-fw-resource-map.md. Chec
 
 ## Changes and checks
 
-Preserve supplied source files and the existing root Word report. Update the owning document before dependent summaries. Keep relative links valid, JSON parseable, numbers reproducible and status accurate. Record substantive changes in CHANGELOG.md and evidence gaps in RESEARCH_BACKLOG.md. Check that synthetic examples remain labelled and no draft guidance is represented as customer-tested.
+Preserve the supplied report wording and provenance in the canonical root Markdown report. The former Word report was replaced with Markdown on 20 November 2026; the old evidence-folder path is a forwarding page, not a second report copy. Update the owning document before dependent summaries. Keep relative links valid, JSON parseable, numbers reproducible and status accurate. Record substantive changes in CHANGELOG.md and evidence gaps in RESEARCH_BACKLOG.md. Check that synthetic examples remain labelled and no draft guidance is represented as customer-tested.
 
 When write access is unavailable, prepare a complete reviewable package and state that publication remains pending. Do not claim a GitHub update from a local file creation.
 

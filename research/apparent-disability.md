@@ -17,7 +17,7 @@ Apparency is context-dependent. An impairment may be apparent in a physical inte
 
 ## Supplied starting point
 
-The [supplied UK report](../evidence/supplied/Apparent_Disability_Proportions_UK_Report.md) was written for casting and portrayal. It proposes a 6–8% working-age range and 7% midpoint. This repository does not endorse those as validated prevalence estimates: see [the review](../evidence/apparent-disability-review.md).
+The [supplied UK report](../Apparent_Disability_Proportions_UK_Report.md) was written for casting and portrayal. It proposes a 6–8% working-age range and 7% midpoint. This repository does not endorse those as validated prevalence estimates: see [the review](../evidence/apparent-disability-review.md).
 
 ## Method
 
